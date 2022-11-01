@@ -8,7 +8,7 @@ export default function EditAccount({user}) {
   const [patch, setPatch] = useState(0);
 
   useEffect(() => {
-    fetch(`/user/${user.id}`)
+    fetch(`/me`)
     .then(r=>r.json()).then((data)=>{
       setPostObject(data)
       setFirstName(data.first_name)
@@ -20,7 +20,7 @@ export default function EditAccount({user}) {
     })
   }, [])
 
-
+  console.log(postObject.id)
 
   function startPatch() {
     setPatch(1)
@@ -35,39 +35,44 @@ export default function EditAccount({user}) {
   const [bio, setBio] = useState("")
   const [editImage, setEditImage] = useState(false)
   const [image, setImage] = useState("")
+  const [skillLevel, setSkillLevel] = useState("")
 
-  function selectCat(event) {
-    setCat(event.target.value)
+ 
+  function handleFirstName(event) {
+    setFirstName(event.target.value)
   }
 
-  function handleTitle(event) {
-    setTitle(event.target.value)
+  function handleLastName(event) {
+    setLastName(event.target.value)
   }
 
-  function handlePrice(event) {
-    setPrice(event.target.value)
+  function handleArea(event) {
+    setArea(event.target.value)
   }
 
-  function handleCity(event) {
-    setCity(event.target.value)
+  function handleSkillLevel(event) {
+    setSkillLevel(event.target.value)
   }
 
-  function handlePostal(event) {
-    setPostal(event.target.value)
+  function handlePhoneNumber(event) {
+    setPhoneNumber(event.target.value)
   }
 
-  function handleDescription(event) {
-    setDescription(event.target.value)
+  function handleBio(event) {
+    setBio(event.target.value)
   }
 
   function handleImage(event) {
-
     setImage(event.target.value)
   }
 
-  function renderAddImageInput() {
+  function handleEditImage(event) {
+    setEditImage(event.target.value)
+  }
+
+  function renderEditImageInput() {
       setPatch(1)
-      setAddImage(!addImage)
+      setEditImage(!editImage)
   }
 
   function handleSubmit(event) {
@@ -78,12 +83,12 @@ export default function EditAccount({user}) {
         "last_name": lastName,
         "bio": bio,
         "profile_picture": image,
-        "area": city,
+        "area": area,
         "phone_number": phoneNumber,
         "skill_level": skillLevel
     }
-
-    fetch(`/users/${id}`, {
+    console.log(editedUser)
+    fetch(`/users/${postObject.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +97,7 @@ export default function EditAccount({user}) {
     })
     .then(r => r.json())
     .then((data) => {
-      navigate(`/users/${data.id}`)
+      navigate('/account')
     })
   }
 
@@ -100,36 +105,36 @@ export default function EditAccount({user}) {
     <div className={styles.post}>
       <form className={styles.form} onSubmit={handleSubmit} onChange={startPatch}>
       <div className={styles.groupcontainer}>
-      <label for="postingtitle" className={styles.postlabel}>first name
-      <input type='text' className={styles.postingtitle} onChange={handleTitle} value={patch > 0 ? title : postObject.title}/>
+      <label for="firstname" className={styles.postlabel}>first name
+      <input type='text' className={styles.postingtitle} onChange={handleFirstName} value={patch > 0 ? firstName : postObject.first_name}/>
       </label>
-      <label for="price" className={styles.pricelabel}>last name
-      <input type="number" className={styles.price} title="Please enter a number" onChange={handlePrice} value={patch > 0 ? price : postObject.price}/>
+      <label for="lastname" className={styles.pricelabel}>last name
+      <input type="text" className={styles.price} onChange={handleLastName} value={patch > 0 ? lastName : postObject.last_name}/>
       </label>
-      <label for="cityorneighborhood" className={styles.citylabel}>area
-      <input type='text' className={styles.city} onChange={handleCity} value={patch > 0 ? city : postObject.area}/>
+      <label for="area" className={styles.citylabel}>area
+      <input type='text' className={styles.city} onChange={handleArea} value={patch > 0 ? area : postObject.area}/>
       </label>
       <label for="postalcode" className={styles.postallabel}>phone number
-      <input type='text' className={styles.postalcode} onChange={handlePostal} value={patch > 0 ? postal : postObject.postal_code}/>
+      <input type='text' className={styles.postalcode} onChange={handlePhoneNumber} value={patch > 0 ? phoneNumber : postObject.phone_number}/>
       </label>
-      <label for="cityorneighborhood" className={styles.citylabel}>skill level
-      <input type='text' className={styles.city} onChange={handleCity} value={patch > 0 ? city : postObject.area}/>
+      <label for="skill" className={styles.citylabel}>skill level
+      <input type='text' className={styles.city} onChange={handleSkillLevel} value={patch > 0 ? skillLevel : postObject.skill_level}/>
       </label>
       </div>
       <div className={styles.descriptioncontainer}>
       <label htmlFor="description" className={styles.descriptionlabel}>your bio
-      <textarea className={styles.description} onChange={handleDescription} value={patch > 0 ? description : postObject.description}></textarea>
+      <textarea className={styles.description} onChange={handleBio} value={patch > 0 ? bio : postObject.bio}></textarea>
       </label>
       </div>
       
       <button className={styles.button} type="submit">Continue</button>
       </form>
       <div className={styles.imagecontainer}>
-        <img src={image} alt="your profile picture" />
-      {addImage ? <label for="imageInput" className={styles.imagelabel}>profile picture url
-      <input type="text" className={styles.imageInput} onChange={handleImage} value={patch > 0 ? image : postObject.image}/>
+        <img src={image} alt="your profile picture" className={styles.imageDisplay}/>
+      {editImage ? <label for="imageInput" className={styles.imagelabel}>profile picture url
+      <input type="text" className={styles.imageInput} onChange={handleImage} value={patch > 0 ? image : postObject.profile_picture}/>
       </label> : 
-      <button onClick={renderAddImageInput} className={styles.imageButton}>edit profile picture</button>}
+      <button onClick={renderEditImageInput} className={styles.imageButton}>edit profile picture</button>}
       </div>
     </div>
   )
