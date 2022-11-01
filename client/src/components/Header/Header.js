@@ -9,10 +9,10 @@ export default function Header({ user }) {
     <>
     <div className={styles.header}>
       <div className={styles.homeBtn}>
-        <Link to='/'>GL</Link>
+        <Link to='/'>PP</Link>
       </div>
       <div className={styles.links}>
-        <Link to='/posts-create'>post</Link> | <Link to={path}>account</Link>
+        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link>
       </div>
     </div>
     <Outlet />

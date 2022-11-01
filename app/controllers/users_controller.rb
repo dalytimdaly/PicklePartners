@@ -22,10 +22,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # PATCH /user - EDIT ACCOUNT INFO
+  def update
+    user = User.find(params[:id])
+    if user.update(user_params)
+      render json: user, status: :accepted
+    else
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params
-    params.permit(:username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :profile_picture)
+    params.permit(:id, :username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :profile_picture)
   end
 
 end

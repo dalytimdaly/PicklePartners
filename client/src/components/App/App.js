@@ -32,10 +32,10 @@ function App() {
     <Routes>
     <Route element={<Header />}>
       <Route path="/" element={<Main />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/account' element={<Account />} />
-      <Route path='/schedule' element={<Schedule />} />
-      <Route path='/account-edit' element={<EditAccount />} />
+      <Route path='/login' element={<Login user={user} newUser={newUser}/>} />
+      <Route path='/account' element={<Account user={user} newUser={newUser}/>} />
+      <Route path='/schedule' element={<Schedule user={user} newUser={newUser}/>} />
+      <Route path='/account-edit' element={<EditAccount user={user} newUser={newUser}/>} />
     </Route>
     </Routes>
     <Footer />
