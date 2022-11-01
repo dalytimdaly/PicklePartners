@@ -7,6 +7,7 @@ import Account from '../Account/Account';
 import Schedule from '../Schedule/Schedule';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import EditAccount from '../EditAccount/EditAccount';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path='/login' element={<Login />} />
       <Route path='/account' element={<Account />} />
       <Route path='/schedule' element={<Schedule />} />
+      <Route path='/account-edit' element={<EditAccount />} />
     </Route>
     </Routes>
     <Footer />
