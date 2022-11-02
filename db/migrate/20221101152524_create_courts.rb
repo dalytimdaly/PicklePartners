@@ -5,23 +5,16 @@ class CreateCourts < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :phone_number
       t.string :hours
-      t.integer :reservations6
-      t.integer :reservations7
-      t.integer :reservations8
-      t.integer :reservations9
-      t.integer :reservations10
-      t.integer :reservations11
-      t.integer :reservations12
-      t.integer :reservations13
-      t.integer :reservations14
-      t.integer :reservations15
-      t.integer :reservations16
-      t.integer :reservations17
-      t.integer :reservations18
-      t.integer :reservations19
-      t.integer :reservations20
-      t.integer :reservations21
-      t.integer :reservations22
+      t.integer :court_number1
+      t.integer :court_number2
+      t.integer :court_number3
+      t.integer :court_number4
+      t.integer :court_number5
+      t.integer :court_number6
+      t.integer :court_number7
+      t.integer :court_number8
+      t.integer :court_number9
+      t.integer :court_number10
 
 
       t.timestamps

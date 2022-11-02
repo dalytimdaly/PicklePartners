@@ -6,10 +6,9 @@ class PickleballsController < ApplicationController
       pickles = User.find(params[:my_id]).pickles
     end
     if(params[:q])
-      pickles = Pickleball.all.filter do |pickle|
-        pickle.court_id(params[:q])
-      end
+      pickles = Pickleball.where(:court_id => (params[:q]))
     end
+    render json: pickles
   end
   
   
@@ -40,7 +39,7 @@ class PickleballsController < ApplicationController
   private
 
   def pickleball_params
-    params.permit(:id, :my_id, :user_id, :court_id, :type_of_play, :size, :skill_level, :time, :date)
+    params.permit(:id, :my_id, :user_id, :court_id, :type_of_play, :size, :skill_level, :time, :date, :user2_id, :user3_id, :user4_id)
   end
 
 end

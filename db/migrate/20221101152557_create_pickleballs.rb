@@ -8,6 +8,7 @@ class CreatePickleballs < ActiveRecord::Migration[6.1]
       t.string :skill_level
       t.integer :time
       t.datetime :date
+      t.integer :court_number_id
       t.integer :user2_id
       t.integer :user3_id
       t.integer :user4_id

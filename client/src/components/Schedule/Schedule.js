@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Search({ user }) {
   const [ results, setResults ] = useState([]);
   const [ errors, setErrors ] = useState([]);
-  const [selection, setSelection] = useState([])
+  const [selection, setSelection] = useState(1)
 
   
   const navigate = useNavigate();
