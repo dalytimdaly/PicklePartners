@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function Main() {
 
   return (
-    <div>handleLogin
+    <div>
     <Link to='/login' className={styles.Link}>Login/Sign-Up</Link>
     </div>
   )

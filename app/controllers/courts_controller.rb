@@ -1,5 +1,32 @@
 class CourtsController < ApplicationController
 
+  def index
+    render json: Court.all
+  end
+  
+  def show
+    court = Court.find(params[:id])
+  end
+
+  def create
+    court = Court.create!(court_params)
+    render json: court, status: :created
+  end
+
+  def destroy
+    court = Court.find(params[:id])
+    court.destroy
+    render json: {}, status: :accepted
+  end
+
+  def update
+    court = Court.find(params[:id])
+    if court.update(court_params)
+      render json: court, status: :accepted
+    else
+      render json: { errors: court.errors.full_messages}, status: :unprocessable_entity
+    end
+  end
 
   private
 
