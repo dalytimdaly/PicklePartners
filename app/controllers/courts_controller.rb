@@ -31,7 +31,8 @@ class CourtsController < ApplicationController
   private
 
   def court_params
-    params.permit(:id, :name, :address, :phone_number, :hours, :reservation6, :reservation7, :reservation8, :reservation9, :reservation10, :reservation11, :reservation12, :reservation13, :reservation14, :reservation15, :reservation16, :reservation17, :reservation18, :reservation19, :reservation20, :reservation21,  :reservation22)
+    params.permit(:id, :name, :address, :phone_number, :hours, :court_number1,
+    :court_number2, :court_number3, :court_number4, :court_number5, :court_number6, :court_number7, :court_number8, :court_number9, :court_number10)
   end
 
 end

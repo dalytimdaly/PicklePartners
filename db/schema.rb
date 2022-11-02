@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_11_01_152557) do
     t.integer "user_id"
     t.integer "court_id"
     t.string "type_of_play"
-    t.string "size"
+    t.integer "size"
     t.string "skill_level"
     t.integer "time"
     t.datetime "date"

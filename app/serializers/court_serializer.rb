@@ -1,3 +1,4 @@
 class CourtSerializer < ActiveModel::Serializer
-  attributes :id, :name, :address, :phone_number, :hours, :reservations6, :reservations7, :reservations8, :reservations9, :reservations10, :reservations11, :reservations12, :reservations13, :reservations14, :reservations15, :reservations16, :reservations17, :reservations18, :reservations19, :reservations20, :reservations21,  :reservations22
+  attributes :id, :name, :address, :phone_number, :hours, :court_number1,
+  :court_number2, :court_number3, :court_number4, :court_number5, :court_number6, :court_number7, :court_number8, :court_number9, :court_number10
 end
