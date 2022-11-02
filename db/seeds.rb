@@ -81,6 +81,7 @@ court_number2: 2, court_number3: 3, court_number4: 4, court_number5: 5, court_nu
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     
   )
@@ -95,6 +96,7 @@ end
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     
   )
@@ -109,6 +111,7 @@ end
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
    
   )
@@ -124,6 +127,7 @@ end
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
     user4_id: User.all.pluck(:id).sample
@@ -139,6 +143,7 @@ end
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
     user4_id: User.all.pluck(:id).sample
@@ -155,6 +160,7 @@ end
     skill_level: skills.sample,
     time: rand(6..22),
     date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
     user4_id: User.all.pluck(:id).sample
