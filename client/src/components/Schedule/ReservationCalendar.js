@@ -1,11 +1,12 @@
 import styles from './ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
 
 export default function ReservationCalendar({ user }) {
   const [ results, setResults ] = useState([]);
+  const [reserved, setReserved] = useState(false)
   const [ errors, setErrors ] = useState([]);
   const { term } = useParams();
 
@@ -94,6 +95,22 @@ export default function ReservationCalendar({ user }) {
 
   
 
+  const reservation = results.map(result => <div key={result.id} className={styles.reservedBlock}>
+    <h4>RESERVED</h4>
+    <p>Type: {result.type_of_play}</p>
+    <p>Group Size: {result.size}</p>
+    <p>Skill Level: {result.skill_level}</p>
+    <p>{result.court_number_id}</p>
+    <p>{result.user2_id}</p>
+    <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button>sign up!</button>}</p>
+    <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button>sign up!</button>}</p>
+  </div>)
+
+  function renderReservation() {
+    return "hi"
+  }
+
+  
   return (
     <div className={styles.pickleContainer}>
       <table className={styles.table}>
@@ -109,55 +126,174 @@ export default function ReservationCalendar({ user }) {
               <th className={styles.tableHead}>{format(lastday, 'MM/d')}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">6AM</a></td>
+              <td className={styles.tableDate}>6AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">7AM</a></td>
+              <td className={styles.tableDate}>7AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">8AM</a></td>
+              <td className={styles.tableDate}>8AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">9AM</a></td>
+              <td className={styles.tableDate}>9AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">10AM</a></td>
+              <td className={styles.tableDate}>10AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">11AM</a></td>
+              <td className={styles.tableDate}>11AM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">12</a></td>
+              <td className={styles.tableDate}>12</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reservation[1]}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">1PM</a></td>
+              <td className={styles.tableDate}>1PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">2PM</a></td>
+              <td className={styles.tableDate}>2PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">3PM</a></td>
+              <td className={styles.tableDate}>3PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">4PM</a></td>
+              <td className={styles.tableDate}>4PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">5PM</a></td>
+              <td className={styles.tableDate}>5PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">6PM</a></td>
+              <td className={styles.tableDate}>6PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">7PM</a></td>
+              <td className={styles.tableDate}>7PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">8PM</a></td>
+              <td className={styles.tableDate}>8PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDate}><a href="localhost:4000">9PM</a></td>
+              <td className={styles.tableDate}>9PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
             <tr className={styles.tableRow}>
-              <td className={styles.tableDateLast}><a href="localhost:4000">10PM</a></td>
+              <td className={styles.tableDateLast}>10PM</td>
+              <td className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</td>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
+              <th className={styles.reservationBlock}>{reserved ? renderReservation : <Link to='/create'>OPEN</Link>}</th>
             </tr>
           </tbody>
         </table>
