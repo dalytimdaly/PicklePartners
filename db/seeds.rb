@@ -5,7 +5,7 @@ require 'faker'
 
 skills = ["pro", "advanced", "intermediate", "beginner"]
 
-200.times do
+250.times do
   User.create(
     username: Faker::Internet.email,
     password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
@@ -83,7 +83,6 @@ court_number2: 2, court_number3: 3, court_number4: 4, court_number5: 5, court_nu
     date: Faker::Date.forward(days: 7),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
-    
   )
 end
 
@@ -98,7 +97,6 @@ end
     date: Faker::Date.forward(days: 7),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
-    
   )
 end
 
@@ -113,7 +111,20 @@ end
     date: Faker::Date.forward(days: 7),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
-   
+  )
+end
+
+70.times do
+  Pickleball.create(
+    user_id: User.all.pluck(:id).sample,
+    court_id: Court.all.pluck(:id).sample,
+    type_of_play: "practice",
+    size: 2,
+    skill_level: skills.sample,
+    time: rand(6..22),
+    date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
+    user2_id: "open spot",
   )
 end
 
@@ -150,6 +161,22 @@ end
   )
 end
 
+70.times do
+  Pickleball.create(
+    user_id: User.all.pluck(:id).sample,
+    court_id: Court.all.pluck(:id).sample,
+    type_of_play: "competitive",
+    size: 4,
+    skill_level: skills.sample,
+    time: rand(6..22),
+    date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
+    user2_id: User.all.pluck(:id).sample,
+    user3_id: "open spot",
+    user4_id: User.all.pluck(:id).sample
+  )
+end
+
 
 70.times do
   Pickleball.create(
@@ -164,5 +191,21 @@ end
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
     user4_id: User.all.pluck(:id).sample
+  )
+end
+
+70.times do
+  Pickleball.create(
+    user_id: User.all.pluck(:id).sample,
+    court_id: Court.all.pluck(:id).sample,
+    type_of_play: "practice",
+    size: 4,
+    skill_level: skills.sample,
+    time: rand(6..22),
+    date: Faker::Date.forward(days: 7),
+    court_number_id: rand(1..10),
+    user2_id: User.all.pluck(:id).sample,
+    user3_id: User.all.pluck(:id).sample,
+    user4_id: "open spot"
   )
 end

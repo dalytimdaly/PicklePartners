@@ -107,19 +107,6 @@ export default function ReservationCalendar({ user }) {
     seconds: 0,
   })
 
-  const reservation = results.map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4>RESERVED</h4>
-    <p>Type: {result.type_of_play}</p>
-    <p>Group Size: {result.size}</p>
-    <p>Skill Level: {result.skill_level}</p>
-    <p>Court Number: {result.court_number_id}</p>
-    <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-    <p>{result.time}</p>
-    <p>{`${result.date.substring(5,7)}/${result.date.substring(8,10)}`}</p>
-  </div>)
-
 
 // HOUR 6  
 
@@ -133,11 +120,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -146,11 +133,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -159,11 +146,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -173,11 +160,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -186,11 +173,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -200,11 +187,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -214,9 +201,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -232,11 +220,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -245,11 +233,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -258,11 +246,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -272,11 +260,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -285,11 +273,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -299,11 +287,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -313,9 +301,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -331,11 +320,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -344,11 +333,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -357,11 +346,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -371,11 +360,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -384,11 +373,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -398,11 +387,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -412,9 +401,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 // HOUR 9
@@ -429,11 +419,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -442,11 +432,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -455,11 +445,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -469,11 +459,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -482,11 +472,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -496,11 +486,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -510,9 +500,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -528,11 +519,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -541,11 +532,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -554,11 +545,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -568,11 +559,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -581,11 +572,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -595,11 +586,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -609,9 +600,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -627,11 +619,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -640,11 +632,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -653,11 +645,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -667,11 +659,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -680,11 +672,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -694,11 +686,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -708,9 +700,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -726,11 +719,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -739,11 +732,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -752,11 +745,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -766,11 +759,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -779,11 +772,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -793,11 +786,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -807,9 +800,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -825,11 +819,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -838,11 +832,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -851,11 +845,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -865,11 +859,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -878,11 +872,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -892,11 +886,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -906,9 +900,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -924,11 +919,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -937,11 +932,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -950,11 +945,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -964,11 +959,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -977,11 +972,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -991,11 +986,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1005,9 +1000,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1022,11 +1018,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1035,11 +1031,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1048,11 +1044,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1062,11 +1058,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1075,11 +1071,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1089,11 +1085,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1103,9 +1099,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1121,11 +1118,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1134,11 +1131,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1147,11 +1144,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1161,11 +1158,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1174,11 +1171,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1188,11 +1185,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1202,9 +1199,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1220,11 +1218,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1233,11 +1231,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1246,11 +1244,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1260,11 +1258,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1273,11 +1271,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1287,11 +1285,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1301,9 +1299,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1319,11 +1318,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1332,11 +1331,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1345,11 +1344,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1359,11 +1358,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1372,11 +1371,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1386,11 +1385,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1400,9 +1399,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1418,11 +1418,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1431,11 +1431,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1444,11 +1444,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1458,11 +1458,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1471,11 +1471,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1485,11 +1485,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1499,9 +1499,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1517,11 +1518,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1530,11 +1531,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1543,11 +1544,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1557,11 +1558,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1570,11 +1571,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1584,11 +1585,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1598,9 +1599,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1616,11 +1618,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
   const tomorrowFiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1629,11 +1629,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
   const thirdDayFiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1642,11 +1640,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
 
@@ -1656,11 +1652,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
   const fifthDayFiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1669,11 +1663,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
     
@@ -1683,11 +1675,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-  <p>{result.time}</p>
-  <p></p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
 
     
@@ -1697,9 +1687,9 @@ export default function ReservationCalendar({ user }) {
   <p>Group Size: {result.size}</p>
   <p>Skill Level: {result.skill_level}</p>
   <p>Court Number: {result.court_number_id}</p>
-  <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+  <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
   </div>)
     
 
@@ -1714,11 +1704,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const tomorrowfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1727,11 +1717,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const thirdDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1740,11 +1730,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
     
@@ -1754,11 +1744,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
       const fifthDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd')).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1767,11 +1757,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1781,11 +1771,11 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
-      <p>{result.time}</p>
-      <p></p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      
       </div>)
     
         
@@ -1795,9 +1785,10 @@ export default function ReservationCalendar({ user }) {
       <p>Group Size: {result.size}</p>
       <p>Skill Level: {result.skill_level}</p>
       <p>Court Number: {result.court_number_id}</p>
-      <p>{result.user2_id ? result.user2_id : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? result.user3_id : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? result.user4_id : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+      <p>Spots Available:</p>
+      <p>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : "display: none"}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
       </div>)
 
 
@@ -1829,8 +1820,7 @@ export default function ReservationCalendar({ user }) {
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
       <label>view another court:
-      <select className={styles.categories}>
-        <option value="for sale">for sale</option>
+      <select className={styles.categories} >
         <option value="jobs">jobs</option>
         <option value="services">services</option>
         <option value="housing">housing</option>
