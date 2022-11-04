@@ -32,7 +32,7 @@ class CourtsController < ApplicationController
   private
 
   def court_params
-    params.permit(:id, :name, :address, :phone_number, :hours, :court_number1,
+    params.permit(:id, :name, :address, :phone_number, :hours, :image, :court_number1,
     :court_number2, :court_number3, :court_number4, :court_number5, :court_number6, :court_number7, :court_number8, :court_number9, :court_number10)
   end
 

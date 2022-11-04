@@ -35,3 +35,9 @@
 .reservedBlock {
   background-color: rgb(241, 9, 9);
 }
+
+.courtBlock {
+  display: flex;
+  flex-direction: column;
+  
+}
