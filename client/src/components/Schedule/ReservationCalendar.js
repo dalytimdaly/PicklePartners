@@ -2,7 +2,7 @@ import styles from './ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { add, format } from 'date-fns'
-import CourtSchedule from './CourtSchedule';
+
 
 
 export default function ReservationCalendar({ user }) {
@@ -35,7 +35,7 @@ export default function ReservationCalendar({ user }) {
     })
   }, [courtId])
 
-  console.log(court)
+  console.log(user)
  
 
   const date = add(new Date(), {
@@ -121,7 +121,7 @@ export default function ReservationCalendar({ user }) {
     const todayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered6Court1 = todayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -133,7 +133,7 @@ export default function ReservationCalendar({ user }) {
       </div>)
 
     const todayfiltered6Court2 = todayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -145,7 +145,7 @@ export default function ReservationCalendar({ user }) {
       </div>)
 
 const todayfiltered6Court3 = todayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -157,7 +157,7 @@ const todayfiltered6Court3 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court4 = todayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -169,7 +169,7 @@ const todayfiltered6Court4 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court5 = todayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -181,7 +181,7 @@ const todayfiltered6Court5 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court6 = todayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -193,7 +193,7 @@ const todayfiltered6Court6 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court7 = todayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -205,7 +205,7 @@ const todayfiltered6Court7 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court8 = todayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -217,7 +217,7 @@ const todayfiltered6Court8 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court9 = todayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -229,7 +229,7 @@ const todayfiltered6Court9 = todayfiltered6.filter(result => result.court_number
 </div>)
 
 const todayfiltered6Court10 = todayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -245,7 +245,7 @@ const todayfiltered6Court10 = todayfiltered6.filter(result => result.court_numbe
 const tomorrowfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
 const tomorrowfiltered6Court1 = tomorrowfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -257,7 +257,7 @@ const tomorrowfiltered6Court1 = tomorrowfiltered6.filter(result => result.court_
   </div>)
 
 const tomorrowfiltered6Court2 = tomorrowfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -269,7 +269,7 @@ const tomorrowfiltered6Court2 = tomorrowfiltered6.filter(result => result.court_
   </div>)
 
 const tomorrowfiltered6Court3 = tomorrowfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -281,7 +281,7 @@ const tomorrowfiltered6Court3 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court4 = tomorrowfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -293,7 +293,7 @@ const tomorrowfiltered6Court4 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court5 = tomorrowfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -305,7 +305,7 @@ const tomorrowfiltered6Court5 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court6 = tomorrowfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -317,7 +317,7 @@ const tomorrowfiltered6Court6 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court7 = tomorrowfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -329,7 +329,7 @@ const tomorrowfiltered6Court7 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court8 = tomorrowfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -341,7 +341,7 @@ const tomorrowfiltered6Court8 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court9 = tomorrowfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -353,7 +353,7 @@ const tomorrowfiltered6Court9 = tomorrowfiltered6.filter(result => result.court_
 </div>)
 
 const tomorrowfiltered6Court10 = tomorrowfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -369,7 +369,7 @@ const tomorrowfiltered6Court10 = tomorrowfiltered6.filter(result => result.court
       const thirdDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
     
       const thirdDayfiltered6Court1 = thirdDayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -381,7 +381,7 @@ const tomorrowfiltered6Court10 = tomorrowfiltered6.filter(result => result.court
         </div>)
 
       const thirdDayfiltered6Court2 = thirdDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -393,7 +393,7 @@ const tomorrowfiltered6Court10 = tomorrowfiltered6.filter(result => result.court
         </div>)
 
 const thirdDayfiltered6Court3 = thirdDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -405,7 +405,7 @@ const thirdDayfiltered6Court3 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court4 = thirdDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -417,7 +417,7 @@ const thirdDayfiltered6Court4 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court5 = thirdDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -429,7 +429,7 @@ const thirdDayfiltered6Court5 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court6 = thirdDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -441,7 +441,7 @@ const thirdDayfiltered6Court6 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court7 = thirdDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -453,7 +453,7 @@ const thirdDayfiltered6Court7 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court8 = thirdDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -465,7 +465,7 @@ const thirdDayfiltered6Court8 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court9 = thirdDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -477,7 +477,7 @@ const thirdDayfiltered6Court9 = thirdDayfiltered6.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered6Court10 = thirdDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -493,7 +493,7 @@ const thirdDayfiltered6Court10 = thirdDayfiltered6.filter(result => result.court
       const fourthDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered6Court1 = fourthDayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -505,7 +505,7 @@ const thirdDayfiltered6Court10 = thirdDayfiltered6.filter(result => result.court
         </div>)
 
       const fourthDayfiltered6Court2 = fourthDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -517,7 +517,7 @@ const thirdDayfiltered6Court10 = thirdDayfiltered6.filter(result => result.court
         </div>)
 
 const fourthDayfiltered6Court3 = fourthDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -529,7 +529,7 @@ const fourthDayfiltered6Court3 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court4 = fourthDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -541,7 +541,7 @@ const fourthDayfiltered6Court4 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court5 = fourthDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -553,7 +553,7 @@ const fourthDayfiltered6Court5 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court6 = fourthDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -565,7 +565,7 @@ const fourthDayfiltered6Court6 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court7 = fourthDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -577,7 +577,7 @@ const fourthDayfiltered6Court7 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court8 = fourthDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -589,7 +589,7 @@ const fourthDayfiltered6Court8 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court9 = fourthDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -601,7 +601,7 @@ const fourthDayfiltered6Court9 = fourthDayfiltered6.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered6Court10 = fourthDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -617,7 +617,7 @@ const fourthDayfiltered6Court10 = fourthDayfiltered6.filter(result => result.cou
       const fifthDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered6Court1 = fifthDayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -629,7 +629,7 @@ const fourthDayfiltered6Court10 = fourthDayfiltered6.filter(result => result.cou
         </div>)
 
       const fifthDayfiltered6Court2 = fifthDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -641,7 +641,7 @@ const fourthDayfiltered6Court10 = fourthDayfiltered6.filter(result => result.cou
         </div>)
 
 const fifthDayfiltered6Court3 = fifthDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -653,7 +653,7 @@ const fifthDayfiltered6Court3 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court4 = fifthDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -665,7 +665,7 @@ const fifthDayfiltered6Court4 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court5 = fifthDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -677,7 +677,7 @@ const fifthDayfiltered6Court5 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court6 = fifthDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -689,7 +689,7 @@ const fifthDayfiltered6Court6 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court7 = fifthDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -701,7 +701,7 @@ const fifthDayfiltered6Court7 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court8 = fifthDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -713,7 +713,7 @@ const fifthDayfiltered6Court8 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court9 = fifthDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -725,7 +725,7 @@ const fifthDayfiltered6Court9 = fifthDayfiltered6.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered6Court10 = fifthDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -741,7 +741,7 @@ const fifthDayfiltered6Court10 = fifthDayfiltered6.filter(result => result.court
       const sixthDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered6Court1 = sixthDayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -753,7 +753,7 @@ const fifthDayfiltered6Court10 = fifthDayfiltered6.filter(result => result.court
         </div>)
 
       const sixthDayfiltered6Court2 = sixthDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -765,7 +765,7 @@ const fifthDayfiltered6Court10 = fifthDayfiltered6.filter(result => result.court
         </div>)
 
 const sixthDayfiltered6Court3 = sixthDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -777,7 +777,7 @@ const sixthDayfiltered6Court3 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court4 = sixthDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -789,7 +789,7 @@ const sixthDayfiltered6Court4 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court5 = sixthDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -801,7 +801,7 @@ const sixthDayfiltered6Court5 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court6 = sixthDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -813,7 +813,7 @@ const sixthDayfiltered6Court6 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court7 = sixthDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -825,7 +825,7 @@ const sixthDayfiltered6Court7 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court8 = sixthDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -837,7 +837,7 @@ const sixthDayfiltered6Court8 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court9 = sixthDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -849,7 +849,7 @@ const sixthDayfiltered6Court9 = sixthDayfiltered6.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered6Court10 = sixthDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -866,7 +866,7 @@ const sixthDayfiltered6Court10 = sixthDayfiltered6.filter(result => result.court
       const lastDayfiltered6 = filtered6.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered6Court1 = lastDayfiltered6.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -878,7 +878,7 @@ const sixthDayfiltered6Court10 = sixthDayfiltered6.filter(result => result.court
         </div>)
 
       const lastDayfiltered6Court2 = lastDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -890,7 +890,7 @@ const sixthDayfiltered6Court10 = sixthDayfiltered6.filter(result => result.court
         </div>)
 
 const lastDayfiltered6Court3 = lastDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -902,7 +902,7 @@ const lastDayfiltered6Court3 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court4 = lastDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -914,7 +914,7 @@ const lastDayfiltered6Court4 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court5 = lastDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -926,7 +926,7 @@ const lastDayfiltered6Court5 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court6 = lastDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -938,7 +938,7 @@ const lastDayfiltered6Court6 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court7 = lastDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -950,7 +950,7 @@ const lastDayfiltered6Court7 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court8 = lastDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -962,7 +962,7 @@ const lastDayfiltered6Court8 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court9 = lastDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -974,7 +974,7 @@ const lastDayfiltered6Court9 = lastDayfiltered6.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -994,7 +994,7 @@ const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_n
     const todayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered7Court1 = todayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1006,7 +1006,7 @@ const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_n
       </div>)
 
     const todayfiltered7Court2 = todayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1018,7 +1018,7 @@ const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_n
       </div>)
 
 const todayfiltered7Court3 = todayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1030,7 +1030,7 @@ const todayfiltered7Court3 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court4 = todayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1042,7 +1042,7 @@ const todayfiltered7Court4 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court5 = todayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1054,7 +1054,7 @@ const todayfiltered7Court5 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court6 = todayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1066,7 +1066,7 @@ const todayfiltered7Court6 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court7 = todayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1078,7 +1078,7 @@ const todayfiltered7Court7 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court8 = todayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1090,7 +1090,7 @@ const todayfiltered7Court8 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court9 = todayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1102,7 +1102,7 @@ const todayfiltered7Court9 = todayfiltered7.filter(result => result.court_number
 </div>)
 
 const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1117,7 +1117,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       const tomorrowfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered7Court1 = tomorrowfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1129,7 +1129,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered7Court2 = tomorrowfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1141,7 +1141,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered7Court3 = tomorrowfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1153,7 +1153,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court4 = tomorrowfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1165,7 +1165,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court5 = tomorrowfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1177,7 +1177,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court6 = tomorrowfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1189,7 +1189,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court7 = tomorrowfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1201,7 +1201,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court8 = tomorrowfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1213,7 +1213,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court9 = tomorrowfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1225,7 +1225,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered7Court10 = tomorrowfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1241,7 +1241,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
       const thirdDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered7Court1 = thirdDayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1253,7 +1253,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
         </div>)
 
       const thirdDayfiltered7Court2 = thirdDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1265,7 +1265,7 @@ const todayfiltered7Court10 = todayfiltered7.filter(result => result.court_numbe
         </div>)
 
 const thirdDayfiltered7Court3 = thirdDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1277,7 +1277,7 @@ const thirdDayfiltered7Court3 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court4 = thirdDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1289,7 +1289,7 @@ const thirdDayfiltered7Court4 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court5 = thirdDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1301,7 +1301,7 @@ const thirdDayfiltered7Court5 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court6 = thirdDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1313,7 +1313,7 @@ const thirdDayfiltered7Court6 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court7 = thirdDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1325,7 +1325,7 @@ const thirdDayfiltered7Court7 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court8 = thirdDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1337,7 +1337,7 @@ const thirdDayfiltered7Court8 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court9 = thirdDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1349,7 +1349,7 @@ const thirdDayfiltered7Court9 = thirdDayfiltered7.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered7Court10 = thirdDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1365,7 +1365,7 @@ const thirdDayfiltered7Court10 = thirdDayfiltered7.filter(result => result.court
       const fourthDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered7Court1 = fourthDayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1377,7 +1377,7 @@ const thirdDayfiltered7Court10 = thirdDayfiltered7.filter(result => result.court
         </div>)
 
       const fourthDayfiltered7Court2 = fourthDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1389,7 +1389,7 @@ const thirdDayfiltered7Court10 = thirdDayfiltered7.filter(result => result.court
         </div>)
 
 const fourthDayfiltered7Court3 = fourthDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1401,7 +1401,7 @@ const fourthDayfiltered7Court3 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court4 = fourthDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1413,7 +1413,7 @@ const fourthDayfiltered7Court4 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court5 = fourthDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1425,7 +1425,7 @@ const fourthDayfiltered7Court5 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court6 = fourthDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1437,7 +1437,7 @@ const fourthDayfiltered7Court6 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court7 = fourthDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1449,7 +1449,7 @@ const fourthDayfiltered7Court7 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court8 = fourthDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1461,7 +1461,7 @@ const fourthDayfiltered7Court8 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court9 = fourthDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1473,7 +1473,7 @@ const fourthDayfiltered7Court9 = fourthDayfiltered7.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered7Court10 = fourthDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1489,7 +1489,7 @@ const fourthDayfiltered7Court10 = fourthDayfiltered7.filter(result => result.cou
       const fifthDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered7Court1 = fifthDayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1501,7 +1501,7 @@ const fourthDayfiltered7Court10 = fourthDayfiltered7.filter(result => result.cou
         </div>)
 
       const fifthDayfiltered7Court2 = fifthDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1513,7 +1513,7 @@ const fourthDayfiltered7Court10 = fourthDayfiltered7.filter(result => result.cou
         </div>)
 
 const fifthDayfiltered7Court3 = fifthDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1525,7 +1525,7 @@ const fifthDayfiltered7Court3 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court4 = fifthDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1537,7 +1537,7 @@ const fifthDayfiltered7Court4 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court5 = fifthDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1549,7 +1549,7 @@ const fifthDayfiltered7Court5 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court6 = fifthDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1561,7 +1561,7 @@ const fifthDayfiltered7Court6 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court7 = fifthDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1573,7 +1573,7 @@ const fifthDayfiltered7Court7 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court8 = fifthDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1585,7 +1585,7 @@ const fifthDayfiltered7Court8 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court9 = fifthDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1597,7 +1597,7 @@ const fifthDayfiltered7Court9 = fifthDayfiltered7.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered7Court10 = fifthDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1613,7 +1613,7 @@ const fifthDayfiltered7Court10 = fifthDayfiltered7.filter(result => result.court
       const sixthDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered7Court1 = sixthDayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1625,7 +1625,7 @@ const fifthDayfiltered7Court10 = fifthDayfiltered7.filter(result => result.court
         </div>)
 
       const sixthDayfiltered7Court2 = sixthDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1637,7 +1637,7 @@ const fifthDayfiltered7Court10 = fifthDayfiltered7.filter(result => result.court
         </div>)
 
 const sixthDayfiltered7Court3 = sixthDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1649,7 +1649,7 @@ const sixthDayfiltered7Court3 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court4 = sixthDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1661,7 +1661,7 @@ const sixthDayfiltered7Court4 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court5 = sixthDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1673,7 +1673,7 @@ const sixthDayfiltered7Court5 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court6 = sixthDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1685,7 +1685,7 @@ const sixthDayfiltered7Court6 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court7 = sixthDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1697,7 +1697,7 @@ const sixthDayfiltered7Court7 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court8 = sixthDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1709,7 +1709,7 @@ const sixthDayfiltered7Court8 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court9 = sixthDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1721,7 +1721,7 @@ const sixthDayfiltered7Court9 = sixthDayfiltered7.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered7Court10 = sixthDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1737,7 +1737,7 @@ const sixthDayfiltered7Court10 = sixthDayfiltered7.filter(result => result.court
       const lastDayfiltered7 = filtered7.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered7Court1 = lastDayfiltered7.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1749,7 +1749,7 @@ const sixthDayfiltered7Court10 = sixthDayfiltered7.filter(result => result.court
         </div>)
 
       const lastDayfiltered7Court2 = lastDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1761,7 +1761,7 @@ const sixthDayfiltered7Court10 = sixthDayfiltered7.filter(result => result.court
         </div>)
 
 const lastDayfiltered7Court3 = lastDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1773,7 +1773,7 @@ const lastDayfiltered7Court3 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court4 = lastDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1785,7 +1785,7 @@ const lastDayfiltered7Court4 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court5 = lastDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1797,7 +1797,7 @@ const lastDayfiltered7Court5 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court6 = lastDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1809,7 +1809,7 @@ const lastDayfiltered7Court6 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court7 = lastDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1821,7 +1821,7 @@ const lastDayfiltered7Court7 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court8 = lastDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1833,7 +1833,7 @@ const lastDayfiltered7Court8 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court9 = lastDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1845,7 +1845,7 @@ const lastDayfiltered7Court9 = lastDayfiltered7.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1868,7 +1868,7 @@ const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_n
     const todayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered8Court1 = todayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1880,7 +1880,7 @@ const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_n
       </div>)
 
     const todayfiltered8Court2 = todayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1892,7 +1892,7 @@ const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_n
       </div>)
 
 const todayfiltered8Court3 = todayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1904,7 +1904,7 @@ const todayfiltered8Court3 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court4 = todayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1916,7 +1916,7 @@ const todayfiltered8Court4 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court5 = todayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1928,7 +1928,7 @@ const todayfiltered8Court5 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court6 = todayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1940,7 +1940,7 @@ const todayfiltered8Court6 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court7 = todayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1952,7 +1952,7 @@ const todayfiltered8Court7 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court8 = todayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1964,7 +1964,7 @@ const todayfiltered8Court8 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court9 = todayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1976,7 +1976,7 @@ const todayfiltered8Court9 = todayfiltered8.filter(result => result.court_number
 </div>)
 
 const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -1992,7 +1992,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       const tomorrowfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered8Court1 = tomorrowfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2004,7 +2004,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered8Court2 = tomorrowfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2016,7 +2016,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered8Court3 = tomorrowfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2028,7 +2028,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court4 = tomorrowfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2040,7 +2040,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court5 = tomorrowfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2052,7 +2052,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court6 = tomorrowfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2064,7 +2064,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court7 = tomorrowfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2076,7 +2076,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court8 = tomorrowfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2088,7 +2088,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court9 = tomorrowfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2100,7 +2100,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered8Court10 = tomorrowfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2116,7 +2116,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
       const thirdDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered8Court1 = thirdDayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2128,7 +2128,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
         </div>)
 
       const thirdDayfiltered8Court2 = thirdDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2140,7 +2140,7 @@ const todayfiltered8Court10 = todayfiltered8.filter(result => result.court_numbe
         </div>)
 
 const thirdDayfiltered8Court3 = thirdDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2152,7 +2152,7 @@ const thirdDayfiltered8Court3 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court4 = thirdDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2164,7 +2164,7 @@ const thirdDayfiltered8Court4 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court5 = thirdDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2176,7 +2176,7 @@ const thirdDayfiltered8Court5 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court6 = thirdDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2188,7 +2188,7 @@ const thirdDayfiltered8Court6 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court7 = thirdDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2200,7 +2200,7 @@ const thirdDayfiltered8Court7 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court8 = thirdDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2212,7 +2212,7 @@ const thirdDayfiltered8Court8 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court9 = thirdDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2224,7 +2224,7 @@ const thirdDayfiltered8Court9 = thirdDayfiltered8.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered8Court10 = thirdDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2241,7 +2241,7 @@ const thirdDayfiltered8Court10 = thirdDayfiltered8.filter(result => result.court
       const fourthDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered8Court1 = fourthDayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2253,7 +2253,7 @@ const thirdDayfiltered8Court10 = thirdDayfiltered8.filter(result => result.court
         </div>)
 
       const fourthDayfiltered8Court2 = fourthDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2265,7 +2265,7 @@ const thirdDayfiltered8Court10 = thirdDayfiltered8.filter(result => result.court
         </div>)
 
 const fourthDayfiltered8Court3 = fourthDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2277,7 +2277,7 @@ const fourthDayfiltered8Court3 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court4 = fourthDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2289,7 +2289,7 @@ const fourthDayfiltered8Court4 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court5 = fourthDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2301,7 +2301,7 @@ const fourthDayfiltered8Court5 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court6 = fourthDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2313,7 +2313,7 @@ const fourthDayfiltered8Court6 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court7 = fourthDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2325,7 +2325,7 @@ const fourthDayfiltered8Court7 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court8 = fourthDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2337,7 +2337,7 @@ const fourthDayfiltered8Court8 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court9 = fourthDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2349,7 +2349,7 @@ const fourthDayfiltered8Court9 = fourthDayfiltered8.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered8Court10 = fourthDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2365,7 +2365,7 @@ const fourthDayfiltered8Court10 = fourthDayfiltered8.filter(result => result.cou
       const fifthDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered8Court1 = fifthDayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2377,7 +2377,7 @@ const fourthDayfiltered8Court10 = fourthDayfiltered8.filter(result => result.cou
         </div>)
 
       const fifthDayfiltered8Court2 = fifthDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2389,7 +2389,7 @@ const fourthDayfiltered8Court10 = fourthDayfiltered8.filter(result => result.cou
         </div>)
 
 const fifthDayfiltered8Court3 = fifthDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2401,7 +2401,7 @@ const fifthDayfiltered8Court3 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court4 = fifthDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2413,7 +2413,7 @@ const fifthDayfiltered8Court4 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court5 = fifthDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2425,7 +2425,7 @@ const fifthDayfiltered8Court5 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court6 = fifthDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2437,7 +2437,7 @@ const fifthDayfiltered8Court6 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court7 = fifthDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2449,7 +2449,7 @@ const fifthDayfiltered8Court7 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court8 = fifthDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2461,7 +2461,7 @@ const fifthDayfiltered8Court8 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court9 = fifthDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2473,7 +2473,7 @@ const fifthDayfiltered8Court9 = fifthDayfiltered8.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered8Court10 = fifthDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2491,7 +2491,7 @@ const fifthDayfiltered8Court10 = fifthDayfiltered8.filter(result => result.court
       const sixthDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered8Court1 = sixthDayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2503,7 +2503,7 @@ const fifthDayfiltered8Court10 = fifthDayfiltered8.filter(result => result.court
         </div>)
 
       const sixthDayfiltered8Court2 = sixthDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2515,7 +2515,7 @@ const fifthDayfiltered8Court10 = fifthDayfiltered8.filter(result => result.court
         </div>)
 
 const sixthDayfiltered8Court3 = sixthDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2527,7 +2527,7 @@ const sixthDayfiltered8Court3 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court4 = sixthDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2539,7 +2539,7 @@ const sixthDayfiltered8Court4 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court5 = sixthDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2551,7 +2551,7 @@ const sixthDayfiltered8Court5 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court6 = sixthDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2563,7 +2563,7 @@ const sixthDayfiltered8Court6 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court7 = sixthDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2575,7 +2575,7 @@ const sixthDayfiltered8Court7 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court8 = sixthDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2587,7 +2587,7 @@ const sixthDayfiltered8Court8 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court9 = sixthDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2599,7 +2599,7 @@ const sixthDayfiltered8Court9 = sixthDayfiltered8.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered8Court10 = sixthDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2615,7 +2615,7 @@ const sixthDayfiltered8Court10 = sixthDayfiltered8.filter(result => result.court
       const lastDayfiltered8 = filtered8.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered8Court1 = lastDayfiltered8.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2627,7 +2627,7 @@ const sixthDayfiltered8Court10 = sixthDayfiltered8.filter(result => result.court
         </div>)
 
       const lastDayfiltered8Court2 = lastDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2639,7 +2639,7 @@ const sixthDayfiltered8Court10 = sixthDayfiltered8.filter(result => result.court
         </div>)
 
 const lastDayfiltered8Court3 = lastDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2651,7 +2651,7 @@ const lastDayfiltered8Court3 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court4 = lastDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2663,7 +2663,7 @@ const lastDayfiltered8Court4 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court5 = lastDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2675,7 +2675,7 @@ const lastDayfiltered8Court5 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court6 = lastDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2687,7 +2687,7 @@ const lastDayfiltered8Court6 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court7 = lastDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2699,7 +2699,7 @@ const lastDayfiltered8Court7 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court8 = lastDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2711,7 +2711,7 @@ const lastDayfiltered8Court8 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court9 = lastDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2723,7 +2723,7 @@ const lastDayfiltered8Court9 = lastDayfiltered8.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2745,7 +2745,7 @@ const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_n
     const todayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered9Court1 = todayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2757,7 +2757,7 @@ const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_n
       </div>)
 
     const todayfiltered9Court2 = todayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2769,7 +2769,7 @@ const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_n
       </div>)
 
 const todayfiltered9Court3 = todayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2781,7 +2781,7 @@ const todayfiltered9Court3 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court4 = todayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2793,7 +2793,7 @@ const todayfiltered9Court4 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court5 = todayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2805,7 +2805,7 @@ const todayfiltered9Court5 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court6 = todayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2817,7 +2817,7 @@ const todayfiltered9Court6 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court7 = todayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2829,7 +2829,7 @@ const todayfiltered9Court7 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court8 = todayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2841,7 +2841,7 @@ const todayfiltered9Court8 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court9 = todayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2853,7 +2853,7 @@ const todayfiltered9Court9 = todayfiltered9.filter(result => result.court_number
 </div>)
 
 const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2869,7 +2869,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       const tomorrowfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered9Court1 = tomorrowfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2881,7 +2881,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered9Court2 = tomorrowfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2893,7 +2893,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
         </div>)
       
       const tomorrowfiltered9Court3 = tomorrowfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2905,7 +2905,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court4 = tomorrowfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2917,7 +2917,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court5 = tomorrowfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2929,7 +2929,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court6 = tomorrowfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2941,7 +2941,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court7 = tomorrowfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2953,7 +2953,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court8 = tomorrowfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2965,7 +2965,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court9 = tomorrowfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2977,7 +2977,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       </div>)
       
       const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -2994,7 +2994,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
       const thirdDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered9Court1 = thirdDayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3006,7 +3006,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
         </div>)
 
       const thirdDayfiltered9Court2 = thirdDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3018,7 +3018,7 @@ const todayfiltered9Court10 = todayfiltered9.filter(result => result.court_numbe
         </div>)
 
 const thirdDayfiltered9Court3 = thirdDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3030,7 +3030,7 @@ const thirdDayfiltered9Court3 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court4 = thirdDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3042,7 +3042,7 @@ const thirdDayfiltered9Court4 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court5 = thirdDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3054,7 +3054,7 @@ const thirdDayfiltered9Court5 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court6 = thirdDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3066,7 +3066,7 @@ const thirdDayfiltered9Court6 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court7 = thirdDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3078,7 +3078,7 @@ const thirdDayfiltered9Court7 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court8 = thirdDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3090,7 +3090,7 @@ const thirdDayfiltered9Court8 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court9 = thirdDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3102,7 +3102,7 @@ const thirdDayfiltered9Court9 = thirdDayfiltered9.filter(result => result.court_
   </div>)
 
 const thirdDayfiltered9Court10 = thirdDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3119,7 +3119,7 @@ const thirdDayfiltered9Court10 = thirdDayfiltered9.filter(result => result.court
       const fourthDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered9Court1 = fourthDayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3131,7 +3131,7 @@ const thirdDayfiltered9Court10 = thirdDayfiltered9.filter(result => result.court
         </div>)
 
       const fourthDayfiltered9Court2 = fourthDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3143,7 +3143,7 @@ const thirdDayfiltered9Court10 = thirdDayfiltered9.filter(result => result.court
         </div>)
 
 const fourthDayfiltered9Court3 = fourthDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3155,7 +3155,7 @@ const fourthDayfiltered9Court3 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court4 = fourthDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3167,7 +3167,7 @@ const fourthDayfiltered9Court4 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court5 = fourthDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3179,7 +3179,7 @@ const fourthDayfiltered9Court5 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court6 = fourthDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3191,7 +3191,7 @@ const fourthDayfiltered9Court6 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court7 = fourthDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3203,7 +3203,7 @@ const fourthDayfiltered9Court7 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court8 = fourthDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3215,7 +3215,7 @@ const fourthDayfiltered9Court8 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court9 = fourthDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3227,7 +3227,7 @@ const fourthDayfiltered9Court9 = fourthDayfiltered9.filter(result => result.cour
   </div>)
 
 const fourthDayfiltered9Court10 = fourthDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3244,7 +3244,7 @@ const fourthDayfiltered9Court10 = fourthDayfiltered9.filter(result => result.cou
       const fifthDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered9Court1 = fifthDayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3256,7 +3256,7 @@ const fourthDayfiltered9Court10 = fourthDayfiltered9.filter(result => result.cou
         </div>)
 
       const fifthDayfiltered9Court2 = fifthDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3268,7 +3268,7 @@ const fourthDayfiltered9Court10 = fourthDayfiltered9.filter(result => result.cou
         </div>)
 
 const fifthDayfiltered9Court3 = fifthDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3280,7 +3280,7 @@ const fifthDayfiltered9Court3 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court4 = fifthDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3292,7 +3292,7 @@ const fifthDayfiltered9Court4 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court5 = fifthDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3304,7 +3304,7 @@ const fifthDayfiltered9Court5 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court6 = fifthDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3316,7 +3316,7 @@ const fifthDayfiltered9Court6 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court7 = fifthDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3328,7 +3328,7 @@ const fifthDayfiltered9Court7 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court8 = fifthDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3340,7 +3340,7 @@ const fifthDayfiltered9Court8 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court9 = fifthDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3352,7 +3352,7 @@ const fifthDayfiltered9Court9 = fifthDayfiltered9.filter(result => result.court_
   </div>)
 
 const fifthDayfiltered9Court10 = fifthDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3369,7 +3369,7 @@ const fifthDayfiltered9Court10 = fifthDayfiltered9.filter(result => result.court
       const sixthDayfiltered9 = filtered9.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
     
       const sixthDayfiltered9Court1 = sixthDayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3381,7 +3381,7 @@ const fifthDayfiltered9Court10 = fifthDayfiltered9.filter(result => result.court
         </div>)
 
       const sixthDayfiltered9Court2 = sixthDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3393,7 +3393,7 @@ const fifthDayfiltered9Court10 = fifthDayfiltered9.filter(result => result.court
         </div>)
 
 const sixthDayfiltered9Court3 = sixthDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3405,7 +3405,7 @@ const sixthDayfiltered9Court3 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court4 = sixthDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3417,7 +3417,7 @@ const sixthDayfiltered9Court4 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court5 = sixthDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3429,7 +3429,7 @@ const sixthDayfiltered9Court5 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court6 = sixthDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3441,7 +3441,7 @@ const sixthDayfiltered9Court6 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court7 = sixthDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3453,7 +3453,7 @@ const sixthDayfiltered9Court7 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court8 = sixthDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3465,7 +3465,7 @@ const sixthDayfiltered9Court8 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court9 = sixthDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3477,7 +3477,7 @@ const sixthDayfiltered9Court9 = sixthDayfiltered9.filter(result => result.court_
   </div>)
 
 const sixthDayfiltered9Court10 = sixthDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3494,7 +3494,7 @@ const sixthDayfiltered9Court10 = sixthDayfiltered9.filter(result => result.court
 
 
       const lastDayfiltered9Court1 = lastDayfiltered9.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3506,7 +3506,7 @@ const sixthDayfiltered9Court10 = sixthDayfiltered9.filter(result => result.court
         </div>)
 
       const lastDayfiltered9Court2 = lastDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3518,7 +3518,7 @@ const sixthDayfiltered9Court10 = sixthDayfiltered9.filter(result => result.court
         </div>)
 
 const lastDayfiltered9Court3 = lastDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3530,7 +3530,7 @@ const lastDayfiltered9Court3 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court4 = lastDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3542,7 +3542,7 @@ const lastDayfiltered9Court4 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court5 = lastDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3554,7 +3554,7 @@ const lastDayfiltered9Court5 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court6 = lastDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3566,7 +3566,7 @@ const lastDayfiltered9Court6 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court7 = lastDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3578,7 +3578,7 @@ const lastDayfiltered9Court7 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court8 = lastDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3590,7 +3590,7 @@ const lastDayfiltered9Court8 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court9 = lastDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3602,7 +3602,7 @@ const lastDayfiltered9Court9 = lastDayfiltered9.filter(result => result.court_nu
   </div>)
 
 const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3623,7 +3623,7 @@ const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_n
     const todayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered10Court1 = todayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3635,7 +3635,7 @@ const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_n
       </div>)
 
     const todayfiltered10Court2 = todayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3647,7 +3647,7 @@ const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_n
       </div>)
 
 const todayfiltered10Court3 = todayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3659,7 +3659,7 @@ const todayfiltered10Court3 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court4 = todayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3671,7 +3671,7 @@ const todayfiltered10Court4 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court5 = todayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3683,7 +3683,7 @@ const todayfiltered10Court5 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court6 = todayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3695,7 +3695,7 @@ const todayfiltered10Court6 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court7 = todayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3707,7 +3707,7 @@ const todayfiltered10Court7 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court8 = todayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3719,7 +3719,7 @@ const todayfiltered10Court8 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court9 = todayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3731,7 +3731,7 @@ const todayfiltered10Court9 = todayfiltered10.filter(result => result.court_numb
 </div>)
 
 const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3747,7 +3747,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       const tomorrowfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered10Court1 = tomorrowfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3759,7 +3759,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered10Court2 = tomorrowfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3771,7 +3771,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered10Court3 = tomorrowfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3783,7 +3783,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court4 = tomorrowfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3795,7 +3795,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court5 = tomorrowfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3807,7 +3807,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court6 = tomorrowfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3819,7 +3819,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court7 = tomorrowfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3831,7 +3831,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court8 = tomorrowfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3843,7 +3843,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court9 = tomorrowfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3855,7 +3855,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered10Court10 = tomorrowfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3871,7 +3871,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
       const thirdDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered10Court1 = thirdDayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3883,7 +3883,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered10Court2 = thirdDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3895,7 +3895,7 @@ const todayfiltered10Court10 = todayfiltered10.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered10Court3 = thirdDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3907,7 +3907,7 @@ const thirdDayfiltered10Court3 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court4 = thirdDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3919,7 +3919,7 @@ const thirdDayfiltered10Court4 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court5 = thirdDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3931,7 +3931,7 @@ const thirdDayfiltered10Court5 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court6 = thirdDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3943,7 +3943,7 @@ const thirdDayfiltered10Court6 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court7 = thirdDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3955,7 +3955,7 @@ const thirdDayfiltered10Court7 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court8 = thirdDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3967,7 +3967,7 @@ const thirdDayfiltered10Court8 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court9 = thirdDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3979,7 +3979,7 @@ const thirdDayfiltered10Court9 = thirdDayfiltered10.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered10Court10 = thirdDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -3997,7 +3997,7 @@ const thirdDayfiltered10Court10 = thirdDayfiltered10.filter(result => result.cou
 
 
       const fourthDayfiltered10Court1 = fourthDayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4009,7 +4009,7 @@ const thirdDayfiltered10Court10 = thirdDayfiltered10.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered10Court2 = fourthDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4021,7 +4021,7 @@ const thirdDayfiltered10Court10 = thirdDayfiltered10.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered10Court3 = fourthDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4033,7 +4033,7 @@ const fourthDayfiltered10Court3 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court4 = fourthDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4045,7 +4045,7 @@ const fourthDayfiltered10Court4 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court5 = fourthDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4057,7 +4057,7 @@ const fourthDayfiltered10Court5 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court6 = fourthDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4069,7 +4069,7 @@ const fourthDayfiltered10Court6 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court7 = fourthDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4081,7 +4081,7 @@ const fourthDayfiltered10Court7 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court8 = fourthDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4093,7 +4093,7 @@ const fourthDayfiltered10Court8 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court9 = fourthDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4105,7 +4105,7 @@ const fourthDayfiltered10Court9 = fourthDayfiltered10.filter(result => result.co
   </div>)
 
 const fourthDayfiltered10Court10 = fourthDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4122,7 +4122,7 @@ const fourthDayfiltered10Court10 = fourthDayfiltered10.filter(result => result.c
       const fifthDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered10Court1 = fifthDayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4134,7 +4134,7 @@ const fourthDayfiltered10Court10 = fourthDayfiltered10.filter(result => result.c
         </div>)
 
       const fifthDayfiltered10Court2 = fifthDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4146,7 +4146,7 @@ const fourthDayfiltered10Court10 = fourthDayfiltered10.filter(result => result.c
         </div>)
 
 const fifthDayfiltered10Court3 = fifthDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4158,7 +4158,7 @@ const fifthDayfiltered10Court3 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court4 = fifthDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4170,7 +4170,7 @@ const fifthDayfiltered10Court4 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court5 = fifthDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4182,7 +4182,7 @@ const fifthDayfiltered10Court5 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court6 = fifthDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4194,7 +4194,7 @@ const fifthDayfiltered10Court6 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court7 = fifthDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4206,7 +4206,7 @@ const fifthDayfiltered10Court7 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court8 = fifthDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4218,7 +4218,7 @@ const fifthDayfiltered10Court8 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court9 = fifthDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4230,7 +4230,7 @@ const fifthDayfiltered10Court9 = fifthDayfiltered10.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered10Court10 = fifthDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4248,7 +4248,7 @@ const fifthDayfiltered10Court10 = fifthDayfiltered10.filter(result => result.cou
       const sixthDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered10Court1 = sixthDayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4260,7 +4260,7 @@ const fifthDayfiltered10Court10 = fifthDayfiltered10.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered10Court2 = sixthDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4272,7 +4272,7 @@ const fifthDayfiltered10Court10 = fifthDayfiltered10.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered10Court3 = sixthDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4284,7 +4284,7 @@ const sixthDayfiltered10Court3 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court4 = sixthDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4296,7 +4296,7 @@ const sixthDayfiltered10Court4 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court5 = sixthDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4308,7 +4308,7 @@ const sixthDayfiltered10Court5 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court6 = sixthDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4320,7 +4320,7 @@ const sixthDayfiltered10Court6 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court7 = sixthDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4332,7 +4332,7 @@ const sixthDayfiltered10Court7 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court8 = sixthDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4344,7 +4344,7 @@ const sixthDayfiltered10Court8 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court9 = sixthDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4356,7 +4356,7 @@ const sixthDayfiltered10Court9 = sixthDayfiltered10.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered10Court10 = sixthDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4372,7 +4372,7 @@ const sixthDayfiltered10Court10 = sixthDayfiltered10.filter(result => result.cou
       const lastDayfiltered10 = filtered10.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered10Court1 = lastDayfiltered10.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4384,7 +4384,7 @@ const sixthDayfiltered10Court10 = sixthDayfiltered10.filter(result => result.cou
         </div>)
 
       const lastDayfiltered10Court2 = lastDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4396,7 +4396,7 @@ const sixthDayfiltered10Court10 = sixthDayfiltered10.filter(result => result.cou
         </div>)
 
 const lastDayfiltered10Court3 = lastDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4408,7 +4408,7 @@ const lastDayfiltered10Court3 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court4 = lastDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4420,7 +4420,7 @@ const lastDayfiltered10Court4 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court5 = lastDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4432,7 +4432,7 @@ const lastDayfiltered10Court5 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court6 = lastDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4444,7 +4444,7 @@ const lastDayfiltered10Court6 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court7 = lastDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4456,7 +4456,7 @@ const lastDayfiltered10Court7 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court8 = lastDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4468,7 +4468,7 @@ const lastDayfiltered10Court8 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court9 = lastDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4480,7 +4480,7 @@ const lastDayfiltered10Court9 = lastDayfiltered10.filter(result => result.court_
   </div>)
 
 const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4502,7 +4502,7 @@ const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court
     const todayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered11Court1 = todayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4514,7 +4514,7 @@ const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court
       </div>)
 
     const todayfiltered11Court2 = todayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4526,7 +4526,7 @@ const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court
       </div>)
 
 const todayfiltered11Court3 = todayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4538,7 +4538,7 @@ const todayfiltered11Court3 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court4 = todayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4550,7 +4550,7 @@ const todayfiltered11Court4 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court5 = todayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4562,7 +4562,7 @@ const todayfiltered11Court5 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court6 = todayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4574,7 +4574,7 @@ const todayfiltered11Court6 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court7 = todayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4586,7 +4586,7 @@ const todayfiltered11Court7 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court8 = todayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4598,7 +4598,7 @@ const todayfiltered11Court8 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court9 = todayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4610,7 +4610,7 @@ const todayfiltered11Court9 = todayfiltered11.filter(result => result.court_numb
 </div>)
 
 const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4626,7 +4626,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       const tomorrowfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered11Court1 = tomorrowfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4638,7 +4638,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered11Court2 = tomorrowfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4650,7 +4650,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered11Court3 = tomorrowfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4662,7 +4662,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court4 = tomorrowfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4674,7 +4674,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court5 = tomorrowfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4686,7 +4686,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court6 = tomorrowfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4698,7 +4698,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court7 = tomorrowfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4710,7 +4710,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court8 = tomorrowfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4722,7 +4722,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court9 = tomorrowfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4734,7 +4734,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered11Court10 = tomorrowfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4750,7 +4750,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
       const thirdDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered11Court1 = thirdDayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4762,7 +4762,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered11Court2 = thirdDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4774,7 +4774,7 @@ const todayfiltered11Court10 = todayfiltered11.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered11Court3 = thirdDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4786,7 +4786,7 @@ const thirdDayfiltered11Court3 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court4 = thirdDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4798,7 +4798,7 @@ const thirdDayfiltered11Court4 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court5 = thirdDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4810,7 +4810,7 @@ const thirdDayfiltered11Court5 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court6 = thirdDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4822,7 +4822,7 @@ const thirdDayfiltered11Court6 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court7 = thirdDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4834,7 +4834,7 @@ const thirdDayfiltered11Court7 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court8 = thirdDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4846,7 +4846,7 @@ const thirdDayfiltered11Court8 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court9 = thirdDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4858,7 +4858,7 @@ const thirdDayfiltered11Court9 = thirdDayfiltered11.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered11Court10 = thirdDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4875,7 +4875,7 @@ const thirdDayfiltered11Court10 = thirdDayfiltered11.filter(result => result.cou
       const fourthDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered11Court1 = fourthDayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4887,7 +4887,7 @@ const thirdDayfiltered11Court10 = thirdDayfiltered11.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered11Court2 = fourthDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4899,7 +4899,7 @@ const thirdDayfiltered11Court10 = thirdDayfiltered11.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered11Court3 = fourthDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4911,7 +4911,7 @@ const fourthDayfiltered11Court3 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court4 = fourthDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4923,7 +4923,7 @@ const fourthDayfiltered11Court4 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court5 = fourthDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4935,7 +4935,7 @@ const fourthDayfiltered11Court5 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court6 = fourthDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4947,7 +4947,7 @@ const fourthDayfiltered11Court6 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court7 = fourthDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4959,7 +4959,7 @@ const fourthDayfiltered11Court7 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court8 = fourthDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4971,7 +4971,7 @@ const fourthDayfiltered11Court8 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court9 = fourthDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4983,7 +4983,7 @@ const fourthDayfiltered11Court9 = fourthDayfiltered11.filter(result => result.co
   </div>)
 
 const fourthDayfiltered11Court10 = fourthDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -4999,7 +4999,7 @@ const fourthDayfiltered11Court10 = fourthDayfiltered11.filter(result => result.c
       const fifthDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered11Court1 = fifthDayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5011,7 +5011,7 @@ const fourthDayfiltered11Court10 = fourthDayfiltered11.filter(result => result.c
         </div>)
 
       const fifthDayfiltered11Court2 = fifthDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5023,7 +5023,7 @@ const fourthDayfiltered11Court10 = fourthDayfiltered11.filter(result => result.c
         </div>)
 
 const fifthDayfiltered11Court3 = fifthDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5035,7 +5035,7 @@ const fifthDayfiltered11Court3 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court4 = fifthDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5047,7 +5047,7 @@ const fifthDayfiltered11Court4 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court5 = fifthDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5059,7 +5059,7 @@ const fifthDayfiltered11Court5 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court6 = fifthDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5071,7 +5071,7 @@ const fifthDayfiltered11Court6 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court7 = fifthDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5083,7 +5083,7 @@ const fifthDayfiltered11Court7 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court8 = fifthDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5095,7 +5095,7 @@ const fifthDayfiltered11Court8 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court9 = fifthDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5107,7 +5107,7 @@ const fifthDayfiltered11Court9 = fifthDayfiltered11.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered11Court10 = fifthDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5123,7 +5123,7 @@ const fifthDayfiltered11Court10 = fifthDayfiltered11.filter(result => result.cou
       const sixthDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered11Court1 = sixthDayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5135,7 +5135,7 @@ const fifthDayfiltered11Court10 = fifthDayfiltered11.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered11Court2 = sixthDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5147,7 +5147,7 @@ const fifthDayfiltered11Court10 = fifthDayfiltered11.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered11Court3 = sixthDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5159,7 +5159,7 @@ const sixthDayfiltered11Court3 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court4 = sixthDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5171,7 +5171,7 @@ const sixthDayfiltered11Court4 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court5 = sixthDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5183,7 +5183,7 @@ const sixthDayfiltered11Court5 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court6 = sixthDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5195,7 +5195,7 @@ const sixthDayfiltered11Court6 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court7 = sixthDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5207,7 +5207,7 @@ const sixthDayfiltered11Court7 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court8 = sixthDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5219,7 +5219,7 @@ const sixthDayfiltered11Court8 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court9 = sixthDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5231,7 +5231,7 @@ const sixthDayfiltered11Court9 = sixthDayfiltered11.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered11Court10 = sixthDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5248,7 +5248,7 @@ const sixthDayfiltered11Court10 = sixthDayfiltered11.filter(result => result.cou
       const lastDayfiltered11 = filtered11.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered11Court1 = lastDayfiltered11.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5260,7 +5260,7 @@ const sixthDayfiltered11Court10 = sixthDayfiltered11.filter(result => result.cou
         </div>)
 
       const lastDayfiltered11Court2 = lastDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5272,7 +5272,7 @@ const sixthDayfiltered11Court10 = sixthDayfiltered11.filter(result => result.cou
         </div>)
 
 const lastDayfiltered11Court3 = lastDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5284,7 +5284,7 @@ const lastDayfiltered11Court3 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court4 = lastDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5296,7 +5296,7 @@ const lastDayfiltered11Court4 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court5 = lastDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5308,7 +5308,7 @@ const lastDayfiltered11Court5 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court6 = lastDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5320,7 +5320,7 @@ const lastDayfiltered11Court6 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court7 = lastDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5332,7 +5332,7 @@ const lastDayfiltered11Court7 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court8 = lastDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5344,7 +5344,7 @@ const lastDayfiltered11Court8 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court9 = lastDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5356,7 +5356,7 @@ const lastDayfiltered11Court9 = lastDayfiltered11.filter(result => result.court_
   </div>)
 
 const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5377,7 +5377,7 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
     const todayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered12Court1 = todayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5389,7 +5389,7 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
       </div>)
 
     const todayfiltered12Court2 = todayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5401,7 +5401,7 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
       </div>)
 
 const todayfiltered12Court3 = todayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5413,7 +5413,7 @@ const todayfiltered12Court3 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court4 = todayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5425,7 +5425,7 @@ const todayfiltered12Court4 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court5 = todayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5437,7 +5437,7 @@ const todayfiltered12Court5 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court6 = todayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5449,7 +5449,7 @@ const todayfiltered12Court6 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court7 = todayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5461,7 +5461,7 @@ const todayfiltered12Court7 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court8 = todayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5473,7 +5473,7 @@ const todayfiltered12Court8 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court9 = todayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5485,7 +5485,7 @@ const todayfiltered12Court9 = todayfiltered12.filter(result => result.court_numb
 </div>)
 
 const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5501,7 +5501,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       const tomorrowfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
       
       const tomorrowfiltered12Court1 = tomorrowfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5513,7 +5513,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered12Court2 = tomorrowfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5525,7 +5525,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered12Court3 = tomorrowfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5537,7 +5537,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court4 = tomorrowfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5549,7 +5549,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court5 = tomorrowfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5561,7 +5561,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court6 = tomorrowfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5573,7 +5573,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court7 = tomorrowfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5585,7 +5585,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court8 = tomorrowfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5597,7 +5597,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court9 = tomorrowfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5609,7 +5609,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered12Court10 = tomorrowfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5625,7 +5625,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
       const thirdDayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered12Court1 = thirdDayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5637,7 +5637,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered12Court2 = thirdDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5649,7 +5649,7 @@ const todayfiltered12Court10 = todayfiltered12.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered12Court3 = thirdDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5661,7 +5661,7 @@ const thirdDayfiltered12Court3 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court4 = thirdDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5673,7 +5673,7 @@ const thirdDayfiltered12Court4 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court5 = thirdDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5685,7 +5685,7 @@ const thirdDayfiltered12Court5 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court6 = thirdDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5697,7 +5697,7 @@ const thirdDayfiltered12Court6 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court7 = thirdDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5709,7 +5709,7 @@ const thirdDayfiltered12Court7 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court8 = thirdDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5721,7 +5721,7 @@ const thirdDayfiltered12Court8 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court9 = thirdDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5733,7 +5733,7 @@ const thirdDayfiltered12Court9 = thirdDayfiltered12.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered12Court10 = thirdDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5750,7 +5750,7 @@ const thirdDayfiltered12Court10 = thirdDayfiltered12.filter(result => result.cou
       const fourthDayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered12Court1 = fourthDayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5762,7 +5762,7 @@ const thirdDayfiltered12Court10 = thirdDayfiltered12.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered12Court2 = fourthDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5774,7 +5774,7 @@ const thirdDayfiltered12Court10 = thirdDayfiltered12.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered12Court3 = fourthDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5786,7 +5786,7 @@ const fourthDayfiltered12Court3 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court4 = fourthDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5798,7 +5798,7 @@ const fourthDayfiltered12Court4 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court5 = fourthDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5810,7 +5810,7 @@ const fourthDayfiltered12Court5 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court6 = fourthDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5822,7 +5822,7 @@ const fourthDayfiltered12Court6 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court7 = fourthDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5834,7 +5834,7 @@ const fourthDayfiltered12Court7 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court8 = fourthDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5846,7 +5846,7 @@ const fourthDayfiltered12Court8 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court9 = fourthDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5858,7 +5858,7 @@ const fourthDayfiltered12Court9 = fourthDayfiltered12.filter(result => result.co
   </div>)
 
 const fourthDayfiltered12Court10 = fourthDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5874,7 +5874,7 @@ const fourthDayfiltered12Court10 = fourthDayfiltered12.filter(result => result.c
       const fifthDayfiltered12 = filtered12.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered12Court1 = fifthDayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5886,7 +5886,7 @@ const fourthDayfiltered12Court10 = fourthDayfiltered12.filter(result => result.c
         </div>)
 
       const fifthDayfiltered12Court2 = fifthDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5898,7 +5898,7 @@ const fourthDayfiltered12Court10 = fourthDayfiltered12.filter(result => result.c
         </div>)
 
 const fifthDayfiltered12Court3 = fifthDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5910,7 +5910,7 @@ const fifthDayfiltered12Court3 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court4 = fifthDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5922,7 +5922,7 @@ const fifthDayfiltered12Court4 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court5 = fifthDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5934,7 +5934,7 @@ const fifthDayfiltered12Court5 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court6 = fifthDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5946,7 +5946,7 @@ const fifthDayfiltered12Court6 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court7 = fifthDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5958,7 +5958,7 @@ const fifthDayfiltered12Court7 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court8 = fifthDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5970,7 +5970,7 @@ const fifthDayfiltered12Court8 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court9 = fifthDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5982,7 +5982,7 @@ const fifthDayfiltered12Court9 = fifthDayfiltered12.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered12Court10 = fifthDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -5999,7 +5999,7 @@ const fifthDayfiltered12Court10 = fifthDayfiltered12.filter(result => result.cou
 
 
       const sixthDayfiltered12Court1 = sixthDayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6011,7 +6011,7 @@ const fifthDayfiltered12Court10 = fifthDayfiltered12.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered12Court2 = sixthDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6023,7 +6023,7 @@ const fifthDayfiltered12Court10 = fifthDayfiltered12.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered12Court3 = sixthDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6035,7 +6035,7 @@ const sixthDayfiltered12Court3 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court4 = sixthDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6047,7 +6047,7 @@ const sixthDayfiltered12Court4 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court5 = sixthDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6059,7 +6059,7 @@ const sixthDayfiltered12Court5 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court6 = sixthDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6071,7 +6071,7 @@ const sixthDayfiltered12Court6 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court7 = sixthDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6083,7 +6083,7 @@ const sixthDayfiltered12Court7 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court8 = sixthDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6095,7 +6095,7 @@ const sixthDayfiltered12Court8 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court9 = sixthDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6107,7 +6107,7 @@ const sixthDayfiltered12Court9 = sixthDayfiltered12.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered12Court10 = sixthDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6125,7 +6125,7 @@ const sixthDayfiltered12Court10 = sixthDayfiltered12.filter(result => result.cou
 
 
       const lastDayfiltered12Court1 = lastDayfiltered12.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6137,7 +6137,7 @@ const sixthDayfiltered12Court10 = sixthDayfiltered12.filter(result => result.cou
         </div>)
 
       const lastDayfiltered12Court2 = lastDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6149,7 +6149,7 @@ const sixthDayfiltered12Court10 = sixthDayfiltered12.filter(result => result.cou
         </div>)
 
 const lastDayfiltered12Court3 = lastDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6161,7 +6161,7 @@ const lastDayfiltered12Court3 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court4 = lastDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6173,7 +6173,7 @@ const lastDayfiltered12Court4 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court5 = lastDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6185,7 +6185,7 @@ const lastDayfiltered12Court5 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court6 = lastDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6197,7 +6197,7 @@ const lastDayfiltered12Court6 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court7 = lastDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6209,7 +6209,7 @@ const lastDayfiltered12Court7 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court8 = lastDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6221,7 +6221,7 @@ const lastDayfiltered12Court8 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court9 = lastDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6233,7 +6233,7 @@ const lastDayfiltered12Court9 = lastDayfiltered12.filter(result => result.court_
   </div>)
 
 const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6255,7 +6255,7 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
     const todayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered13Court1 = todayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6267,7 +6267,7 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
       </div>)
 
     const todayfiltered13Court2 = todayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6279,7 +6279,7 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
       </div>)
 
 const todayfiltered13Court3 = todayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6291,7 +6291,7 @@ const todayfiltered13Court3 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court4 = todayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6303,7 +6303,7 @@ const todayfiltered13Court4 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court5 = todayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6315,7 +6315,7 @@ const todayfiltered13Court5 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court6 = todayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6327,7 +6327,7 @@ const todayfiltered13Court6 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court7 = todayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6339,7 +6339,7 @@ const todayfiltered13Court7 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court8 = todayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6351,7 +6351,7 @@ const todayfiltered13Court8 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court9 = todayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6363,7 +6363,7 @@ const todayfiltered13Court9 = todayfiltered13.filter(result => result.court_numb
 </div>)
 
 const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6379,7 +6379,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       const tomorrowfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered13Court1 = tomorrowfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6391,7 +6391,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered13Court2 = tomorrowfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6403,7 +6403,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered13Court3 = tomorrowfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6415,7 +6415,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court4 = tomorrowfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6427,7 +6427,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court5 = tomorrowfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6439,7 +6439,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court6 = tomorrowfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6451,7 +6451,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court7 = tomorrowfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6463,7 +6463,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court8 = tomorrowfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6475,7 +6475,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court9 = tomorrowfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6487,7 +6487,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered13Court10 = tomorrowfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6503,7 +6503,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
       const thirdDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered13Court1 = thirdDayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6515,7 +6515,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered13Court2 = thirdDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6527,7 +6527,7 @@ const todayfiltered13Court10 = todayfiltered13.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered13Court3 = thirdDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6539,7 +6539,7 @@ const thirdDayfiltered13Court3 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court4 = thirdDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6551,7 +6551,7 @@ const thirdDayfiltered13Court4 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court5 = thirdDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6563,7 +6563,7 @@ const thirdDayfiltered13Court5 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court6 = thirdDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6575,7 +6575,7 @@ const thirdDayfiltered13Court6 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court7 = thirdDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6587,7 +6587,7 @@ const thirdDayfiltered13Court7 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court8 = thirdDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6599,7 +6599,7 @@ const thirdDayfiltered13Court8 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court9 = thirdDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6611,7 +6611,7 @@ const thirdDayfiltered13Court9 = thirdDayfiltered13.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered13Court10 = thirdDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6628,7 +6628,7 @@ const thirdDayfiltered13Court10 = thirdDayfiltered13.filter(result => result.cou
       const fourthDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered13Court1 = fourthDayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6640,7 +6640,7 @@ const thirdDayfiltered13Court10 = thirdDayfiltered13.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered13Court2 = fourthDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6652,7 +6652,7 @@ const thirdDayfiltered13Court10 = thirdDayfiltered13.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered13Court3 = fourthDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6664,7 +6664,7 @@ const fourthDayfiltered13Court3 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court4 = fourthDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6676,7 +6676,7 @@ const fourthDayfiltered13Court4 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court5 = fourthDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6688,7 +6688,7 @@ const fourthDayfiltered13Court5 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court6 = fourthDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6700,7 +6700,7 @@ const fourthDayfiltered13Court6 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court7 = fourthDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6712,7 +6712,7 @@ const fourthDayfiltered13Court7 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court8 = fourthDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6724,7 +6724,7 @@ const fourthDayfiltered13Court8 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court9 = fourthDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6736,7 +6736,7 @@ const fourthDayfiltered13Court9 = fourthDayfiltered13.filter(result => result.co
   </div>)
 
 const fourthDayfiltered13Court10 = fourthDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6753,7 +6753,7 @@ const fourthDayfiltered13Court10 = fourthDayfiltered13.filter(result => result.c
       const fifthDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered13Court1 = fifthDayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6765,7 +6765,7 @@ const fourthDayfiltered13Court10 = fourthDayfiltered13.filter(result => result.c
         </div>)
 
       const fifthDayfiltered13Court2 = fifthDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6777,7 +6777,7 @@ const fourthDayfiltered13Court10 = fourthDayfiltered13.filter(result => result.c
         </div>)
 
 const fifthDayfiltered13Court3 = fifthDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6789,7 +6789,7 @@ const fifthDayfiltered13Court3 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court4 = fifthDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6801,7 +6801,7 @@ const fifthDayfiltered13Court4 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court5 = fifthDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6813,7 +6813,7 @@ const fifthDayfiltered13Court5 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court6 = fifthDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6825,7 +6825,7 @@ const fifthDayfiltered13Court6 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court7 = fifthDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6837,7 +6837,7 @@ const fifthDayfiltered13Court7 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court8 = fifthDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6849,7 +6849,7 @@ const fifthDayfiltered13Court8 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court9 = fifthDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6861,7 +6861,7 @@ const fifthDayfiltered13Court9 = fifthDayfiltered13.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered13Court10 = fifthDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6877,7 +6877,7 @@ const fifthDayfiltered13Court10 = fifthDayfiltered13.filter(result => result.cou
       const sixthDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered13Court1 = sixthDayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6889,7 +6889,7 @@ const fifthDayfiltered13Court10 = fifthDayfiltered13.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered13Court2 = sixthDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6901,7 +6901,7 @@ const fifthDayfiltered13Court10 = fifthDayfiltered13.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered13Court3 = sixthDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6913,7 +6913,7 @@ const sixthDayfiltered13Court3 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court4 = sixthDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6925,7 +6925,7 @@ const sixthDayfiltered13Court4 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court5 = sixthDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6937,7 +6937,7 @@ const sixthDayfiltered13Court5 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court6 = sixthDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6949,7 +6949,7 @@ const sixthDayfiltered13Court6 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court7 = sixthDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6961,7 +6961,7 @@ const sixthDayfiltered13Court7 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court8 = sixthDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6973,7 +6973,7 @@ const sixthDayfiltered13Court8 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court9 = sixthDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -6985,7 +6985,7 @@ const sixthDayfiltered13Court9 = sixthDayfiltered13.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered13Court10 = sixthDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7001,7 +7001,7 @@ const sixthDayfiltered13Court10 = sixthDayfiltered13.filter(result => result.cou
       const lastDayfiltered13 = filtered13.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered13Court1 = lastDayfiltered13.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7013,7 +7013,7 @@ const sixthDayfiltered13Court10 = sixthDayfiltered13.filter(result => result.cou
         </div>)
 
       const lastDayfiltered13Court2 = lastDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7025,7 +7025,7 @@ const sixthDayfiltered13Court10 = sixthDayfiltered13.filter(result => result.cou
         </div>)
 
 const lastDayfiltered13Court3 = lastDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7037,7 +7037,7 @@ const lastDayfiltered13Court3 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court4 = lastDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7049,7 +7049,7 @@ const lastDayfiltered13Court4 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court5 = lastDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7061,7 +7061,7 @@ const lastDayfiltered13Court5 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court6 = lastDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7073,7 +7073,7 @@ const lastDayfiltered13Court6 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court7 = lastDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7085,7 +7085,7 @@ const lastDayfiltered13Court7 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court8 = lastDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7097,7 +7097,7 @@ const lastDayfiltered13Court8 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court9 = lastDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7109,7 +7109,7 @@ const lastDayfiltered13Court9 = lastDayfiltered13.filter(result => result.court_
   </div>)
 
 const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7131,7 +7131,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
 
 
       const todayfiltered14Court1 = todayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7143,7 +7143,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
   
       const todayfiltered14Court2 = todayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7155,7 +7155,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
   
   const todayfiltered14Court3 = todayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7167,7 +7167,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court4 = todayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7179,7 +7179,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court5 = todayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7191,7 +7191,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court6 = todayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7203,7 +7203,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court7 = todayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7215,7 +7215,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court8 = todayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7227,7 +7227,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court9 = todayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7239,7 +7239,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
   </div>)
   
   const todayfiltered14Court10 = todayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7255,7 +7255,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       const tomorrowfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered14Court1 = tomorrowfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7267,7 +7267,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
       
       const tomorrowfiltered14Court2 = tomorrowfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7279,7 +7279,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
       
       const tomorrowfiltered14Court3 = tomorrowfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7291,7 +7291,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court4 = tomorrowfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7303,7 +7303,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court5 = tomorrowfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7315,7 +7315,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court6 = tomorrowfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7327,7 +7327,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court7 = tomorrowfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7339,7 +7339,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court8 = tomorrowfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7351,7 +7351,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court9 = tomorrowfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7363,7 +7363,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       </div>)
       
       const tomorrowfiltered14Court10 = tomorrowfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7381,7 +7381,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
 
 
       const thirdDayfiltered14Court1 = thirdDayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7393,7 +7393,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
 
       const thirdDayfiltered14Court2 = thirdDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7405,7 +7405,7 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
         </div>)
 
 const thirdDayfiltered14Court3 = thirdDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7417,7 +7417,7 @@ const thirdDayfiltered14Court3 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court4 = thirdDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7429,7 +7429,7 @@ const thirdDayfiltered14Court4 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court5 = thirdDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7441,7 +7441,7 @@ const thirdDayfiltered14Court5 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court6 = thirdDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7453,7 +7453,7 @@ const thirdDayfiltered14Court6 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court7 = thirdDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7465,7 +7465,7 @@ const thirdDayfiltered14Court7 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court8 = thirdDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7477,7 +7477,7 @@ const thirdDayfiltered14Court8 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court9 = thirdDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7489,7 +7489,7 @@ const thirdDayfiltered14Court9 = thirdDayfiltered14.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered14Court10 = thirdDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7506,7 +7506,7 @@ const thirdDayfiltered14Court10 = thirdDayfiltered14.filter(result => result.cou
       const fourthDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered14Court1 = fourthDayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7518,7 +7518,7 @@ const thirdDayfiltered14Court10 = thirdDayfiltered14.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered14Court2 = fourthDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7530,7 +7530,7 @@ const thirdDayfiltered14Court10 = thirdDayfiltered14.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered14Court3 = fourthDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7542,7 +7542,7 @@ const fourthDayfiltered14Court3 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court4 = fourthDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7554,7 +7554,7 @@ const fourthDayfiltered14Court4 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court5 = fourthDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7566,7 +7566,7 @@ const fourthDayfiltered14Court5 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court6 = fourthDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7578,7 +7578,7 @@ const fourthDayfiltered14Court6 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court7 = fourthDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7590,7 +7590,7 @@ const fourthDayfiltered14Court7 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court8 = fourthDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7602,7 +7602,7 @@ const fourthDayfiltered14Court8 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court9 = fourthDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7614,7 +7614,7 @@ const fourthDayfiltered14Court9 = fourthDayfiltered14.filter(result => result.co
   </div>)
 
 const fourthDayfiltered14Court10 = fourthDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7632,7 +7632,7 @@ const fourthDayfiltered14Court10 = fourthDayfiltered14.filter(result => result.c
       const fifthDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered14Court1 = fifthDayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7644,7 +7644,7 @@ const fourthDayfiltered14Court10 = fourthDayfiltered14.filter(result => result.c
         </div>)
 
       const fifthDayfiltered14Court2 = fifthDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7656,7 +7656,7 @@ const fourthDayfiltered14Court10 = fourthDayfiltered14.filter(result => result.c
         </div>)
 
 const fifthDayfiltered14Court3 = fifthDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7668,7 +7668,7 @@ const fifthDayfiltered14Court3 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court4 = fifthDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7680,7 +7680,7 @@ const fifthDayfiltered14Court4 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court5 = fifthDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7692,7 +7692,7 @@ const fifthDayfiltered14Court5 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court6 = fifthDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7704,7 +7704,7 @@ const fifthDayfiltered14Court6 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court7 = fifthDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7716,7 +7716,7 @@ const fifthDayfiltered14Court7 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court8 = fifthDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7728,7 +7728,7 @@ const fifthDayfiltered14Court8 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court9 = fifthDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7740,7 +7740,7 @@ const fifthDayfiltered14Court9 = fifthDayfiltered14.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered14Court10 = fifthDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7756,7 +7756,7 @@ const fifthDayfiltered14Court10 = fifthDayfiltered14.filter(result => result.cou
       const sixthDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered14Court1 = sixthDayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7768,7 +7768,7 @@ const fifthDayfiltered14Court10 = fifthDayfiltered14.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered14Court2 = sixthDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7780,7 +7780,7 @@ const fifthDayfiltered14Court10 = fifthDayfiltered14.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered14Court3 = sixthDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7792,7 +7792,7 @@ const sixthDayfiltered14Court3 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court4 = sixthDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7804,7 +7804,7 @@ const sixthDayfiltered14Court4 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court5 = sixthDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7816,7 +7816,7 @@ const sixthDayfiltered14Court5 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court6 = sixthDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7828,7 +7828,7 @@ const sixthDayfiltered14Court6 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court7 = sixthDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7840,7 +7840,7 @@ const sixthDayfiltered14Court7 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court8 = sixthDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7852,7 +7852,7 @@ const sixthDayfiltered14Court8 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court9 = sixthDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7864,7 +7864,7 @@ const sixthDayfiltered14Court9 = sixthDayfiltered14.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered14Court10 = sixthDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7880,7 +7880,7 @@ const sixthDayfiltered14Court10 = sixthDayfiltered14.filter(result => result.cou
       const lastDayfiltered14 = filtered14.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered14Court1 = lastDayfiltered14.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7892,7 +7892,7 @@ const sixthDayfiltered14Court10 = sixthDayfiltered14.filter(result => result.cou
         </div>)
 
       const lastDayfiltered14Court2 = lastDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7904,7 +7904,7 @@ const sixthDayfiltered14Court10 = sixthDayfiltered14.filter(result => result.cou
         </div>)
 
 const lastDayfiltered14Court3 = lastDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7916,7 +7916,7 @@ const lastDayfiltered14Court3 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court4 = lastDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7928,7 +7928,7 @@ const lastDayfiltered14Court4 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court5 = lastDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7940,7 +7940,7 @@ const lastDayfiltered14Court5 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court6 = lastDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7952,7 +7952,7 @@ const lastDayfiltered14Court6 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court7 = lastDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7964,7 +7964,7 @@ const lastDayfiltered14Court7 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court8 = lastDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7976,7 +7976,7 @@ const lastDayfiltered14Court8 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court9 = lastDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -7988,7 +7988,7 @@ const lastDayfiltered14Court9 = lastDayfiltered14.filter(result => result.court_
   </div>)
 
 const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8009,7 +8009,7 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
     const todayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered15Court1 = todayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8021,7 +8021,7 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
       </div>)
 
     const todayfiltered15Court2 = todayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8033,7 +8033,7 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
       </div>)
 
 const todayfiltered15Court3 = todayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8045,7 +8045,7 @@ const todayfiltered15Court3 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court4 = todayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8057,7 +8057,7 @@ const todayfiltered15Court4 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court5 = todayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8069,7 +8069,7 @@ const todayfiltered15Court5 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court6 = todayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8081,7 +8081,7 @@ const todayfiltered15Court6 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court7 = todayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8093,7 +8093,7 @@ const todayfiltered15Court7 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court8 = todayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8105,7 +8105,7 @@ const todayfiltered15Court8 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court9 = todayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8117,7 +8117,7 @@ const todayfiltered15Court9 = todayfiltered15.filter(result => result.court_numb
 </div>)
 
 const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8133,7 +8133,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       const tomorrowfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered15Court1 = tomorrowfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8145,7 +8145,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered15Court2 = tomorrowfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8157,7 +8157,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered15Court3 = tomorrowfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8169,7 +8169,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court4 = tomorrowfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8181,7 +8181,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court5 = tomorrowfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8193,7 +8193,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court6 = tomorrowfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8205,7 +8205,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court7 = tomorrowfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8217,7 +8217,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court8 = tomorrowfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8229,7 +8229,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court9 = tomorrowfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8241,7 +8241,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered15Court10 = tomorrowfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8257,7 +8257,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
       const thirdDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered15Court1 = thirdDayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8269,7 +8269,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered15Court2 = thirdDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8281,7 +8281,7 @@ const todayfiltered15Court10 = todayfiltered15.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered15Court3 = thirdDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8293,7 +8293,7 @@ const thirdDayfiltered15Court3 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court4 = thirdDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8305,7 +8305,7 @@ const thirdDayfiltered15Court4 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court5 = thirdDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8317,7 +8317,7 @@ const thirdDayfiltered15Court5 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court6 = thirdDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8329,7 +8329,7 @@ const thirdDayfiltered15Court6 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court7 = thirdDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8341,7 +8341,7 @@ const thirdDayfiltered15Court7 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court8 = thirdDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8353,7 +8353,7 @@ const thirdDayfiltered15Court8 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court9 = thirdDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8365,7 +8365,7 @@ const thirdDayfiltered15Court9 = thirdDayfiltered15.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered15Court10 = thirdDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8382,7 +8382,7 @@ const thirdDayfiltered15Court10 = thirdDayfiltered15.filter(result => result.cou
       const fourthDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered15Court1 = fourthDayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8394,7 +8394,7 @@ const thirdDayfiltered15Court10 = thirdDayfiltered15.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered15Court2 = fourthDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8406,7 +8406,7 @@ const thirdDayfiltered15Court10 = thirdDayfiltered15.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered15Court3 = fourthDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8418,7 +8418,7 @@ const fourthDayfiltered15Court3 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court4 = fourthDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8430,7 +8430,7 @@ const fourthDayfiltered15Court4 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court5 = fourthDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8442,7 +8442,7 @@ const fourthDayfiltered15Court5 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court6 = fourthDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8454,7 +8454,7 @@ const fourthDayfiltered15Court6 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court7 = fourthDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8466,7 +8466,7 @@ const fourthDayfiltered15Court7 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court8 = fourthDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8478,7 +8478,7 @@ const fourthDayfiltered15Court8 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court9 = fourthDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8490,7 +8490,7 @@ const fourthDayfiltered15Court9 = fourthDayfiltered15.filter(result => result.co
   </div>)
 
 const fourthDayfiltered15Court10 = fourthDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8507,7 +8507,7 @@ const fourthDayfiltered15Court10 = fourthDayfiltered15.filter(result => result.c
       const fifthDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered15Court1 = fifthDayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8519,7 +8519,7 @@ const fourthDayfiltered15Court10 = fourthDayfiltered15.filter(result => result.c
         </div>)
 
       const fifthDayfiltered15Court2 = fifthDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8531,7 +8531,7 @@ const fourthDayfiltered15Court10 = fourthDayfiltered15.filter(result => result.c
         </div>)
 
 const fifthDayfiltered15Court3 = fifthDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8543,7 +8543,7 @@ const fifthDayfiltered15Court3 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court4 = fifthDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8555,7 +8555,7 @@ const fifthDayfiltered15Court4 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court5 = fifthDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8567,7 +8567,7 @@ const fifthDayfiltered15Court5 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court6 = fifthDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8579,7 +8579,7 @@ const fifthDayfiltered15Court6 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court7 = fifthDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8591,7 +8591,7 @@ const fifthDayfiltered15Court7 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court8 = fifthDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8603,7 +8603,7 @@ const fifthDayfiltered15Court8 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court9 = fifthDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8615,7 +8615,7 @@ const fifthDayfiltered15Court9 = fifthDayfiltered15.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered15Court10 = fifthDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8632,7 +8632,7 @@ const fifthDayfiltered15Court10 = fifthDayfiltered15.filter(result => result.cou
 
 
       const sixthDayfiltered15Court1 = sixthDayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8644,7 +8644,7 @@ const fifthDayfiltered15Court10 = fifthDayfiltered15.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered15Court2 = sixthDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8656,7 +8656,7 @@ const fifthDayfiltered15Court10 = fifthDayfiltered15.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered15Court3 = sixthDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8668,7 +8668,7 @@ const sixthDayfiltered15Court3 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court4 = sixthDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8680,7 +8680,7 @@ const sixthDayfiltered15Court4 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court5 = sixthDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8692,7 +8692,7 @@ const sixthDayfiltered15Court5 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court6 = sixthDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8704,7 +8704,7 @@ const sixthDayfiltered15Court6 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court7 = sixthDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8716,7 +8716,7 @@ const sixthDayfiltered15Court7 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court8 = sixthDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8728,7 +8728,7 @@ const sixthDayfiltered15Court8 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court9 = sixthDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8740,7 +8740,7 @@ const sixthDayfiltered15Court9 = sixthDayfiltered15.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered15Court10 = sixthDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8756,7 +8756,7 @@ const sixthDayfiltered15Court10 = sixthDayfiltered15.filter(result => result.cou
       const lastDayfiltered15 = filtered15.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered15Court1 = lastDayfiltered15.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8768,7 +8768,7 @@ const sixthDayfiltered15Court10 = sixthDayfiltered15.filter(result => result.cou
         </div>)
 
       const lastDayfiltered15Court2 = lastDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8780,7 +8780,7 @@ const sixthDayfiltered15Court10 = sixthDayfiltered15.filter(result => result.cou
         </div>)
 
 const lastDayfiltered15Court3 = lastDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8792,7 +8792,7 @@ const lastDayfiltered15Court3 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court4 = lastDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8804,7 +8804,7 @@ const lastDayfiltered15Court4 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court5 = lastDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8816,7 +8816,7 @@ const lastDayfiltered15Court5 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court6 = lastDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8828,7 +8828,7 @@ const lastDayfiltered15Court6 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court7 = lastDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8840,7 +8840,7 @@ const lastDayfiltered15Court7 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court8 = lastDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8852,7 +8852,7 @@ const lastDayfiltered15Court8 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court9 = lastDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8864,7 +8864,7 @@ const lastDayfiltered15Court9 = lastDayfiltered15.filter(result => result.court_
   </div>)
 
 const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8886,7 +8886,7 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
     const todayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered16Court1 = todayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8898,7 +8898,7 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
       </div>)
 
     const todayfiltered16Court2 = todayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8910,7 +8910,7 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
       </div>)
 
 const todayfiltered16Court3 = todayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8922,7 +8922,7 @@ const todayfiltered16Court3 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court4 = todayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8934,7 +8934,7 @@ const todayfiltered16Court4 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court5 = todayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8946,7 +8946,7 @@ const todayfiltered16Court5 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court6 = todayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8958,7 +8958,7 @@ const todayfiltered16Court6 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court7 = todayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8970,7 +8970,7 @@ const todayfiltered16Court7 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court8 = todayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8982,7 +8982,7 @@ const todayfiltered16Court8 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court9 = todayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -8994,7 +8994,7 @@ const todayfiltered16Court9 = todayfiltered16.filter(result => result.court_numb
 </div>)
 
 const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9010,7 +9010,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       const tomorrowfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered16Court1 = tomorrowfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9022,7 +9022,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered16Court2 = tomorrowfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9034,7 +9034,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered16Court3 = tomorrowfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9046,7 +9046,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court4 = tomorrowfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9058,7 +9058,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court5 = tomorrowfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9070,7 +9070,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court6 = tomorrowfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9082,7 +9082,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court7 = tomorrowfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9094,7 +9094,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court8 = tomorrowfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9106,7 +9106,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court9 = tomorrowfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9118,7 +9118,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered16Court10 = tomorrowfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9135,7 +9135,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
       const thirdDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered16Court1 = thirdDayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9147,7 +9147,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered16Court2 = thirdDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9159,7 +9159,7 @@ const todayfiltered16Court10 = todayfiltered16.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered16Court3 = thirdDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9171,7 +9171,7 @@ const thirdDayfiltered16Court3 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court4 = thirdDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9183,7 +9183,7 @@ const thirdDayfiltered16Court4 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court5 = thirdDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9195,7 +9195,7 @@ const thirdDayfiltered16Court5 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court6 = thirdDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9207,7 +9207,7 @@ const thirdDayfiltered16Court6 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court7 = thirdDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9219,7 +9219,7 @@ const thirdDayfiltered16Court7 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court8 = thirdDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9231,7 +9231,7 @@ const thirdDayfiltered16Court8 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court9 = thirdDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9243,7 +9243,7 @@ const thirdDayfiltered16Court9 = thirdDayfiltered16.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered16Court10 = thirdDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9260,7 +9260,7 @@ const thirdDayfiltered16Court10 = thirdDayfiltered16.filter(result => result.cou
       const fourthDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered16Court1 = fourthDayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9272,7 +9272,7 @@ const thirdDayfiltered16Court10 = thirdDayfiltered16.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered16Court2 = fourthDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9284,7 +9284,7 @@ const thirdDayfiltered16Court10 = thirdDayfiltered16.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered16Court3 = fourthDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9296,7 +9296,7 @@ const fourthDayfiltered16Court3 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court4 = fourthDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9308,7 +9308,7 @@ const fourthDayfiltered16Court4 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court5 = fourthDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9320,7 +9320,7 @@ const fourthDayfiltered16Court5 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court6 = fourthDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9332,7 +9332,7 @@ const fourthDayfiltered16Court6 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court7 = fourthDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9344,7 +9344,7 @@ const fourthDayfiltered16Court7 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court8 = fourthDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9356,7 +9356,7 @@ const fourthDayfiltered16Court8 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court9 = fourthDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9368,7 +9368,7 @@ const fourthDayfiltered16Court9 = fourthDayfiltered16.filter(result => result.co
   </div>)
 
 const fourthDayfiltered16Court10 = fourthDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9385,7 +9385,7 @@ const fourthDayfiltered16Court10 = fourthDayfiltered16.filter(result => result.c
       const fifthDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered16Court1 = fifthDayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9397,7 +9397,7 @@ const fourthDayfiltered16Court10 = fourthDayfiltered16.filter(result => result.c
         </div>)
 
       const fifthDayfiltered16Court2 = fifthDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9409,7 +9409,7 @@ const fourthDayfiltered16Court10 = fourthDayfiltered16.filter(result => result.c
         </div>)
 
 const fifthDayfiltered16Court3 = fifthDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9421,7 +9421,7 @@ const fifthDayfiltered16Court3 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court4 = fifthDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9433,7 +9433,7 @@ const fifthDayfiltered16Court4 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court5 = fifthDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9445,7 +9445,7 @@ const fifthDayfiltered16Court5 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court6 = fifthDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9457,7 +9457,7 @@ const fifthDayfiltered16Court6 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court7 = fifthDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9469,7 +9469,7 @@ const fifthDayfiltered16Court7 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court8 = fifthDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9481,7 +9481,7 @@ const fifthDayfiltered16Court8 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court9 = fifthDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9493,7 +9493,7 @@ const fifthDayfiltered16Court9 = fifthDayfiltered16.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered16Court10 = fifthDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9509,7 +9509,7 @@ const fifthDayfiltered16Court10 = fifthDayfiltered16.filter(result => result.cou
       const sixthDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered16Court1 = sixthDayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9521,7 +9521,7 @@ const fifthDayfiltered16Court10 = fifthDayfiltered16.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered16Court2 = sixthDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9533,7 +9533,7 @@ const fifthDayfiltered16Court10 = fifthDayfiltered16.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered16Court3 = sixthDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9545,7 +9545,7 @@ const sixthDayfiltered16Court3 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court4 = sixthDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9557,7 +9557,7 @@ const sixthDayfiltered16Court4 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court5 = sixthDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9569,7 +9569,7 @@ const sixthDayfiltered16Court5 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court6 = sixthDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9581,7 +9581,7 @@ const sixthDayfiltered16Court6 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court7 = sixthDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9593,7 +9593,7 @@ const sixthDayfiltered16Court7 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court8 = sixthDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9605,7 +9605,7 @@ const sixthDayfiltered16Court8 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court9 = sixthDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9617,7 +9617,7 @@ const sixthDayfiltered16Court9 = sixthDayfiltered16.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered16Court10 = sixthDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9634,7 +9634,7 @@ const sixthDayfiltered16Court10 = sixthDayfiltered16.filter(result => result.cou
       const lastDayfiltered16 = filtered16.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered16Court1 = lastDayfiltered16.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9646,7 +9646,7 @@ const sixthDayfiltered16Court10 = sixthDayfiltered16.filter(result => result.cou
         </div>)
 
       const lastDayfiltered16Court2 = lastDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9658,7 +9658,7 @@ const sixthDayfiltered16Court10 = sixthDayfiltered16.filter(result => result.cou
         </div>)
 
 const lastDayfiltered16Court3 = lastDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9670,7 +9670,7 @@ const lastDayfiltered16Court3 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court4 = lastDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9682,7 +9682,7 @@ const lastDayfiltered16Court4 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court5 = lastDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9694,7 +9694,7 @@ const lastDayfiltered16Court5 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court6 = lastDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9706,7 +9706,7 @@ const lastDayfiltered16Court6 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court7 = lastDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9718,7 +9718,7 @@ const lastDayfiltered16Court7 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court8 = lastDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9730,7 +9730,7 @@ const lastDayfiltered16Court8 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court9 = lastDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9742,7 +9742,7 @@ const lastDayfiltered16Court9 = lastDayfiltered16.filter(result => result.court_
   </div>)
 
 const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9765,7 +9765,7 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
 
 
     const todayfiltered17Court1 = todayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9777,7 +9777,7 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
       </div>)
 
     const todayfiltered17Court2 = todayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9789,7 +9789,7 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
       </div>)
 
 const todayfiltered17Court3 = todayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9801,7 +9801,7 @@ const todayfiltered17Court3 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court4 = todayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9813,7 +9813,7 @@ const todayfiltered17Court4 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court5 = todayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9825,7 +9825,7 @@ const todayfiltered17Court5 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court6 = todayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9837,7 +9837,7 @@ const todayfiltered17Court6 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court7 = todayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9849,7 +9849,7 @@ const todayfiltered17Court7 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court8 = todayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9861,7 +9861,7 @@ const todayfiltered17Court8 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court9 = todayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9873,7 +9873,7 @@ const todayfiltered17Court9 = todayfiltered17.filter(result => result.court_numb
 </div>)
 
 const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9889,7 +9889,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       const tomorrowfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered17Court1 = tomorrowfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9901,7 +9901,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered17Court2 = tomorrowfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9913,7 +9913,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered17Court3 = tomorrowfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9925,7 +9925,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court4 = tomorrowfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9937,7 +9937,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court5 = tomorrowfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9949,7 +9949,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court6 = tomorrowfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9961,7 +9961,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court7 = tomorrowfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9973,7 +9973,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court8 = tomorrowfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9985,7 +9985,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court9 = tomorrowfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -9997,7 +9997,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered17Court10 = tomorrowfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10014,7 +10014,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
       
 
       const thirdDayfiltered17Court1 = thirdDayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10026,7 +10026,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered17Court2 = thirdDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10038,7 +10038,7 @@ const todayfiltered17Court10 = todayfiltered17.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered17Court3 = thirdDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10050,7 +10050,7 @@ const thirdDayfiltered17Court3 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court4 = thirdDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10062,7 +10062,7 @@ const thirdDayfiltered17Court4 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court5 = thirdDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10074,7 +10074,7 @@ const thirdDayfiltered17Court5 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court6 = thirdDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10086,7 +10086,7 @@ const thirdDayfiltered17Court6 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court7 = thirdDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10098,7 +10098,7 @@ const thirdDayfiltered17Court7 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court8 = thirdDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10110,7 +10110,7 @@ const thirdDayfiltered17Court8 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court9 = thirdDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10122,7 +10122,7 @@ const thirdDayfiltered17Court9 = thirdDayfiltered17.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered17Court10 = thirdDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10139,7 +10139,7 @@ const thirdDayfiltered17Court10 = thirdDayfiltered17.filter(result => result.cou
       const fourthDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered17Court1 = fourthDayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10151,7 +10151,7 @@ const thirdDayfiltered17Court10 = thirdDayfiltered17.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered17Court2 = fourthDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10163,7 +10163,7 @@ const thirdDayfiltered17Court10 = thirdDayfiltered17.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered17Court3 = fourthDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10175,7 +10175,7 @@ const fourthDayfiltered17Court3 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court4 = fourthDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10187,7 +10187,7 @@ const fourthDayfiltered17Court4 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court5 = fourthDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10199,7 +10199,7 @@ const fourthDayfiltered17Court5 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court6 = fourthDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10211,7 +10211,7 @@ const fourthDayfiltered17Court6 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court7 = fourthDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10223,7 +10223,7 @@ const fourthDayfiltered17Court7 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court8 = fourthDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10235,7 +10235,7 @@ const fourthDayfiltered17Court8 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court9 = fourthDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10247,7 +10247,7 @@ const fourthDayfiltered17Court9 = fourthDayfiltered17.filter(result => result.co
   </div>)
 
 const fourthDayfiltered17Court10 = fourthDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10265,7 +10265,7 @@ const fourthDayfiltered17Court10 = fourthDayfiltered17.filter(result => result.c
       const fifthDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered17Court1 = fifthDayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10277,7 +10277,7 @@ const fourthDayfiltered17Court10 = fourthDayfiltered17.filter(result => result.c
         </div>)
 
       const fifthDayfiltered17Court2 = fifthDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10289,7 +10289,7 @@ const fourthDayfiltered17Court10 = fourthDayfiltered17.filter(result => result.c
         </div>)
 
 const fifthDayfiltered17Court3 = fifthDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10301,7 +10301,7 @@ const fifthDayfiltered17Court3 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court4 = fifthDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10313,7 +10313,7 @@ const fifthDayfiltered17Court4 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court5 = fifthDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10325,7 +10325,7 @@ const fifthDayfiltered17Court5 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court6 = fifthDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10337,7 +10337,7 @@ const fifthDayfiltered17Court6 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court7 = fifthDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10349,7 +10349,7 @@ const fifthDayfiltered17Court7 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court8 = fifthDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10361,7 +10361,7 @@ const fifthDayfiltered17Court8 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court9 = fifthDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10373,7 +10373,7 @@ const fifthDayfiltered17Court9 = fifthDayfiltered17.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered17Court10 = fifthDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10389,7 +10389,7 @@ const fifthDayfiltered17Court10 = fifthDayfiltered17.filter(result => result.cou
       const sixthDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered17Court1 = sixthDayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10401,7 +10401,7 @@ const fifthDayfiltered17Court10 = fifthDayfiltered17.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered17Court2 = sixthDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10413,7 +10413,7 @@ const fifthDayfiltered17Court10 = fifthDayfiltered17.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered17Court3 = sixthDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10425,7 +10425,7 @@ const sixthDayfiltered17Court3 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court4 = sixthDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10437,7 +10437,7 @@ const sixthDayfiltered17Court4 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court5 = sixthDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10449,7 +10449,7 @@ const sixthDayfiltered17Court5 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court6 = sixthDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10461,7 +10461,7 @@ const sixthDayfiltered17Court6 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court7 = sixthDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10473,7 +10473,7 @@ const sixthDayfiltered17Court7 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court8 = sixthDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10485,7 +10485,7 @@ const sixthDayfiltered17Court8 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court9 = sixthDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10497,7 +10497,7 @@ const sixthDayfiltered17Court9 = sixthDayfiltered17.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered17Court10 = sixthDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10514,7 +10514,7 @@ const sixthDayfiltered17Court10 = sixthDayfiltered17.filter(result => result.cou
       const lastDayfiltered17 = filtered17.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered17Court1 = lastDayfiltered17.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10526,7 +10526,7 @@ const sixthDayfiltered17Court10 = sixthDayfiltered17.filter(result => result.cou
         </div>)
 
       const lastDayfiltered17Court2 = lastDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10538,7 +10538,7 @@ const sixthDayfiltered17Court10 = sixthDayfiltered17.filter(result => result.cou
         </div>)
 
 const lastDayfiltered17Court3 = lastDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10550,7 +10550,7 @@ const lastDayfiltered17Court3 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court4 = lastDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10562,7 +10562,7 @@ const lastDayfiltered17Court4 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court5 = lastDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10574,7 +10574,7 @@ const lastDayfiltered17Court5 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court6 = lastDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10586,7 +10586,7 @@ const lastDayfiltered17Court6 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court7 = lastDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10598,7 +10598,7 @@ const lastDayfiltered17Court7 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court8 = lastDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10610,7 +10610,7 @@ const lastDayfiltered17Court8 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court9 = lastDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10622,7 +10622,7 @@ const lastDayfiltered17Court9 = lastDayfiltered17.filter(result => result.court_
   </div>)
 
 const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10644,7 +10644,7 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
     const todayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered18Court1 = todayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10656,7 +10656,7 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
       </div>)
 
     const todayfiltered18Court2 = todayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10668,7 +10668,7 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
       </div>)
 
 const todayfiltered18Court3 = todayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10680,7 +10680,7 @@ const todayfiltered18Court3 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court4 = todayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10692,7 +10692,7 @@ const todayfiltered18Court4 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court5 = todayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10704,7 +10704,7 @@ const todayfiltered18Court5 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court6 = todayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10716,7 +10716,7 @@ const todayfiltered18Court6 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court7 = todayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10728,7 +10728,7 @@ const todayfiltered18Court7 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court8 = todayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10740,7 +10740,7 @@ const todayfiltered18Court8 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court9 = todayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10752,7 +10752,7 @@ const todayfiltered18Court9 = todayfiltered18.filter(result => result.court_numb
 </div>)
 
 const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10768,7 +10768,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       const tomorrowfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered18Court1 = tomorrowfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10780,7 +10780,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered18Court2 = tomorrowfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10792,7 +10792,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered18Court3 = tomorrowfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10804,7 +10804,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court4 = tomorrowfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10816,7 +10816,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court5 = tomorrowfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10828,7 +10828,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court6 = tomorrowfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10840,7 +10840,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court7 = tomorrowfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10852,7 +10852,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court8 = tomorrowfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10864,7 +10864,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court9 = tomorrowfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10876,7 +10876,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered18Court10 = tomorrowfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10893,7 +10893,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
 
 
       const thirdDayfiltered18Court1 = thirdDayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10905,7 +10905,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered18Court2 = thirdDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10917,7 +10917,7 @@ const todayfiltered18Court10 = todayfiltered18.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered18Court3 = thirdDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10929,7 +10929,7 @@ const thirdDayfiltered18Court3 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court4 = thirdDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10941,7 +10941,7 @@ const thirdDayfiltered18Court4 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court5 = thirdDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10953,7 +10953,7 @@ const thirdDayfiltered18Court5 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court6 = thirdDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10965,7 +10965,7 @@ const thirdDayfiltered18Court6 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court7 = thirdDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10977,7 +10977,7 @@ const thirdDayfiltered18Court7 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court8 = thirdDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -10989,7 +10989,7 @@ const thirdDayfiltered18Court8 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court9 = thirdDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11001,7 +11001,7 @@ const thirdDayfiltered18Court9 = thirdDayfiltered18.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered18Court10 = thirdDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11018,7 +11018,7 @@ const thirdDayfiltered18Court10 = thirdDayfiltered18.filter(result => result.cou
       const fourthDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered18Court1 = fourthDayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11030,7 +11030,7 @@ const thirdDayfiltered18Court10 = thirdDayfiltered18.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered18Court2 = fourthDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11042,7 +11042,7 @@ const thirdDayfiltered18Court10 = thirdDayfiltered18.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered18Court3 = fourthDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11054,7 +11054,7 @@ const fourthDayfiltered18Court3 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court4 = fourthDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11066,7 +11066,7 @@ const fourthDayfiltered18Court4 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court5 = fourthDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11078,7 +11078,7 @@ const fourthDayfiltered18Court5 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court6 = fourthDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11090,7 +11090,7 @@ const fourthDayfiltered18Court6 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court7 = fourthDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11102,7 +11102,7 @@ const fourthDayfiltered18Court7 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court8 = fourthDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11114,7 +11114,7 @@ const fourthDayfiltered18Court8 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court9 = fourthDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11126,7 +11126,7 @@ const fourthDayfiltered18Court9 = fourthDayfiltered18.filter(result => result.co
   </div>)
 
 const fourthDayfiltered18Court10 = fourthDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11144,7 +11144,7 @@ const fourthDayfiltered18Court10 = fourthDayfiltered18.filter(result => result.c
       const fifthDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered18Court1 = fifthDayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11156,7 +11156,7 @@ const fourthDayfiltered18Court10 = fourthDayfiltered18.filter(result => result.c
         </div>)
 
       const fifthDayfiltered18Court2 = fifthDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11168,7 +11168,7 @@ const fourthDayfiltered18Court10 = fourthDayfiltered18.filter(result => result.c
         </div>)
 
 const fifthDayfiltered18Court3 = fifthDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11180,7 +11180,7 @@ const fifthDayfiltered18Court3 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court4 = fifthDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11192,7 +11192,7 @@ const fifthDayfiltered18Court4 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court5 = fifthDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11204,7 +11204,7 @@ const fifthDayfiltered18Court5 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court6 = fifthDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11216,7 +11216,7 @@ const fifthDayfiltered18Court6 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court7 = fifthDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11228,7 +11228,7 @@ const fifthDayfiltered18Court7 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court8 = fifthDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11240,7 +11240,7 @@ const fifthDayfiltered18Court8 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court9 = fifthDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11252,7 +11252,7 @@ const fifthDayfiltered18Court9 = fifthDayfiltered18.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered18Court10 = fifthDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11269,7 +11269,7 @@ const fifthDayfiltered18Court10 = fifthDayfiltered18.filter(result => result.cou
       const sixthDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered18Court1 = sixthDayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11281,7 +11281,7 @@ const fifthDayfiltered18Court10 = fifthDayfiltered18.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered18Court2 = sixthDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11293,7 +11293,7 @@ const fifthDayfiltered18Court10 = fifthDayfiltered18.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered18Court3 = sixthDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11305,7 +11305,7 @@ const sixthDayfiltered18Court3 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court4 = sixthDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11317,7 +11317,7 @@ const sixthDayfiltered18Court4 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court5 = sixthDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11329,7 +11329,7 @@ const sixthDayfiltered18Court5 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court6 = sixthDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11341,7 +11341,7 @@ const sixthDayfiltered18Court6 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court7 = sixthDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11353,7 +11353,7 @@ const sixthDayfiltered18Court7 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court8 = sixthDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11365,7 +11365,7 @@ const sixthDayfiltered18Court8 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court9 = sixthDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11377,7 +11377,7 @@ const sixthDayfiltered18Court9 = sixthDayfiltered18.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered18Court10 = sixthDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11393,7 +11393,7 @@ const sixthDayfiltered18Court10 = sixthDayfiltered18.filter(result => result.cou
       const lastDayfiltered18 = filtered18.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered18Court1 = lastDayfiltered18.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11405,7 +11405,7 @@ const sixthDayfiltered18Court10 = sixthDayfiltered18.filter(result => result.cou
         </div>)
 
       const lastDayfiltered18Court2 = lastDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11417,7 +11417,7 @@ const sixthDayfiltered18Court10 = sixthDayfiltered18.filter(result => result.cou
         </div>)
 
 const lastDayfiltered18Court3 = lastDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11429,7 +11429,7 @@ const lastDayfiltered18Court3 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court4 = lastDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11441,7 +11441,7 @@ const lastDayfiltered18Court4 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court5 = lastDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11453,7 +11453,7 @@ const lastDayfiltered18Court5 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court6 = lastDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11465,7 +11465,7 @@ const lastDayfiltered18Court6 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court7 = lastDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11477,7 +11477,7 @@ const lastDayfiltered18Court7 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court8 = lastDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11489,7 +11489,7 @@ const lastDayfiltered18Court8 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court9 = lastDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11501,7 +11501,7 @@ const lastDayfiltered18Court9 = lastDayfiltered18.filter(result => result.court_
   </div>)
 
 const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11522,7 +11522,7 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
     const todayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered19Court1 = todayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11534,7 +11534,7 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
       </div>)
 
     const todayfiltered19Court2 = todayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11546,7 +11546,7 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
       </div>)
 
 const todayfiltered19Court3 = todayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11558,7 +11558,7 @@ const todayfiltered19Court3 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court4 = todayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11570,7 +11570,7 @@ const todayfiltered19Court4 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court5 = todayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11582,7 +11582,7 @@ const todayfiltered19Court5 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court6 = todayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11594,7 +11594,7 @@ const todayfiltered19Court6 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court7 = todayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11606,7 +11606,7 @@ const todayfiltered19Court7 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court8 = todayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11618,7 +11618,7 @@ const todayfiltered19Court8 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court9 = todayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11630,7 +11630,7 @@ const todayfiltered19Court9 = todayfiltered19.filter(result => result.court_numb
 </div>)
 
 const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11646,7 +11646,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       const tomorrowfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered19Court1 = tomorrowfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11658,7 +11658,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered19Court2 = tomorrowfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11670,7 +11670,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered19Court3 = tomorrowfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11682,7 +11682,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court4 = tomorrowfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11694,7 +11694,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court5 = tomorrowfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11706,7 +11706,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court6 = tomorrowfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11718,7 +11718,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court7 = tomorrowfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11730,7 +11730,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court8 = tomorrowfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11742,7 +11742,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court9 = tomorrowfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11754,7 +11754,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered19Court10 = tomorrowfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11770,7 +11770,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
       const thirdDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered19Court1 = thirdDayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11782,7 +11782,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered19Court2 = thirdDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11794,7 +11794,7 @@ const todayfiltered19Court10 = todayfiltered19.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered19Court3 = thirdDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11806,7 +11806,7 @@ const thirdDayfiltered19Court3 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court4 = thirdDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11818,7 +11818,7 @@ const thirdDayfiltered19Court4 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court5 = thirdDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11830,7 +11830,7 @@ const thirdDayfiltered19Court5 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court6 = thirdDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11842,7 +11842,7 @@ const thirdDayfiltered19Court6 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court7 = thirdDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11854,7 +11854,7 @@ const thirdDayfiltered19Court7 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court8 = thirdDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11866,7 +11866,7 @@ const thirdDayfiltered19Court8 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court9 = thirdDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11878,7 +11878,7 @@ const thirdDayfiltered19Court9 = thirdDayfiltered19.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered19Court10 = thirdDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11896,7 +11896,7 @@ const thirdDayfiltered19Court10 = thirdDayfiltered19.filter(result => result.cou
 
 
       const fourthDayfiltered19Court1 = fourthDayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11908,7 +11908,7 @@ const thirdDayfiltered19Court10 = thirdDayfiltered19.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered19Court2 = fourthDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11920,7 +11920,7 @@ const thirdDayfiltered19Court10 = thirdDayfiltered19.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered19Court3 = fourthDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11932,7 +11932,7 @@ const fourthDayfiltered19Court3 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court4 = fourthDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11944,7 +11944,7 @@ const fourthDayfiltered19Court4 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court5 = fourthDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11956,7 +11956,7 @@ const fourthDayfiltered19Court5 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court6 = fourthDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11968,7 +11968,7 @@ const fourthDayfiltered19Court6 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court7 = fourthDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11980,7 +11980,7 @@ const fourthDayfiltered19Court7 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court8 = fourthDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -11992,7 +11992,7 @@ const fourthDayfiltered19Court8 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court9 = fourthDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12004,7 +12004,7 @@ const fourthDayfiltered19Court9 = fourthDayfiltered19.filter(result => result.co
   </div>)
 
 const fourthDayfiltered19Court10 = fourthDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12021,7 +12021,7 @@ const fourthDayfiltered19Court10 = fourthDayfiltered19.filter(result => result.c
       const fifthDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered19Court1 = fifthDayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12033,7 +12033,7 @@ const fourthDayfiltered19Court10 = fourthDayfiltered19.filter(result => result.c
         </div>)
 
       const fifthDayfiltered19Court2 = fifthDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12045,7 +12045,7 @@ const fourthDayfiltered19Court10 = fourthDayfiltered19.filter(result => result.c
         </div>)
 
 const fifthDayfiltered19Court3 = fifthDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12057,7 +12057,7 @@ const fifthDayfiltered19Court3 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court4 = fifthDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12069,7 +12069,7 @@ const fifthDayfiltered19Court4 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court5 = fifthDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12081,7 +12081,7 @@ const fifthDayfiltered19Court5 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court6 = fifthDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12093,7 +12093,7 @@ const fifthDayfiltered19Court6 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court7 = fifthDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12105,7 +12105,7 @@ const fifthDayfiltered19Court7 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court8 = fifthDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12117,7 +12117,7 @@ const fifthDayfiltered19Court8 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court9 = fifthDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12129,7 +12129,7 @@ const fifthDayfiltered19Court9 = fifthDayfiltered19.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered19Court10 = fifthDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12145,7 +12145,7 @@ const fifthDayfiltered19Court10 = fifthDayfiltered19.filter(result => result.cou
       const sixthDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered19Court1 = sixthDayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12157,7 +12157,7 @@ const fifthDayfiltered19Court10 = fifthDayfiltered19.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered19Court2 = sixthDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12169,7 +12169,7 @@ const fifthDayfiltered19Court10 = fifthDayfiltered19.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered19Court3 = sixthDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12181,7 +12181,7 @@ const sixthDayfiltered19Court3 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court4 = sixthDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12193,7 +12193,7 @@ const sixthDayfiltered19Court4 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court5 = sixthDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12205,7 +12205,7 @@ const sixthDayfiltered19Court5 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court6 = sixthDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12217,7 +12217,7 @@ const sixthDayfiltered19Court6 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court7 = sixthDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12229,7 +12229,7 @@ const sixthDayfiltered19Court7 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court8 = sixthDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12241,7 +12241,7 @@ const sixthDayfiltered19Court8 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court9 = sixthDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12253,7 +12253,7 @@ const sixthDayfiltered19Court9 = sixthDayfiltered19.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered19Court10 = sixthDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12270,7 +12270,7 @@ const sixthDayfiltered19Court10 = sixthDayfiltered19.filter(result => result.cou
       const lastDayfiltered19 = filtered19.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered19Court1 = lastDayfiltered19.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12282,7 +12282,7 @@ const sixthDayfiltered19Court10 = sixthDayfiltered19.filter(result => result.cou
         </div>)
 
       const lastDayfiltered19Court2 = lastDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12294,7 +12294,7 @@ const sixthDayfiltered19Court10 = sixthDayfiltered19.filter(result => result.cou
         </div>)
 
 const lastDayfiltered19Court3 = lastDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12306,7 +12306,7 @@ const lastDayfiltered19Court3 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court4 = lastDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12318,7 +12318,7 @@ const lastDayfiltered19Court4 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court5 = lastDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12330,7 +12330,7 @@ const lastDayfiltered19Court5 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court6 = lastDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12342,7 +12342,7 @@ const lastDayfiltered19Court6 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court7 = lastDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12354,7 +12354,7 @@ const lastDayfiltered19Court7 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court8 = lastDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12366,7 +12366,7 @@ const lastDayfiltered19Court8 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court9 = lastDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12378,7 +12378,7 @@ const lastDayfiltered19Court9 = lastDayfiltered19.filter(result => result.court_
   </div>)
 
 const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12400,7 +12400,7 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
     const todayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered20Court1 = todayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12412,7 +12412,7 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
       </div>)
 
     const todayfiltered20Court2 = todayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12424,7 +12424,7 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
       </div>)
 
 const todayfiltered20Court3 = todayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12436,7 +12436,7 @@ const todayfiltered20Court3 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court4 = todayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12448,7 +12448,7 @@ const todayfiltered20Court4 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court5 = todayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12460,7 +12460,7 @@ const todayfiltered20Court5 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court6 = todayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12472,7 +12472,7 @@ const todayfiltered20Court6 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court7 = todayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12484,7 +12484,7 @@ const todayfiltered20Court7 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court8 = todayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12496,7 +12496,7 @@ const todayfiltered20Court8 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court9 = todayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12508,7 +12508,7 @@ const todayfiltered20Court9 = todayfiltered20.filter(result => result.court_numb
 </div>)
 
 const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12525,7 +12525,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       const tomorrowfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered20Court1 = tomorrowfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12537,7 +12537,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered20Court2 = tomorrowfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12549,7 +12549,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered20Court3 = tomorrowfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12561,7 +12561,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court4 = tomorrowfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12573,7 +12573,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court5 = tomorrowfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12585,7 +12585,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court6 = tomorrowfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12597,7 +12597,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court7 = tomorrowfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12609,7 +12609,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court8 = tomorrowfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12621,7 +12621,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court9 = tomorrowfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12633,7 +12633,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered20Court10 = tomorrowfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12649,7 +12649,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
       const thirdDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered20Court1 = thirdDayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12661,7 +12661,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered20Court2 = thirdDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12673,7 +12673,7 @@ const todayfiltered20Court10 = todayfiltered20.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered20Court3 = thirdDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12685,7 +12685,7 @@ const thirdDayfiltered20Court3 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court4 = thirdDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12697,7 +12697,7 @@ const thirdDayfiltered20Court4 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court5 = thirdDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12709,7 +12709,7 @@ const thirdDayfiltered20Court5 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court6 = thirdDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12721,7 +12721,7 @@ const thirdDayfiltered20Court6 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court7 = thirdDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12733,7 +12733,7 @@ const thirdDayfiltered20Court7 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court8 = thirdDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12745,7 +12745,7 @@ const thirdDayfiltered20Court8 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court9 = thirdDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12757,7 +12757,7 @@ const thirdDayfiltered20Court9 = thirdDayfiltered20.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered20Court10 = thirdDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12774,7 +12774,7 @@ const thirdDayfiltered20Court10 = thirdDayfiltered20.filter(result => result.cou
       const fourthDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered20Court1 = fourthDayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12786,7 +12786,7 @@ const thirdDayfiltered20Court10 = thirdDayfiltered20.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered20Court2 = fourthDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12798,7 +12798,7 @@ const thirdDayfiltered20Court10 = thirdDayfiltered20.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered20Court3 = fourthDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12810,7 +12810,7 @@ const fourthDayfiltered20Court3 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court4 = fourthDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12822,7 +12822,7 @@ const fourthDayfiltered20Court4 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court5 = fourthDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12834,7 +12834,7 @@ const fourthDayfiltered20Court5 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court6 = fourthDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12846,7 +12846,7 @@ const fourthDayfiltered20Court6 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court7 = fourthDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12858,7 +12858,7 @@ const fourthDayfiltered20Court7 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court8 = fourthDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12870,7 +12870,7 @@ const fourthDayfiltered20Court8 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court9 = fourthDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12882,7 +12882,7 @@ const fourthDayfiltered20Court9 = fourthDayfiltered20.filter(result => result.co
   </div>)
 
 const fourthDayfiltered20Court10 = fourthDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12901,7 +12901,7 @@ const fourthDayfiltered20Court10 = fourthDayfiltered20.filter(result => result.c
       const fifthDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
     
       const fifthDayfiltered20Court1 = fifthDayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12913,7 +12913,7 @@ const fourthDayfiltered20Court10 = fourthDayfiltered20.filter(result => result.c
         </div>)
 
       const fifthDayfiltered20Court2 = fifthDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12925,7 +12925,7 @@ const fourthDayfiltered20Court10 = fourthDayfiltered20.filter(result => result.c
         </div>)
 
 const fifthDayfiltered20Court3 = fifthDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12937,7 +12937,7 @@ const fifthDayfiltered20Court3 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court4 = fifthDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12949,7 +12949,7 @@ const fifthDayfiltered20Court4 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court5 = fifthDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12961,7 +12961,7 @@ const fifthDayfiltered20Court5 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court6 = fifthDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12973,7 +12973,7 @@ const fifthDayfiltered20Court6 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court7 = fifthDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12985,7 +12985,7 @@ const fifthDayfiltered20Court7 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court8 = fifthDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -12997,7 +12997,7 @@ const fifthDayfiltered20Court8 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court9 = fifthDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13009,7 +13009,7 @@ const fifthDayfiltered20Court9 = fifthDayfiltered20.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered20Court10 = fifthDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13025,7 +13025,7 @@ const fifthDayfiltered20Court10 = fifthDayfiltered20.filter(result => result.cou
       const sixthDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
       
       const sixthDayfiltered20Court1 = sixthDayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13037,7 +13037,7 @@ const fifthDayfiltered20Court10 = fifthDayfiltered20.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered20Court2 = sixthDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13049,7 +13049,7 @@ const fifthDayfiltered20Court10 = fifthDayfiltered20.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered20Court3 = sixthDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13061,7 +13061,7 @@ const sixthDayfiltered20Court3 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court4 = sixthDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13073,7 +13073,7 @@ const sixthDayfiltered20Court4 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court5 = sixthDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13085,7 +13085,7 @@ const sixthDayfiltered20Court5 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court6 = sixthDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13097,7 +13097,7 @@ const sixthDayfiltered20Court6 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court7 = sixthDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13109,7 +13109,7 @@ const sixthDayfiltered20Court7 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court8 = sixthDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13121,7 +13121,7 @@ const sixthDayfiltered20Court8 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court9 = sixthDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13133,7 +13133,7 @@ const sixthDayfiltered20Court9 = sixthDayfiltered20.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered20Court10 = sixthDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13150,7 +13150,7 @@ const sixthDayfiltered20Court10 = sixthDayfiltered20.filter(result => result.cou
       const lastDayfiltered20 = filtered20.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered20Court1 = lastDayfiltered20.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13162,7 +13162,7 @@ const sixthDayfiltered20Court10 = sixthDayfiltered20.filter(result => result.cou
         </div>)
 
       const lastDayfiltered20Court2 = lastDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13174,7 +13174,7 @@ const sixthDayfiltered20Court10 = sixthDayfiltered20.filter(result => result.cou
         </div>)
 
 const lastDayfiltered20Court3 = lastDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13186,7 +13186,7 @@ const lastDayfiltered20Court3 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court4 = lastDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13198,7 +13198,7 @@ const lastDayfiltered20Court4 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court5 = lastDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13210,7 +13210,7 @@ const lastDayfiltered20Court5 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court6 = lastDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13222,7 +13222,7 @@ const lastDayfiltered20Court6 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court7 = lastDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13234,7 +13234,7 @@ const lastDayfiltered20Court7 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court8 = lastDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13246,7 +13246,7 @@ const lastDayfiltered20Court8 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court9 = lastDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13258,7 +13258,7 @@ const lastDayfiltered20Court9 = lastDayfiltered20.filter(result => result.court_
   </div>)
 
 const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13279,7 +13279,7 @@ const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court
   const todayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
   const todayfiltered21Court1 = todayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13291,7 +13291,7 @@ const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court
     </div>)
 
   const todayfiltered21Court2 = todayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13303,7 +13303,7 @@ const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court
     </div>)
 
 const todayfiltered21Court3 = todayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13315,7 +13315,7 @@ const todayfiltered21Court3 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court4 = todayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13327,7 +13327,7 @@ const todayfiltered21Court4 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court5 = todayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13339,7 +13339,7 @@ const todayfiltered21Court5 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court6 = todayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13351,7 +13351,7 @@ const todayfiltered21Court6 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court7 = todayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13363,7 +13363,7 @@ const todayfiltered21Court7 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court8 = todayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13375,7 +13375,7 @@ const todayfiltered21Court8 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court9 = todayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13387,7 +13387,7 @@ const todayfiltered21Court9 = todayfiltered21.filter(result => result.court_numb
 </div>)
 
 const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13404,7 +13404,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   const tomorrowfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
   const tomorrowfiltered21Court1 = tomorrowfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13416,7 +13416,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
     </div>)
   
   const tomorrowfiltered21Court2 = tomorrowfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13428,7 +13428,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
     </div>)
   
   const tomorrowfiltered21Court3 = tomorrowfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13440,7 +13440,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court4 = tomorrowfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13452,7 +13452,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court5 = tomorrowfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13464,7 +13464,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court6 = tomorrowfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13476,7 +13476,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court7 = tomorrowfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13488,7 +13488,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court8 = tomorrowfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13500,7 +13500,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court9 = tomorrowfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13512,7 +13512,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   </div>)
   
   const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13528,7 +13528,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
   const thirdDayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
   const thirdDayfiltered21Court1 = thirdDayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13540,7 +13540,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
     </div>)
 
   const thirdDayfiltered21Court2 = thirdDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13552,7 +13552,7 @@ const todayfiltered21Court10 = todayfiltered21.filter(result => result.court_num
     </div>)
 
 const thirdDayfiltered21Court3 = thirdDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13564,7 +13564,7 @@ const thirdDayfiltered21Court3 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court4 = thirdDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13576,7 +13576,7 @@ const thirdDayfiltered21Court4 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court5 = thirdDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13588,7 +13588,7 @@ const thirdDayfiltered21Court5 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court6 = thirdDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13600,7 +13600,7 @@ const thirdDayfiltered21Court6 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court7 = thirdDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13612,7 +13612,7 @@ const thirdDayfiltered21Court7 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court8 = thirdDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13624,7 +13624,7 @@ const thirdDayfiltered21Court8 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court9 = thirdDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13636,7 +13636,7 @@ const thirdDayfiltered21Court9 = thirdDayfiltered21.filter(result => result.cour
 </div>)
 
 const thirdDayfiltered21Court10 = thirdDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13653,7 +13653,7 @@ const thirdDayfiltered21Court10 = thirdDayfiltered21.filter(result => result.cou
   const fourthDayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
   const fourthDayfiltered21Court1 = fourthDayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13665,7 +13665,7 @@ const thirdDayfiltered21Court10 = thirdDayfiltered21.filter(result => result.cou
     </div>)
 
   const fourthDayfiltered21Court2 = fourthDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13677,7 +13677,7 @@ const thirdDayfiltered21Court10 = thirdDayfiltered21.filter(result => result.cou
     </div>)
 
 const fourthDayfiltered21Court3 = fourthDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13689,7 +13689,7 @@ const fourthDayfiltered21Court3 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court4 = fourthDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13701,7 +13701,7 @@ const fourthDayfiltered21Court4 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court5 = fourthDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13713,7 +13713,7 @@ const fourthDayfiltered21Court5 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court6 = fourthDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13725,7 +13725,7 @@ const fourthDayfiltered21Court6 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court7 = fourthDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13737,7 +13737,7 @@ const fourthDayfiltered21Court7 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court8 = fourthDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13749,7 +13749,7 @@ const fourthDayfiltered21Court8 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court9 = fourthDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13761,7 +13761,7 @@ const fourthDayfiltered21Court9 = fourthDayfiltered21.filter(result => result.co
 </div>)
 
 const fourthDayfiltered21Court10 = fourthDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13777,7 +13777,7 @@ const fourthDayfiltered21Court10 = fourthDayfiltered21.filter(result => result.c
   const fifthDayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
   const fifthDayfiltered21Court1 = fifthDayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13789,7 +13789,7 @@ const fourthDayfiltered21Court10 = fourthDayfiltered21.filter(result => result.c
     </div>)
 
   const fifthDayfiltered21Court2 = fifthDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13801,7 +13801,7 @@ const fourthDayfiltered21Court10 = fourthDayfiltered21.filter(result => result.c
     </div>)
 
 const fifthDayfiltered21Court3 = fifthDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13813,7 +13813,7 @@ const fifthDayfiltered21Court3 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court4 = fifthDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13825,7 +13825,7 @@ const fifthDayfiltered21Court4 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court5 = fifthDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13837,7 +13837,7 @@ const fifthDayfiltered21Court5 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court6 = fifthDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13849,7 +13849,7 @@ const fifthDayfiltered21Court6 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court7 = fifthDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13861,7 +13861,7 @@ const fifthDayfiltered21Court7 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court8 = fifthDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13873,7 +13873,7 @@ const fifthDayfiltered21Court8 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court9 = fifthDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13885,7 +13885,7 @@ const fifthDayfiltered21Court9 = fifthDayfiltered21.filter(result => result.cour
 </div>)
 
 const fifthDayfiltered21Court10 = fifthDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13902,7 +13902,7 @@ const fifthDayfiltered21Court10 = fifthDayfiltered21.filter(result => result.cou
   const sixthDayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
   const sixthDayfiltered21Court1 = sixthDayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13914,7 +13914,7 @@ const fifthDayfiltered21Court10 = fifthDayfiltered21.filter(result => result.cou
     </div>)
 
   const sixthDayfiltered21Court2 = sixthDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13926,7 +13926,7 @@ const fifthDayfiltered21Court10 = fifthDayfiltered21.filter(result => result.cou
     </div>)
 
 const sixthDayfiltered21Court3 = sixthDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13938,7 +13938,7 @@ const sixthDayfiltered21Court3 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court4 = sixthDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13950,7 +13950,7 @@ const sixthDayfiltered21Court4 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court5 = sixthDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13962,7 +13962,7 @@ const sixthDayfiltered21Court5 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court6 = sixthDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13974,7 +13974,7 @@ const sixthDayfiltered21Court6 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court7 = sixthDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13986,7 +13986,7 @@ const sixthDayfiltered21Court7 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court8 = sixthDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -13998,7 +13998,7 @@ const sixthDayfiltered21Court8 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court9 = sixthDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14010,7 +14010,7 @@ const sixthDayfiltered21Court9 = sixthDayfiltered21.filter(result => result.cour
 </div>)
 
 const sixthDayfiltered21Court10 = sixthDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14027,7 +14027,7 @@ const sixthDayfiltered21Court10 = sixthDayfiltered21.filter(result => result.cou
   const lastDayfiltered21 = filtered21.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
   const lastDayfiltered21Court1 = lastDayfiltered21.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14039,7 +14039,7 @@ const sixthDayfiltered21Court10 = sixthDayfiltered21.filter(result => result.cou
     </div>)
 
   const lastDayfiltered21Court2 = lastDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-    <h4 className={styles.reservedH4}>RESERVED</h4>
+    <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
     <p className={styles.reserveP}>Type: {result.type_of_play}</p>
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14051,7 +14051,7 @@ const sixthDayfiltered21Court10 = sixthDayfiltered21.filter(result => result.cou
     </div>)
 
 const lastDayfiltered21Court3 = lastDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14063,7 +14063,7 @@ const lastDayfiltered21Court3 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court4 = lastDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14075,7 +14075,7 @@ const lastDayfiltered21Court4 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court5 = lastDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14087,7 +14087,7 @@ const lastDayfiltered21Court5 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court6 = lastDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14099,7 +14099,7 @@ const lastDayfiltered21Court6 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court7 = lastDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14111,7 +14111,7 @@ const lastDayfiltered21Court7 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court8 = lastDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14123,7 +14123,7 @@ const lastDayfiltered21Court8 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court9 = lastDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14135,7 +14135,7 @@ const lastDayfiltered21Court9 = lastDayfiltered21.filter(result => result.court_
 </div>)
 
 const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14156,7 +14156,7 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
     const todayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(date, 'MM/dd'))
 
     const todayfiltered22Court1 = todayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14168,7 +14168,7 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
       </div>)
 
     const todayfiltered22Court2 = todayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14180,7 +14180,7 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
       </div>)
 
 const todayfiltered22Court3 = todayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14192,7 +14192,7 @@ const todayfiltered22Court3 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court4 = todayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14204,7 +14204,7 @@ const todayfiltered22Court4 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court5 = todayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14216,7 +14216,7 @@ const todayfiltered22Court5 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court6 = todayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14228,7 +14228,7 @@ const todayfiltered22Court6 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court7 = todayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14240,7 +14240,7 @@ const todayfiltered22Court7 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court8 = todayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14252,7 +14252,7 @@ const todayfiltered22Court8 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court9 = todayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14264,7 +14264,7 @@ const todayfiltered22Court9 = todayfiltered22.filter(result => result.court_numb
 </div>)
 
 const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-<h4 className={styles.reservedH4}>RESERVED</h4>
+<h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
 <p className={styles.reserveP}>Type: {result.type_of_play}</p>
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14280,7 +14280,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       const tomorrowfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(tomorrow, 'MM/dd'))
 
       const tomorrowfiltered22Court1 = tomorrowfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14292,7 +14292,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered22Court2 = tomorrowfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14304,7 +14304,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
         </div>)
       
       const tomorrowfiltered22Court3 = tomorrowfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14316,7 +14316,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court4 = tomorrowfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14328,7 +14328,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court5 = tomorrowfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14340,7 +14340,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court6 = tomorrowfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14352,7 +14352,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court7 = tomorrowfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14364,7 +14364,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court8 = tomorrowfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14376,7 +14376,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court9 = tomorrowfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14388,7 +14388,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       </div>)
       
       const tomorrowfiltered22Court10 = tomorrowfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-      <h4 className={styles.reservedH4}>RESERVED</h4>
+      <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
       <p className={styles.reserveP}>Type: {result.type_of_play}</p>
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14404,7 +14404,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
       const thirdDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day3, 'MM/dd'))
 
       const thirdDayfiltered22Court1 = thirdDayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14416,7 +14416,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
         </div>)
 
       const thirdDayfiltered22Court2 = thirdDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14428,7 +14428,7 @@ const todayfiltered22Court10 = todayfiltered22.filter(result => result.court_num
         </div>)
 
 const thirdDayfiltered22Court3 = thirdDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14440,7 +14440,7 @@ const thirdDayfiltered22Court3 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court4 = thirdDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14452,7 +14452,7 @@ const thirdDayfiltered22Court4 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court5 = thirdDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14464,7 +14464,7 @@ const thirdDayfiltered22Court5 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court6 = thirdDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14476,7 +14476,7 @@ const thirdDayfiltered22Court6 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court7 = thirdDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14488,7 +14488,7 @@ const thirdDayfiltered22Court7 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court8 = thirdDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14500,7 +14500,7 @@ const thirdDayfiltered22Court8 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court9 = thirdDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14512,7 +14512,7 @@ const thirdDayfiltered22Court9 = thirdDayfiltered22.filter(result => result.cour
   </div>)
 
 const thirdDayfiltered22Court10 = thirdDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14528,7 +14528,7 @@ const thirdDayfiltered22Court10 = thirdDayfiltered22.filter(result => result.cou
       const fourthDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day4, 'MM/dd'))
 
       const fourthDayfiltered22Court1 = fourthDayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14540,7 +14540,7 @@ const thirdDayfiltered22Court10 = thirdDayfiltered22.filter(result => result.cou
         </div>)
 
       const fourthDayfiltered22Court2 = fourthDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14552,7 +14552,7 @@ const thirdDayfiltered22Court10 = thirdDayfiltered22.filter(result => result.cou
         </div>)
 
 const fourthDayfiltered22Court3 = fourthDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14564,7 +14564,7 @@ const fourthDayfiltered22Court3 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court4 = fourthDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14576,7 +14576,7 @@ const fourthDayfiltered22Court4 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court5 = fourthDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14588,7 +14588,7 @@ const fourthDayfiltered22Court5 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court6 = fourthDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14600,7 +14600,7 @@ const fourthDayfiltered22Court6 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court7 = fourthDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14612,7 +14612,7 @@ const fourthDayfiltered22Court7 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court8 = fourthDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14624,7 +14624,7 @@ const fourthDayfiltered22Court8 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court9 = fourthDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14636,7 +14636,7 @@ const fourthDayfiltered22Court9 = fourthDayfiltered22.filter(result => result.co
   </div>)
 
 const fourthDayfiltered22Court10 = fourthDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14653,7 +14653,7 @@ const fourthDayfiltered22Court10 = fourthDayfiltered22.filter(result => result.c
       const fifthDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day5, 'MM/dd'))
 
       const fifthDayfiltered22Court1 = fifthDayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14665,7 +14665,7 @@ const fourthDayfiltered22Court10 = fourthDayfiltered22.filter(result => result.c
         </div>)
 
       const fifthDayfiltered22Court2 = fifthDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14677,7 +14677,7 @@ const fourthDayfiltered22Court10 = fourthDayfiltered22.filter(result => result.c
         </div>)
 
 const fifthDayfiltered22Court3 = fifthDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14689,7 +14689,7 @@ const fifthDayfiltered22Court3 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court4 = fifthDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14701,7 +14701,7 @@ const fifthDayfiltered22Court4 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court5 = fifthDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14713,7 +14713,7 @@ const fifthDayfiltered22Court5 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court6 = fifthDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14725,7 +14725,7 @@ const fifthDayfiltered22Court6 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court7 = fifthDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14737,7 +14737,7 @@ const fifthDayfiltered22Court7 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court8 = fifthDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14749,7 +14749,7 @@ const fifthDayfiltered22Court8 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court9 = fifthDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14761,7 +14761,7 @@ const fifthDayfiltered22Court9 = fifthDayfiltered22.filter(result => result.cour
   </div>)
 
 const fifthDayfiltered22Court10 = fifthDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14778,7 +14778,7 @@ const fifthDayfiltered22Court10 = fifthDayfiltered22.filter(result => result.cou
       const sixthDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(day6, 'MM/dd'))
 
       const sixthDayfiltered22Court1 = sixthDayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14790,7 +14790,7 @@ const fifthDayfiltered22Court10 = fifthDayfiltered22.filter(result => result.cou
         </div>)
 
       const sixthDayfiltered22Court2 = sixthDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14802,7 +14802,7 @@ const fifthDayfiltered22Court10 = fifthDayfiltered22.filter(result => result.cou
         </div>)
 
 const sixthDayfiltered22Court3 = sixthDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14814,7 +14814,7 @@ const sixthDayfiltered22Court3 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court4 = sixthDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14826,7 +14826,7 @@ const sixthDayfiltered22Court4 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court5 = sixthDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14838,7 +14838,7 @@ const sixthDayfiltered22Court5 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court6 = sixthDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14850,7 +14850,7 @@ const sixthDayfiltered22Court6 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court7 = sixthDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14862,7 +14862,7 @@ const sixthDayfiltered22Court7 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court8 = sixthDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14874,7 +14874,7 @@ const sixthDayfiltered22Court8 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court9 = sixthDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14886,7 +14886,7 @@ const sixthDayfiltered22Court9 = sixthDayfiltered22.filter(result => result.cour
   </div>)
 
 const sixthDayfiltered22Court10 = sixthDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14903,7 +14903,7 @@ const sixthDayfiltered22Court10 = sixthDayfiltered22.filter(result => result.cou
       const lastDayfiltered22 = filtered22.filter(result => `${result.date.substring(5,7)}/${result.date.substring(8,10)}` === format(lastday, 'MM/dd'))
 
       const lastDayfiltered22Court1 = lastDayfiltered22.filter(result => result.court_number_id === 1).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14915,7 +14915,7 @@ const sixthDayfiltered22Court10 = sixthDayfiltered22.filter(result => result.cou
         </div>)
 
       const lastDayfiltered22Court2 = lastDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
-        <h4 className={styles.reservedH4}>RESERVED</h4>
+        <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
         <p className={styles.reserveP}>Type: {result.type_of_play}</p>
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14927,7 +14927,7 @@ const sixthDayfiltered22Court10 = sixthDayfiltered22.filter(result => result.cou
         </div>)
 
 const lastDayfiltered22Court3 = lastDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14939,7 +14939,7 @@ const lastDayfiltered22Court3 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court4 = lastDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14951,7 +14951,7 @@ const lastDayfiltered22Court4 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court5 = lastDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14963,7 +14963,7 @@ const lastDayfiltered22Court5 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court6 = lastDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14975,7 +14975,7 @@ const lastDayfiltered22Court6 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court7 = lastDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14987,7 +14987,7 @@ const lastDayfiltered22Court7 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court8 = lastDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -14999,7 +14999,7 @@ const lastDayfiltered22Court8 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court9 = lastDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
@@ -15011,42 +15011,86 @@ const lastDayfiltered22Court9 = lastDayfiltered22.filter(result => result.court_
   </div>)
 
 const lastDayfiltered22Court10 = lastDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
-  <h4 className={styles.reservedH4}>RESERVED</h4>
+  <h4 className={styles.reservedH4}>COURT {result.court_number_id} RESERVED</h4>
   <p className={styles.reserveP}>Type: {result.type_of_play}</p>
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
   <p className={styles.reserveP}>Spots Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={reserveSpotUser2}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={reserveSpotUser3} value={result.id}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={reserveSpotUser4} value={result.id}>sign up!</button>}</p>
   </div>)
 
     // FUNCTIONS
 
- 
-    
     
   
 
   function reserveSpotUser2() {
-    return "hi"
-    /* patch request to pickleball.id with user id
-      make SURE IT CANNOT OVERWRITE A USER ALREADY SIGNED UP
-    */
-  }
+    /*
+      event.preventDefault()
+  
+      const editedPlayer = {
+          "user2_id": user.id
+      }
+  
+      fetch(`/pickleballs/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(editedPlayer),
+      })
+      .then(r => r.json())
+      .then((data) => {
+        window.location.reload()
+      })
+      */
+    }
+  
 
   function reserveSpotUser3() {
-    return "hi"
-    /* patch request to pickleball.id with user id
-      make SURE IT CANNOT OVERWRITE A USER ALREADY SIGNED UP
+    /*
+      event.preventDefault()
+  
+      const editedPlayer = {
+        "user3_id": user.id
+    }
+
+    fetch(`/pickleballs/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPlayer),
+    })
+    .then(r => r.json())
+    .then((data) => {
+      window.location.reload()
+    })
     */
   }
 
   function reserveSpotUser4() {
-    return "hi"
-    /* patch request to pickleball.id with user id
-      make SURE IT CANNOT OVERWRITE A USER ALREADY SIGNED UP
+    /*
+    event.preventDefault()
+  
+      const editedPlayer = {
+        "user4_id": user.id
+    }
+
+    fetch(`/pickleballs/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPlayer),
+    })
+    .then(r => r.json())
+    .then((data) => {
+      window.location.reload()
+    })
     */
   }
 
@@ -15055,15 +15099,6 @@ const lastDayfiltered22Court10 = lastDayfiltered22.filter(result => result.court
   return (
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
-      <label>view another court:
-      <select className={styles.categories} >
-        <option value="jobs">jobs</option>
-        <option value="services">services</option>
-        <option value="housing">housing</option>
-        <option value="community">community</option>
-        <option value="events">events</option>
-      </select>
-      </label>
       <table className={styles.table}>
           <tbody>
             <tr className={styles.tableRowDays}>
