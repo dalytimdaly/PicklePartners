@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_11_01_152557) do
     t.string "address"
     t.string "phone_number"
     t.string "hours"
+    t.string "image"
     t.integer "court_number1"
     t.integer "court_number2"
     t.integer "court_number3"

@@ -5,6 +5,7 @@ class CreateCourts < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :phone_number
       t.string :hours
+      t.string :image
       t.integer :court_number1
       t.integer :court_number2
       t.integer :court_number3
