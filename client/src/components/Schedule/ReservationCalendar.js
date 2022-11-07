@@ -1,6 +1,6 @@
 import styles from './ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
 
@@ -9,7 +9,7 @@ export default function ReservationCalendar({ user }) {
   const [ results, setResults ] = useState([]);
   const [ court, setCourt ] = useState([])
   const [ errors, setErrors ] = useState([]);
-  const { term } = useParams();
+  
 
   const courtId = window.location.href.toString().substring(31,32)
 
@@ -109,97 +109,27 @@ export default function ReservationCalendar({ user }) {
   })
 
 
-
-
-    // FUNCTIONS
-
-    
   
-
-  function reserveSpotUser2(event) {
-    console.log(event.target.value)
-    console.log("hi")
-    /*
-      event.preventDefault()
-  
-      const editedPlayer = {
-          "user2_id": user.id
-      }
-  
-      fetch(`/pickleballs/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(editedPlayer),
-      })
-      .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
-      */
-    }
-  
-
-  function reserveSpotUser3(event) {
-    console.log(event.target.value)
-    console.log("hi")
-    /*
-      event.preventDefault()
-  
-      const editedPlayer = {
-        "user3_id": user.id
-    }
-
-    fetch(`/pickleballs/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(editedPlayer),
-    })
-    .then(r => r.json())
-    .then((data) => {
-      window.location.reload()
-    })
-    */
-  }
-
-  function reserveSpotUser4(event) {
-    console.log(event.target.value)
-    console.log("hi")
-    /*
-    event.preventDefault()
-  
-      const editedPlayer = {
-        "user4_id": user.id
-    }
-
-    fetch(`/pickleballs/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(editedPlayer),
-    })
-    .then(r => r.json())
-    .then((data) => {
-      window.location.reload()
-    })
-    */
-  }
 
   
 
   return (
     <div>
-    <Link>Reservations {date}</Link>
-    <Link>Reservations {tomorrow}</Link>
-    <Link>Reservations {day3}</Link>
-    <Link>Reservations {day4}</Link>
-    <Link>Reservations {day5}</Link>
-    <Link>Reservations {day6}</Link>
-    <Link>Reservations {day7}</Link>
+     
+    <Link to={`/schedule/${courtId}/today`}>{format(date, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(tomorrow, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(day3, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(day4, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(day5, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(day6, 'MM/dd')}</Link>
+    <br></br>
+    <Link to={`/schedule/${courtId}/today`}>{format(lastday, 'MM/dd')}</Link>
+    <br></br>
     </div>
   )
 }

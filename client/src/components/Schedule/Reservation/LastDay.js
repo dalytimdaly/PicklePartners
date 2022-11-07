@@ -1,9 +1,9 @@
-import styles from './ReservationCalendar.module.css'
+import styles from '../ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
-export default function LastDay() {
+export default function LastDay({user}) {
 
   const [ results, setResults ] = useState([]);
   const [ court, setCourt ] = useState([])
@@ -53,43 +53,15 @@ export default function LastDay() {
 
     
   
-
     function reserveSpotUser2(event) {
-      console.log(event.target.value)
-      console.log("hi")
-      /*
-        event.preventDefault()
     
-        const editedPlayer = {
-            "user2_id": user.id
-        }
-    
-        fetch(`/pickleballs/${id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(editedPlayer),
-        })
-        .then(r => r.json())
-        .then((data) => {
-          window.location.reload()
-        })
-        */
-      }
-    
+      event.preventDefault()
   
-    function reserveSpotUser3(event) {
-      console.log(event.target.value)
-      console.log("hi")
-      /*
-        event.preventDefault()
-    
-        const editedPlayer = {
-          "user3_id": user.id
+      const editedPlayer = {
+          "user2_id": user.id
       }
   
-      fetch(`/pickleballs/${id}`, {
+      fetch(`/pickleballs/${event.target.value}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -100,20 +72,43 @@ export default function LastDay() {
       .then((data) => {
         window.location.reload()
       })
-      */
+     
     }
   
+
+  function reserveSpotUser3(event) {
+
+      event.preventDefault()
+  
+      const editedPlayer = {
+        "user3_id": user.id
+    }
+
+    console.log(editedPlayer)
+
+    fetch(`/pickleballs/${event.target.value}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedPlayer),
+    })
+    .then(r => r.json())
+    .then((data) => {
+      window.location.reload()
+    })
+   
+  }
+  
     function reserveSpotUser4(event) {
-      console.log(event.target.value)
-      console.log("hi")
-      /*
+
       event.preventDefault()
     
         const editedPlayer = {
           "user4_id": user.id
       }
   
-      fetch(`/pickleballs/${id}`, {
+      fetch(`/pickleballs/${event.target.value}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +119,7 @@ export default function LastDay() {
       .then((data) => {
         window.location.reload()
       })
-      */
+      
     }
   
 
@@ -144,9 +139,9 @@ export default function LastDay() {
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
     <p className={styles.reserveP}>Spots Available:</p>
-    <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+    <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
     </div>)
 
   const lastDayfiltered6Court2 = lastDayfiltered6.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -156,9 +151,9 @@ export default function LastDay() {
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
     <p className={styles.reserveP}>Spots Available:</p>
-    <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+    <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+    <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
     </div>)
 
 const lastDayfiltered6Court3 = lastDayfiltered6.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -168,9 +163,9 @@ const lastDayfiltered6Court3 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court4 = lastDayfiltered6.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -180,9 +175,9 @@ const lastDayfiltered6Court4 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court5 = lastDayfiltered6.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -192,9 +187,9 @@ const lastDayfiltered6Court5 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court6 = lastDayfiltered6.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -204,9 +199,9 @@ const lastDayfiltered6Court6 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court7 = lastDayfiltered6.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -216,9 +211,9 @@ const lastDayfiltered6Court7 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court8 = lastDayfiltered6.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -228,9 +223,9 @@ const lastDayfiltered6Court8 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court9 = lastDayfiltered6.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -240,9 +235,9 @@ const lastDayfiltered6Court9 = lastDayfiltered6.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -252,9 +247,9 @@ const lastDayfiltered6Court10 = lastDayfiltered6.filter(result => result.court_n
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 
@@ -274,9 +269,9 @@ const filtered7 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered7Court2 = lastDayfiltered7.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -286,9 +281,9 @@ const filtered7 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered7Court3 = lastDayfiltered7.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -298,9 +293,9 @@ const lastDayfiltered7Court3 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court4 = lastDayfiltered7.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -310,9 +305,9 @@ const lastDayfiltered7Court4 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court5 = lastDayfiltered7.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -322,9 +317,9 @@ const lastDayfiltered7Court5 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court6 = lastDayfiltered7.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -334,9 +329,9 @@ const lastDayfiltered7Court6 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court7 = lastDayfiltered7.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -346,9 +341,9 @@ const lastDayfiltered7Court7 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court8 = lastDayfiltered7.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -358,9 +353,9 @@ const lastDayfiltered7Court8 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court9 = lastDayfiltered7.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -370,9 +365,9 @@ const lastDayfiltered7Court9 = lastDayfiltered7.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -382,9 +377,9 @@ const lastDayfiltered7Court10 = lastDayfiltered7.filter(result => result.court_n
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 8
@@ -406,9 +401,9 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered8Court2 = lastDayfiltered8.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -418,9 +413,9 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered8Court3 = lastDayfiltered8.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -430,9 +425,9 @@ const lastDayfiltered8Court3 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court4 = lastDayfiltered8.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -442,9 +437,9 @@ const lastDayfiltered8Court4 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court5 = lastDayfiltered8.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -454,9 +449,9 @@ const lastDayfiltered8Court5 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court6 = lastDayfiltered8.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -466,9 +461,9 @@ const lastDayfiltered8Court6 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court7 = lastDayfiltered8.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -478,9 +473,9 @@ const lastDayfiltered8Court7 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court8 = lastDayfiltered8.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -490,9 +485,9 @@ const lastDayfiltered8Court8 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court9 = lastDayfiltered8.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -502,9 +497,9 @@ const lastDayfiltered8Court9 = lastDayfiltered8.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -514,9 +509,9 @@ const lastDayfiltered8Court10 = lastDayfiltered8.filter(result => result.court_n
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 
@@ -540,9 +535,9 @@ const filtered9 = results.filter(result => result.time === 9)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered9Court2 = lastDayfiltered9.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -552,9 +547,9 @@ const filtered9 = results.filter(result => result.time === 9)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered9Court3 = lastDayfiltered9.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -564,9 +559,9 @@ const lastDayfiltered9Court3 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court4 = lastDayfiltered9.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -576,9 +571,9 @@ const lastDayfiltered9Court4 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court5 = lastDayfiltered9.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -588,9 +583,9 @@ const lastDayfiltered9Court5 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court6 = lastDayfiltered9.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -600,9 +595,9 @@ const lastDayfiltered9Court6 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court7 = lastDayfiltered9.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -612,9 +607,9 @@ const lastDayfiltered9Court7 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court8 = lastDayfiltered9.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -624,9 +619,9 @@ const lastDayfiltered9Court8 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court9 = lastDayfiltered9.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -636,9 +631,9 @@ const lastDayfiltered9Court9 = lastDayfiltered9.filter(result => result.court_nu
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -648,9 +643,9 @@ const lastDayfiltered9Court10 = lastDayfiltered9.filter(result => result.court_n
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 10
@@ -670,9 +665,9 @@ const filtered10 = results.filter(result => result.time === 10)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered10Court2 = lastDayfiltered10.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -682,9 +677,9 @@ const filtered10 = results.filter(result => result.time === 10)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered10Court3 = lastDayfiltered10.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -694,9 +689,9 @@ const lastDayfiltered10Court3 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court4 = lastDayfiltered10.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -706,9 +701,9 @@ const lastDayfiltered10Court4 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court5 = lastDayfiltered10.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -718,9 +713,9 @@ const lastDayfiltered10Court5 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court6 = lastDayfiltered10.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -730,9 +725,9 @@ const lastDayfiltered10Court6 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court7 = lastDayfiltered10.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -742,9 +737,9 @@ const lastDayfiltered10Court7 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court8 = lastDayfiltered10.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -754,9 +749,9 @@ const lastDayfiltered10Court8 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court9 = lastDayfiltered10.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -766,9 +761,9 @@ const lastDayfiltered10Court9 = lastDayfiltered10.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -778,9 +773,9 @@ const lastDayfiltered10Court10 = lastDayfiltered10.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 
@@ -801,9 +796,9 @@ const filtered11 = results.filter(result => result.time === 11)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered11Court2 = lastDayfiltered11.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -813,9 +808,9 @@ const filtered11 = results.filter(result => result.time === 11)
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered11Court3 = lastDayfiltered11.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -825,9 +820,9 @@ const lastDayfiltered11Court3 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court4 = lastDayfiltered11.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -837,9 +832,9 @@ const lastDayfiltered11Court4 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court5 = lastDayfiltered11.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -849,9 +844,9 @@ const lastDayfiltered11Court5 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court6 = lastDayfiltered11.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -861,9 +856,9 @@ const lastDayfiltered11Court6 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court7 = lastDayfiltered11.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -873,9 +868,9 @@ const lastDayfiltered11Court7 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court8 = lastDayfiltered11.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -885,9 +880,9 @@ const lastDayfiltered11Court8 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court9 = lastDayfiltered11.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -897,9 +892,9 @@ const lastDayfiltered11Court9 = lastDayfiltered11.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -909,9 +904,9 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 12
@@ -933,9 +928,9 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered12Court2 = lastDayfiltered12.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -945,9 +940,9 @@ const lastDayfiltered11Court10 = lastDayfiltered11.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered12Court3 = lastDayfiltered12.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -957,9 +952,9 @@ const lastDayfiltered12Court3 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court4 = lastDayfiltered12.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -969,9 +964,9 @@ const lastDayfiltered12Court4 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court5 = lastDayfiltered12.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -981,9 +976,9 @@ const lastDayfiltered12Court5 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court6 = lastDayfiltered12.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -993,9 +988,9 @@ const lastDayfiltered12Court6 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court7 = lastDayfiltered12.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1005,9 +1000,9 @@ const lastDayfiltered12Court7 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court8 = lastDayfiltered12.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1017,9 +1012,9 @@ const lastDayfiltered12Court8 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court9 = lastDayfiltered12.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1029,9 +1024,9 @@ const lastDayfiltered12Court9 = lastDayfiltered12.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1041,9 +1036,9 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 13
@@ -1063,9 +1058,9 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered13Court2 = lastDayfiltered13.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1075,9 +1070,9 @@ const lastDayfiltered12Court10 = lastDayfiltered12.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered13Court3 = lastDayfiltered13.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1087,9 +1082,9 @@ const lastDayfiltered13Court3 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court4 = lastDayfiltered13.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1099,9 +1094,9 @@ const lastDayfiltered13Court4 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court5 = lastDayfiltered13.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1111,9 +1106,9 @@ const lastDayfiltered13Court5 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court6 = lastDayfiltered13.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1123,9 +1118,9 @@ const lastDayfiltered13Court6 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court7 = lastDayfiltered13.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1135,9 +1130,9 @@ const lastDayfiltered13Court7 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court8 = lastDayfiltered13.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1147,9 +1142,9 @@ const lastDayfiltered13Court8 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court9 = lastDayfiltered13.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1159,9 +1154,9 @@ const lastDayfiltered13Court9 = lastDayfiltered13.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1171,9 +1166,9 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 14
@@ -1193,9 +1188,9 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered14Court2 = lastDayfiltered14.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1205,9 +1200,9 @@ const lastDayfiltered13Court10 = lastDayfiltered13.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered14Court3 = lastDayfiltered14.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1217,9 +1212,9 @@ const lastDayfiltered14Court3 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court4 = lastDayfiltered14.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1229,9 +1224,9 @@ const lastDayfiltered14Court4 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court5 = lastDayfiltered14.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1241,9 +1236,9 @@ const lastDayfiltered14Court5 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court6 = lastDayfiltered14.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1253,9 +1248,9 @@ const lastDayfiltered14Court6 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court7 = lastDayfiltered14.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1265,9 +1260,9 @@ const lastDayfiltered14Court7 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court8 = lastDayfiltered14.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1277,9 +1272,9 @@ const lastDayfiltered14Court8 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court9 = lastDayfiltered14.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1289,9 +1284,9 @@ const lastDayfiltered14Court9 = lastDayfiltered14.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1301,9 +1296,9 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 15
@@ -1323,9 +1318,9 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered15Court2 = lastDayfiltered15.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1335,9 +1330,9 @@ const lastDayfiltered14Court10 = lastDayfiltered14.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered15Court3 = lastDayfiltered15.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1347,9 +1342,9 @@ const lastDayfiltered15Court3 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court4 = lastDayfiltered15.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1359,9 +1354,9 @@ const lastDayfiltered15Court4 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court5 = lastDayfiltered15.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1371,9 +1366,9 @@ const lastDayfiltered15Court5 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court6 = lastDayfiltered15.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1383,9 +1378,9 @@ const lastDayfiltered15Court6 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court7 = lastDayfiltered15.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1395,9 +1390,9 @@ const lastDayfiltered15Court7 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court8 = lastDayfiltered15.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1407,9 +1402,9 @@ const lastDayfiltered15Court8 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court9 = lastDayfiltered15.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1419,9 +1414,9 @@ const lastDayfiltered15Court9 = lastDayfiltered15.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1431,9 +1426,9 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 16
@@ -1454,9 +1449,9 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered16Court2 = lastDayfiltered16.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1466,9 +1461,9 @@ const lastDayfiltered15Court10 = lastDayfiltered15.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered16Court3 = lastDayfiltered16.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1478,9 +1473,9 @@ const lastDayfiltered16Court3 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court4 = lastDayfiltered16.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1490,9 +1485,9 @@ const lastDayfiltered16Court4 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court5 = lastDayfiltered16.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1502,9 +1497,9 @@ const lastDayfiltered16Court5 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court6 = lastDayfiltered16.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1514,9 +1509,9 @@ const lastDayfiltered16Court6 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court7 = lastDayfiltered16.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1526,9 +1521,9 @@ const lastDayfiltered16Court7 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court8 = lastDayfiltered16.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1538,9 +1533,9 @@ const lastDayfiltered16Court8 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court9 = lastDayfiltered16.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1550,9 +1545,9 @@ const lastDayfiltered16Court9 = lastDayfiltered16.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1562,9 +1557,9 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 
@@ -1586,9 +1581,9 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered17Court2 = lastDayfiltered17.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1598,9 +1593,9 @@ const lastDayfiltered16Court10 = lastDayfiltered16.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered17Court3 = lastDayfiltered17.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1610,9 +1605,9 @@ const lastDayfiltered17Court3 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court4 = lastDayfiltered17.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1622,9 +1617,9 @@ const lastDayfiltered17Court4 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court5 = lastDayfiltered17.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1634,9 +1629,9 @@ const lastDayfiltered17Court5 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court6 = lastDayfiltered17.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1646,9 +1641,9 @@ const lastDayfiltered17Court6 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court7 = lastDayfiltered17.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1658,9 +1653,9 @@ const lastDayfiltered17Court7 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court8 = lastDayfiltered17.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1670,9 +1665,9 @@ const lastDayfiltered17Court8 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court9 = lastDayfiltered17.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1682,9 +1677,9 @@ const lastDayfiltered17Court9 = lastDayfiltered17.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1694,9 +1689,9 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 18
@@ -1716,9 +1711,9 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered18Court2 = lastDayfiltered18.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1728,9 +1723,9 @@ const lastDayfiltered17Court10 = lastDayfiltered17.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered18Court3 = lastDayfiltered18.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1740,9 +1735,9 @@ const lastDayfiltered18Court3 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court4 = lastDayfiltered18.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1752,9 +1747,9 @@ const lastDayfiltered18Court4 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court5 = lastDayfiltered18.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1764,9 +1759,9 @@ const lastDayfiltered18Court5 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court6 = lastDayfiltered18.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1776,9 +1771,9 @@ const lastDayfiltered18Court6 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court7 = lastDayfiltered18.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1788,9 +1783,9 @@ const lastDayfiltered18Court7 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court8 = lastDayfiltered18.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1800,9 +1795,9 @@ const lastDayfiltered18Court8 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court9 = lastDayfiltered18.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1812,9 +1807,9 @@ const lastDayfiltered18Court9 = lastDayfiltered18.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1824,9 +1819,9 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 19
@@ -1847,9 +1842,9 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered19Court2 = lastDayfiltered19.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1859,9 +1854,9 @@ const lastDayfiltered18Court10 = lastDayfiltered18.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered19Court3 = lastDayfiltered19.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1871,9 +1866,9 @@ const lastDayfiltered19Court3 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court4 = lastDayfiltered19.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1883,9 +1878,9 @@ const lastDayfiltered19Court4 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court5 = lastDayfiltered19.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1895,9 +1890,9 @@ const lastDayfiltered19Court5 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court6 = lastDayfiltered19.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1907,9 +1902,9 @@ const lastDayfiltered19Court6 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court7 = lastDayfiltered19.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1919,9 +1914,9 @@ const lastDayfiltered19Court7 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court8 = lastDayfiltered19.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1931,9 +1926,9 @@ const lastDayfiltered19Court8 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court9 = lastDayfiltered19.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1943,9 +1938,9 @@ const lastDayfiltered19Court9 = lastDayfiltered19.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1955,9 +1950,9 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 20
@@ -1978,9 +1973,9 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered20Court2 = lastDayfiltered20.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -1990,9 +1985,9 @@ const lastDayfiltered19Court10 = lastDayfiltered19.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered20Court3 = lastDayfiltered20.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2002,9 +1997,9 @@ const lastDayfiltered20Court3 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court4 = lastDayfiltered20.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2014,9 +2009,9 @@ const lastDayfiltered20Court4 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court5 = lastDayfiltered20.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2026,9 +2021,9 @@ const lastDayfiltered20Court5 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court6 = lastDayfiltered20.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2038,9 +2033,9 @@ const lastDayfiltered20Court6 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court7 = lastDayfiltered20.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2050,9 +2045,9 @@ const lastDayfiltered20Court7 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court8 = lastDayfiltered20.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2062,9 +2057,9 @@ const lastDayfiltered20Court8 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court9 = lastDayfiltered20.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2074,9 +2069,9 @@ const lastDayfiltered20Court9 = lastDayfiltered20.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2086,9 +2081,9 @@ const lastDayfiltered20Court10 = lastDayfiltered20.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 // HOUR 21
@@ -2109,9 +2104,9 @@ const lastDayfiltered21Court1 = lastDayfiltered21.filter(result => result.court_
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
   <p className={styles.reserveP}>Spots Available:</p>
-  <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+  <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
   </div>)
 
 const lastDayfiltered21Court2 = lastDayfiltered21.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2121,9 +2116,9 @@ const lastDayfiltered21Court2 = lastDayfiltered21.filter(result => result.court_
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
   <p className={styles.reserveP}>Spots Available:</p>
-  <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+  <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+  <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
   </div>)
 
 const lastDayfiltered21Court3 = lastDayfiltered21.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2133,9 +2128,9 @@ const lastDayfiltered21Court3 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court4 = lastDayfiltered21.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2145,9 +2140,9 @@ const lastDayfiltered21Court4 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court5 = lastDayfiltered21.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2157,9 +2152,9 @@ const lastDayfiltered21Court5 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court6 = lastDayfiltered21.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2169,9 +2164,9 @@ const lastDayfiltered21Court6 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court7 = lastDayfiltered21.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2181,9 +2176,9 @@ const lastDayfiltered21Court7 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court8 = lastDayfiltered21.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2193,9 +2188,9 @@ const lastDayfiltered21Court8 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court9 = lastDayfiltered21.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2205,9 +2200,9 @@ const lastDayfiltered21Court9 = lastDayfiltered21.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2217,9 +2212,9 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
   // HOUR 22
@@ -2238,9 +2233,9 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
     const lastDayfiltered22Court2 = lastDayfiltered22.filter(result => result.court_number_id === 2).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2250,9 +2245,9 @@ const lastDayfiltered21Court10 = lastDayfiltered21.filter(result => result.court
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
       <p className={styles.reserveP}>Spots Available:</p>
-      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+      <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
       </div>)
 
 const lastDayfiltered22Court3 = lastDayfiltered22.filter(result => result.court_number_id === 3).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2262,9 +2257,9 @@ const lastDayfiltered22Court3 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court4 = lastDayfiltered22.filter(result => result.court_number_id === 4).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2274,9 +2269,9 @@ const lastDayfiltered22Court4 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court5 = lastDayfiltered22.filter(result => result.court_number_id === 5).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2286,9 +2281,9 @@ const lastDayfiltered22Court5 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court6 = lastDayfiltered22.filter(result => result.court_number_id === 6).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2298,9 +2293,9 @@ const lastDayfiltered22Court6 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court7 = lastDayfiltered22.filter(result => result.court_number_id === 7).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2310,9 +2305,9 @@ const lastDayfiltered22Court7 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court8 = lastDayfiltered22.filter(result => result.court_number_id === 8).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2322,9 +2317,9 @@ const lastDayfiltered22Court8 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court9 = lastDayfiltered22.filter(result => result.court_number_id === 9).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2334,9 +2329,9 @@ const lastDayfiltered22Court9 = lastDayfiltered22.filter(result => result.court_
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
 
 const lastDayfiltered22Court10 = lastDayfiltered22.filter(result => result.court_number_id === 10).map(result => <div key={result.id} className={styles.reservedBlock}>
@@ -2346,259 +2341,388 @@ const lastDayfiltered22Court10 = lastDayfiltered22.filter(result => result.court
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
 <p className={styles.reserveP}>Spots Available:</p>
-<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(e) => reserveSpotUser2} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(e) => reserveSpotUser3} value={result.id}>sign up!</button>}</p>
-<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(e) => reserveSpotUser4} value={result.id}>sign up!</button>}</p>
+<p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
+<p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
 </div>)
+
+const date = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+const tomorrow = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 1,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+const day3 = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 2,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+const day4 = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 3,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+const day5 = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 4,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+const day6 = add(new Date(), {
+  years: 0,
+  months: 0,
+  weeks: 0,
+  days: 5,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+})
+
+
 
   return (
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
+      <Link>View other dates: </Link>
+      <div>
+     
+    <Link to={`/schedule/${courtId}/today`}>{format(date, 'eee, MM/dd')}</Link>
+
+    <Link to={`/schedule/${courtId}/tomorrow`}>{format(tomorrow, 'eee, MM/dd')}</Link>
+
+    <Link to={`/schedule/${courtId}/day3`}>{format(day3, 'eee, MM/dd')}</Link>
+
+    <Link to={`/schedule/${courtId}/day4`}>{format(day4, 'eee, MM/dd')}</Link>
+
+    <Link to={`/schedule/${courtId}/day5`}>{format(day5, 'eee, MM/dd')}</Link>
+   
+    <Link to={`/schedule/${courtId}/day6`}>{format(day6, 'eee, MM/dd')}</Link>
+ 
+    </div>
       <table className={styles.table}>
           <tbody>
             <tr className={styles.tableRowDays}>
               <th></th>
-              <th className={styles.tableHead}>{format(date, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(tomorrow, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(day3, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(day4, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(day5, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(day6, 'MM/dd')}</th>
-              <th className={styles.tableHead}>{format(lastday, 'MM/dd')}</th>
+              <th className={styles.tableHead}>Court 1</th>
+              <th className={styles.tableHead}>Court 2</th>
+              <th className={styles.tableHead}>Court 3</th>
+              <th className={styles.tableHead}>Court 4</th>
+              <th className={styles.tableHead}>Court 5</th>
+              <th className={styles.tableHead}>Court 6</th>
+              <th className={styles.tableHead}>Court 7</th>
+              <th className={styles.tableHead}>Court 8</th>
+              <th className={styles.tableHead}>Court 9</th>
+              <th className={styles.tableHead}>Court 10</th>
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>6AM</td>
             
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court1.length !== 0 ? lastDayfiltered6Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court2.length !== 0 ? lastDayfiltered6Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court3.length !== 0 ? lastDayfiltered6Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court4.length !== 0 ? lastDayfiltered6Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court5.length !== 0 ? lastDayfiltered6Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court6.length !== 0 ? lastDayfiltered6Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court7.length !== 0 ? lastDayfiltered6Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court8.length !== 0 ? lastDayfiltered6Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court9.length !== 0 ? lastDayfiltered6Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered6Court10.length !== 0 ? lastDayfiltered6Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+            
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court1.length !== 0 ? lastDayfiltered6Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court2.length !== 0 ? lastDayfiltered6Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court3.length !== 0 ? lastDayfiltered6Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court4.length !== 0 ? lastDayfiltered6Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court5.length !== 0 ? lastDayfiltered6Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court6.length !== 0 ? lastDayfiltered6Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court7.length !== 0 ? lastDayfiltered6Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court8.length !== 0 ? lastDayfiltered6Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court9.length !== 0 ? lastDayfiltered6Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered6Court10.length !== 0 ? lastDayfiltered6Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>7AM</td>
              
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court1.length !== 0 ? lastDayfiltered7Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court2.length !== 0 ? lastDayfiltered7Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court3.length !== 0 ? lastDayfiltered7Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court4.length !== 0 ? lastDayfiltered7Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court5.length !== 0 ? lastDayfiltered7Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court6.length !== 0 ? lastDayfiltered7Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court7.length !== 0 ? lastDayfiltered7Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court8.length !== 0 ? lastDayfiltered7Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court9.length !== 0 ? lastDayfiltered7Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered7Court10.length !== 0 ? lastDayfiltered7Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+             
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court1.length !== 0 ? lastDayfiltered7Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court2.length !== 0 ? lastDayfiltered7Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court3.length !== 0 ? lastDayfiltered7Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court4.length !== 0 ? lastDayfiltered7Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court5.length !== 0 ? lastDayfiltered7Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court6.length !== 0 ? lastDayfiltered7Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court7.length !== 0 ? lastDayfiltered7Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court8.length !== 0 ? lastDayfiltered7Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court9.length !== 0 ? lastDayfiltered7Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered7Court10.length !== 0 ? lastDayfiltered7Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+           
               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>8AM</td>
              
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court1.length !== 0 ? lastDayfiltered8Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court2.length !== 0 ? lastDayfiltered8Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court3.length !== 0 ? lastDayfiltered8Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court4.length !== 0 ? lastDayfiltered8Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court5.length !== 0 ? lastDayfiltered8Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court6.length !== 0 ? lastDayfiltered8Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court7.length !== 0 ? lastDayfiltered8Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court8.length !== 0 ? lastDayfiltered8Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court9.length !== 0 ? lastDayfiltered8Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered8Court10.length !== 0 ? lastDayfiltered8Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+            
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court1.length !== 0 ? lastDayfiltered8Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court2.length !== 0 ? lastDayfiltered8Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court3.length !== 0 ? lastDayfiltered8Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court4.length !== 0 ? lastDayfiltered8Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court5.length !== 0 ? lastDayfiltered8Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court6.length !== 0 ? lastDayfiltered8Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court7.length !== 0 ? lastDayfiltered8Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court8.length !== 0 ? lastDayfiltered8Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court9.length !== 0 ? lastDayfiltered8Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered8Court10.length !== 0 ? lastDayfiltered8Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
              
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>9AM</td>
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court1.length !== 0 ? lastDayfiltered9Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court2.length !== 0 ? lastDayfiltered9Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court3.length !== 0 ? lastDayfiltered9Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court4.length !== 0 ? lastDayfiltered9Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court5.length !== 0 ? lastDayfiltered9Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court6.length !== 0 ? lastDayfiltered9Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court7.length !== 0 ? lastDayfiltered9Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court8.length !== 0 ? lastDayfiltered9Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court9.length !== 0 ? lastDayfiltered9Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered9Court10.length !== 0 ? lastDayfiltered9Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
              
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court1.length !== 0 ? lastDayfiltered9Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court2.length !== 0 ? lastDayfiltered9Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court3.length !== 0 ? lastDayfiltered9Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court4.length !== 0 ? lastDayfiltered9Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court5.length !== 0 ? lastDayfiltered9Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court6.length !== 0 ? lastDayfiltered9Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court7.length !== 0 ? lastDayfiltered9Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court8.length !== 0 ? lastDayfiltered9Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court9.length !== 0 ? lastDayfiltered9Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered9Court10.length !== 0 ? lastDayfiltered9Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>10AM</td>
               
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court1.length !== 0 ? lastDayfiltered10Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court2.length !== 0 ? lastDayfiltered10Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court3.length !== 0 ? lastDayfiltered10Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court4.length !== 0 ? lastDayfiltered10Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court5.length !== 0 ? lastDayfiltered10Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court6.length !== 0 ? lastDayfiltered10Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court7.length !== 0 ? lastDayfiltered10Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court8.length !== 0 ? lastDayfiltered10Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court9.length !== 0 ? lastDayfiltered10Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered10Court10.length !== 0 ? lastDayfiltered10Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+             
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court1.length !== 0 ? lastDayfiltered10Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court2.length !== 0 ? lastDayfiltered10Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court3.length !== 0 ? lastDayfiltered10Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court4.length !== 0 ? lastDayfiltered10Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court5.length !== 0 ? lastDayfiltered10Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court6.length !== 0 ? lastDayfiltered10Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court7.length !== 0 ? lastDayfiltered10Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court8.length !== 0 ? lastDayfiltered10Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court9.length !== 0 ? lastDayfiltered10Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered10Court10.length !== 0 ? lastDayfiltered10Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>11AM</td>
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court1.length !== 0 ? lastDayfiltered11Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court2.length !== 0 ? lastDayfiltered11Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court3.length !== 0 ? lastDayfiltered11Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court4.length !== 0 ? lastDayfiltered11Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court5.length !== 0 ? lastDayfiltered11Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court6.length !== 0 ? lastDayfiltered11Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court7.length !== 0 ? lastDayfiltered11Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court8.length !== 0 ? lastDayfiltered11Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court9.length !== 0 ? lastDayfiltered11Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered11Court10.length !== 0 ? lastDayfiltered11Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+            
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court1.length !== 0 ? lastDayfiltered11Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court2.length !== 0 ? lastDayfiltered11Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court3.length !== 0 ? lastDayfiltered11Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court4.length !== 0 ? lastDayfiltered11Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court5.length !== 0 ? lastDayfiltered11Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court6.length !== 0 ? lastDayfiltered11Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court7.length !== 0 ? lastDayfiltered11Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court8.length !== 0 ? lastDayfiltered11Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court9.length !== 0 ? lastDayfiltered11Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered11Court10.length !== 0 ? lastDayfiltered11Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+             
              </tr> 
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>12</td>
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court1.length !== 0 ? lastDayfiltered12Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court2.length !== 0 ? lastDayfiltered12Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court3.length !== 0 ? lastDayfiltered12Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court4.length !== 0 ? lastDayfiltered12Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court5.length !== 0 ? lastDayfiltered12Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court6.length !== 0 ? lastDayfiltered12Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court7.length !== 0 ? lastDayfiltered12Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court8.length !== 0 ? lastDayfiltered12Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court9.length !== 0 ? lastDayfiltered12Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered12Court10.length !== 0 ? lastDayfiltered12Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
-             
+            
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court1.length !== 0 ? lastDayfiltered12Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court2.length !== 0 ? lastDayfiltered12Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court3.length !== 0 ? lastDayfiltered12Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court4.length !== 0 ? lastDayfiltered12Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court5.length !== 0 ? lastDayfiltered12Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court6.length !== 0 ? lastDayfiltered12Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court7.length !== 0 ? lastDayfiltered12Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court8.length !== 0 ? lastDayfiltered12Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court9.length !== 0 ? lastDayfiltered12Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered12Court10.length !== 0 ? lastDayfiltered12Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>1PM</td>
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court1.length !== 0 ? lastDayfiltered13Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court2.length !== 0 ? lastDayfiltered13Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court3.length !== 0 ? lastDayfiltered13Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court4.length !== 0 ? lastDayfiltered13Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court5.length !== 0 ? lastDayfiltered13Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court6.length !== 0 ? lastDayfiltered13Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court7.length !== 0 ? lastDayfiltered13Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court8.length !== 0 ? lastDayfiltered13Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court9.length !== 0 ? lastDayfiltered13Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered13Court10.length !== 0 ? lastDayfiltered13Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+             
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court1.length !== 0 ? lastDayfiltered13Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court2.length !== 0 ? lastDayfiltered13Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court3.length !== 0 ? lastDayfiltered13Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court4.length !== 0 ? lastDayfiltered13Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court5.length !== 0 ? lastDayfiltered13Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court6.length !== 0 ? lastDayfiltered13Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court7.length !== 0 ? lastDayfiltered13Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court8.length !== 0 ? lastDayfiltered13Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court9.length !== 0 ? lastDayfiltered13Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered13Court10.length !== 0 ? lastDayfiltered13Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+            
+              
+            </tr>
+            <tr className={styles.tableRow}>
+              <td className={styles.tableDate}>2PM</td>
+              
+           
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court1.length !== 0 ? lastDayfiltered14Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court2.length !== 0 ? lastDayfiltered14Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court3.length !== 0 ? lastDayfiltered14Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court4.length !== 0 ? lastDayfiltered14Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court5.length !== 0 ? lastDayfiltered14Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court6.length !== 0 ? lastDayfiltered14Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court7.length !== 0 ? lastDayfiltered14Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court8.length !== 0 ? lastDayfiltered14Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court9.length !== 0 ? lastDayfiltered14Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered14Court10.length !== 0 ? lastDayfiltered14Court10 : <Link to='/create'>OPEN</Link>}</div></th>
               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>3PM</td>
               
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court1.length !== 0 ? lastDayfiltered15Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court2.length !== 0 ? lastDayfiltered15Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court3.length !== 0 ? lastDayfiltered15Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court4.length !== 0 ? lastDayfiltered15Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court5.length !== 0 ? lastDayfiltered15Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court6.length !== 0 ? lastDayfiltered15Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court7.length !== 0 ? lastDayfiltered15Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court8.length !== 0 ? lastDayfiltered15Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court9.length !== 0 ? lastDayfiltered15Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered15Court10.length !== 0 ? lastDayfiltered15Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+         
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court1.length !== 0 ? lastDayfiltered15Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court2.length !== 0 ? lastDayfiltered15Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court3.length !== 0 ? lastDayfiltered15Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court4.length !== 0 ? lastDayfiltered15Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court5.length !== 0 ? lastDayfiltered15Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court6.length !== 0 ? lastDayfiltered15Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court7.length !== 0 ? lastDayfiltered15Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court8.length !== 0 ? lastDayfiltered15Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court9.length !== 0 ? lastDayfiltered15Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered15Court10.length !== 0 ? lastDayfiltered15Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+            
               
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>4PM</td>
              
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court1.length !== 0 ? lastDayfiltered16Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court2.length !== 0 ? lastDayfiltered16Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court3.length !== 0 ? lastDayfiltered16Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court4.length !== 0 ? lastDayfiltered16Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court5.length !== 0 ? lastDayfiltered16Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court6.length !== 0 ? lastDayfiltered16Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court7.length !== 0 ? lastDayfiltered16Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court8.length !== 0 ? lastDayfiltered16Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court9.length !== 0 ? lastDayfiltered16Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered16Court10.length !== 0 ? lastDayfiltered16Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+           
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court1.length !== 0 ? lastDayfiltered16Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court2.length !== 0 ? lastDayfiltered16Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court3.length !== 0 ? lastDayfiltered16Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court4.length !== 0 ? lastDayfiltered16Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court5.length !== 0 ? lastDayfiltered16Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court6.length !== 0 ? lastDayfiltered16Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court7.length !== 0 ? lastDayfiltered16Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court8.length !== 0 ? lastDayfiltered16Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court9.length !== 0 ? lastDayfiltered16Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered16Court10.length !== 0 ? lastDayfiltered16Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
               
             </tr>
             <tr className={styles.tableRow}>
+              <td className={styles.tableDate}>5PM</td>
+           
+             
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court1.length !== 0 ? lastDayfiltered17Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court2.length !== 0 ? lastDayfiltered17Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court3.length !== 0 ? lastDayfiltered17Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court4.length !== 0 ? lastDayfiltered17Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court5.length !== 0 ? lastDayfiltered17Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court6.length !== 0 ? lastDayfiltered17Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court7.length !== 0 ? lastDayfiltered17Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court8.length !== 0 ? lastDayfiltered17Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court9.length !== 0 ? lastDayfiltered17Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered17Court10.length !== 0 ? lastDayfiltered17Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+              
+             
+            </tr>
+            <tr className={styles.tableRow}></tr>
+            <tr className={styles.tableRow}>
               <td className={styles.tableDate}>6PM</td>
            
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court1.length !== 0 ? lastDayfiltered18Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court2.length !== 0 ? lastDayfiltered18Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court3.length !== 0 ? lastDayfiltered18Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court4.length !== 0 ? lastDayfiltered18Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court5.length !== 0 ? lastDayfiltered18Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court6.length !== 0 ? lastDayfiltered18Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court7.length !== 0 ? lastDayfiltered18Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court8.length !== 0 ? lastDayfiltered18Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court9.length !== 0 ? lastDayfiltered18Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered18Court10.length !== 0 ? lastDayfiltered18Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+           
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court1.length !== 0 ? lastDayfiltered18Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court2.length !== 0 ? lastDayfiltered18Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court3.length !== 0 ? lastDayfiltered18Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court4.length !== 0 ? lastDayfiltered18Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court5.length !== 0 ? lastDayfiltered18Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court6.length !== 0 ? lastDayfiltered18Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court7.length !== 0 ? lastDayfiltered18Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court8.length !== 0 ? lastDayfiltered18Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court9.length !== 0 ? lastDayfiltered18Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered18Court10.length !== 0 ? lastDayfiltered18Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+         
+             
+            </tr>
+            <tr className={styles.tableRow}>
+              <td className={styles.tableDate}>7PM</td>
+           
+           
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court1.length !== 0 ? lastDayfiltered19Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court2.length !== 0 ? lastDayfiltered19Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court3.length !== 0 ? lastDayfiltered19Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court4.length !== 0 ? lastDayfiltered19Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court5.length !== 0 ? lastDayfiltered19Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court6.length !== 0 ? lastDayfiltered19Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court7.length !== 0 ? lastDayfiltered19Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court8.length !== 0 ? lastDayfiltered19Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court9.length !== 0 ? lastDayfiltered19Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered19Court10.length !== 0 ? lastDayfiltered19Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+       
              
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>8PM</td>
              
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court1.length !== 0 ? lastDayfiltered20Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court2.length !== 0 ? lastDayfiltered20Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court3.length !== 0 ? lastDayfiltered20Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court4.length !== 0 ? lastDayfiltered20Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court5.length !== 0 ? lastDayfiltered20Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court6.length !== 0 ? lastDayfiltered20Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court7.length !== 0 ? lastDayfiltered20Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court8.length !== 0 ? lastDayfiltered20Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court9.length !== 0 ? lastDayfiltered20Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered20Court10.length !== 0 ? lastDayfiltered20Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
-              
+         
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court1.length !== 0 ? lastDayfiltered20Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court2.length !== 0 ? lastDayfiltered20Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court3.length !== 0 ? lastDayfiltered20Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court4.length !== 0 ? lastDayfiltered20Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court5.length !== 0 ? lastDayfiltered20Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court6.length !== 0 ? lastDayfiltered20Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court7.length !== 0 ? lastDayfiltered20Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court8.length !== 0 ? lastDayfiltered20Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court9.length !== 0 ? lastDayfiltered20Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered20Court10.length !== 0 ? lastDayfiltered20Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+           
             </tr>
             <tr className={styles.tableRow}>
               <td className={styles.tableDate}>9PM</td>
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court1.length !== 0 ? lastDayfiltered21Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court2.length !== 0 ? lastDayfiltered21Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court3.length !== 0 ? lastDayfiltered21Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court4.length !== 0 ? lastDayfiltered21Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court5.length !== 0 ? lastDayfiltered21Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court6.length !== 0 ? lastDayfiltered21Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court7.length !== 0 ? lastDayfiltered21Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court8.length !== 0 ? lastDayfiltered21Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court9.length !== 0 ? lastDayfiltered21Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered21Court10.length !== 0 ? lastDayfiltered21Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+          
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court1.length !== 0 ? lastDayfiltered21Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court2.length !== 0 ? lastDayfiltered21Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court3.length !== 0 ? lastDayfiltered21Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court4.length !== 0 ? lastDayfiltered21Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court5.length !== 0 ? lastDayfiltered21Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court6.length !== 0 ? lastDayfiltered21Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court7.length !== 0 ? lastDayfiltered21Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court8.length !== 0 ? lastDayfiltered21Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court9.length !== 0 ? lastDayfiltered21Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered21Court10.length !== 0 ? lastDayfiltered21Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+            
              </tr> 
             <tr className={styles.tableRow}>
               <td className={styles.tableDateLast}>10PM</td>
-              <th className={styles.reservationBlock}>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court1.length !== 0 ? lastDayfiltered22Court1 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court2.length !== 0 ? lastDayfiltered22Court2 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court3.length !== 0 ? lastDayfiltered22Court3 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court4.length !== 0 ? lastDayfiltered22Court4 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court5.length !== 0 ? lastDayfiltered22Court5 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court6.length !== 0 ? lastDayfiltered22Court6 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court7.length !== 0 ? lastDayfiltered22Court7 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court8.length !== 0 ? lastDayfiltered22Court8 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court9.length !== 0 ? lastDayfiltered22Court9 : <Link to='/create'>OPEN</Link>}</div>
-                <div className={styles.courtBlock}>{lastDayfiltered22Court10.length !== 0 ? lastDayfiltered22Court10 : <Link to='/create'>OPEN</Link>}</div>
-                </th>
+       
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court1.length !== 0 ? lastDayfiltered22Court1 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court2.length !== 0 ? lastDayfiltered22Court2 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court3.length !== 0 ? lastDayfiltered22Court3 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court4.length !== 0 ? lastDayfiltered22Court4 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court5.length !== 0 ? lastDayfiltered22Court5 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court6.length !== 0 ? lastDayfiltered22Court6 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court7.length !== 0 ? lastDayfiltered22Court7 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court8.length !== 0 ? lastDayfiltered22Court8 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court9.length !== 0 ? lastDayfiltered22Court9 : <Link to='/create'>OPEN</Link>}</div></th>
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{lastDayfiltered22Court10.length !== 0 ? lastDayfiltered22Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+        
              
                
             </tr>
