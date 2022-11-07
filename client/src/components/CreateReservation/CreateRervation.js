@@ -1,11 +1,10 @@
 import styles from './CreateReservation.module.css';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { format, add } from 'date-fns'
 export default function CreateReservation({user}) {
 
   const [postObject, setPostObject] = useState({})
-  const [patch, setPatch] = useState(0);
 
   useEffect(() => {
     fetch(`/me`)
@@ -14,8 +13,6 @@ export default function CreateReservation({user}) {
       setUserId(data.id)
     })
   }, [])
-
-
 
 
   const navigate = useNavigate();

@@ -1,9 +1,8 @@
 class PickleballsController < ApplicationController
 
   def index
-    pickles = Pickleball.all
     if(params[:my_id])
-      pickles = User.find(params[:my_id]).pickles
+      pickles = User.find(params[:my_id]).pickleballs
     end
     if(params[:q])
       pickles = Pickleball.where(:court_id => (params[:q]))
