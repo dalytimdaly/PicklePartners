@@ -15,47 +15,54 @@ export default function CreateReservation({user}) {
     })
   }, [])
 
-  console.log(postObject.id)
+
 
 
   const navigate = useNavigate();
   
   const [userId, setUserId] = useState("")
-  const [courtId, setCourtId] = useState("")
-  const [type, setType] = useState("")
-  const [size, setSize] = useState("")
-  const [time, setTime] = useState(0)
-  const [dateOfGame, setDateOfGame] = useState(false)
-  const [courtNumber, setCourtNumber] = useState("")
-  const [skillLevel, setSkillLevel] = useState("")
+  const [courtId, setCourtId] = useState(1)
+  const [type, setType] = useState("casual")
+  const [size, setSize] = useState(2)
+  const [time, setTime] = useState(6)
+  const [dateOfGame, setDateOfGame] = useState("")
+  const [courtNumber, setCourtNumber] = useState(1)
+  const [skillLevel, setSkillLevel] = useState("beginner")
   
 
   function handleCourtId(event) {
     setCourtId(event.target.value)
+    console.log(courtId)
   }
 
   function handleType(event) {
     setType(event.target.value)
+    console.log(type)
   }
 
   function handleSkillLevel(event) {
     setSkillLevel(event.target.value)
+    console.log(skillLevel)
   }
 
   function handleSize(event) {
     setSize(event.target.value)
+    console.log(size)
   }
 
   function handleTime(event) {
     setTime(event.target.value)
+    console.log(time)
   }
 
   function handleDate(event) {
     setDateOfGame(event.target.value)
+    console.log(dateOfGame)
   }
 
   function handleCourtNumber(event) {
     setCourtNumber(event.target.value)
+    console.log(courtNumber)
   }
 
   function handleSubmit(event) {
@@ -67,16 +74,13 @@ export default function CreateReservation({user}) {
         "type": type,
         "size": size,
         "time": time,
-        "date": date,
+        "date": dateOfGame,
         "skill_level": skillLevel,
         "court_number_id": courtNumber,
-        "user2_id": 0,
-        "user3_id": 0,
-        "user4_id": 0
     }
     console.log(createdPickle)
-/*
-    fetch("/posts/", {
+
+    fetch("/pickleballs/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,10 +89,12 @@ export default function CreateReservation({user}) {
     })
     .then(r => r.json())
     .then((data) => {
-      navigate(`/posts/${data.id}`)
+      navigate(`/account`)
     })
-    */
+    
   }
+
+  
 
   const date = add(new Date(), {
     years: 0,
@@ -100,7 +106,66 @@ export default function CreateReservation({user}) {
     seconds: 0,
   })
 
-  console.log(format(date, 'eee, MM/dd'))
+  const tomorrow = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 1,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  
+  const day3 = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 2,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  
+  const day4 = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 3,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  
+  const day5 = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 4,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  
+  const day6 = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 5,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+  
+  const lastday = add(new Date(), {
+    years: 0,
+    months: 0,
+    weeks: 0,
+    days: 6,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+
 
   return (
     <div className={styles.post}>
@@ -167,27 +232,28 @@ export default function CreateReservation({user}) {
       </label>
       <label for="skill" className={styles.citylabel}>date
       <select className={styles.categories} onChange={handleDate}>
-        <option value="6">6AM</option>
-        <option value="7">7AM</option>
-        <option value="8">8AM</option>
-        <option value="9">9AM</option>
-        <option value="10">10AM</option>
-        <option value="11">11AM</option>
-        <option value="12">12</option>
-        <option value="13">1PM</option>
-        <option value="14">2PM</option>
-        <option value="15">3PM</option>
-        <option value="16">4PM</option>
-        <option value="17">5PM</option>
-        <option value="18">6PM</option>
-        <option value="19">7PM</option>
-        <option value="20">8PM</option>
-        <option value="21">9PM</option>
-        <option value="22">10PM</option>
+        <option value={format(date, 'eee MMM MM/dd y')}>{format(date, 'eee, MM/dd')}</option>
+        <option value={format(tomorrow, 'eee MMM MM/dd y')}>{format(tomorrow, 'eee, MM/dd')}</option>
+        <option value={format(day3, 'eee MMM MM/dd y')}>{format(day3, 'eee, MM/dd')}</option>
+        <option value={format(day4, 'eee MMM MM/dd y')}>{format(day4, 'eee, MM/dd')}</option>
+        <option value={format(day5, 'eee MMM MM/dd y')}>{format(day5, 'eee, MM/dd')}</option>
+        <option value={format(day6, 'eee MMM MM/dd y')}>{format(day6, 'eee, MM/dd')}</option>
+        <option value={format(lastday, 'eee MMM MM/dd y')}>{format(lastday, 'eee, MM/dd')}</option>
       </select>
       </label>
       <label for="skill" className={styles.citylabel}>court number:
-      <input type='text' className={styles.city} onChange={handleCourtNumber}/>
+      <select className={styles.categories} onChange={handleCourtNumber}>
+        <option value="1">Court 1</option>
+        <option value="2">Court 2</option>
+        <option value="3">Court 3</option>
+        <option value="4">Court 4</option>
+        <option value="5">Court 5</option>
+        <option value="6">Court 6</option>
+        <option value="7">Court 7</option>
+        <option value="8">Court 8</option>
+        <option value="9">Court 9</option>
+        <option value="10">Court 10</option>
+      </select>
       </label>
       </div> 
       <button className={styles.button} type="submit">Submit Reservation</button>
