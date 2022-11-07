@@ -17,8 +17,12 @@ class PickleballsController < ApplicationController
   end
 
   def create
-    pickle = Pickleball.create!(pickleball_params)
-    render json: pickle, status: :created
+    pickle = Pickleball.create(pickleball_params)
+    if pickle.valid?
+      render json: pickle, status: :created
+    else
+      render json: { errors: pickle.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy

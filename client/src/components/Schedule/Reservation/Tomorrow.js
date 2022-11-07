@@ -134,7 +134,7 @@ export default function Tomorrow({ user }) {
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -146,7 +146,7 @@ export default function Tomorrow({ user }) {
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -158,7 +158,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -170,7 +170,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -182,7 +182,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -194,7 +194,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -206,7 +206,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -218,7 +218,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -230,7 +230,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -242,7 +242,7 @@ export default function Tomorrow({ user }) {
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
     <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -262,7 +262,7 @@ const filtered7 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -274,7 +274,7 @@ const filtered7 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -286,7 +286,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -298,7 +298,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -310,7 +310,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -322,7 +322,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -334,7 +334,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -346,7 +346,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -358,7 +358,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -370,7 +370,7 @@ const filtered7 = results.filter(result => result.time === 8)
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -393,7 +393,7 @@ const filtered8 = results.filter(result => result.time === 8)
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
         
-        <p className={styles.reserveP}>Spots Available:</p>
+        <p className={styles.reserveP}>Spot(s) Available:</p>
         <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -405,7 +405,7 @@ const filtered8 = results.filter(result => result.time === 8)
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
         
-        <p className={styles.reserveP}>Spots Available:</p>
+        <p className={styles.reserveP}>Spot(s) Available:</p>
         <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -417,7 +417,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -429,7 +429,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -441,7 +441,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -453,7 +453,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -465,7 +465,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -477,7 +477,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -489,7 +489,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -501,7 +501,7 @@ const filtered8 = results.filter(result => result.time === 8)
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -528,7 +528,7 @@ const tomorrowfiltered9Court1 = tomorrowfiltered9.filter(result => result.court_
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -540,7 +540,7 @@ const tomorrowfiltered9Court2 = tomorrowfiltered9.filter(result => result.court_
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -552,7 +552,7 @@ const tomorrowfiltered9Court3 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -564,7 +564,7 @@ const tomorrowfiltered9Court4 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -576,7 +576,7 @@ const tomorrowfiltered9Court5 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -588,7 +588,7 @@ const tomorrowfiltered9Court6 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -600,7 +600,7 @@ const tomorrowfiltered9Court7 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -612,7 +612,7 @@ const tomorrowfiltered9Court8 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -624,7 +624,7 @@ const tomorrowfiltered9Court9 = tomorrowfiltered9.filter(result => result.court_
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -636,7 +636,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -659,7 +659,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
         
-        <p className={styles.reserveP}>Spots Available:</p>
+        <p className={styles.reserveP}>Spot(s) Available:</p>
         <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -671,7 +671,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
         <p className={styles.reserveP}>Group Size: {result.size}</p>
         <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
         
-        <p className={styles.reserveP}>Spots Available:</p>
+        <p className={styles.reserveP}>Spot(s) Available:</p>
         <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
         <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -683,7 +683,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -695,7 +695,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -707,7 +707,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -719,7 +719,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -731,7 +731,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -743,7 +743,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -755,7 +755,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -767,7 +767,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -788,7 +788,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -800,7 +800,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -812,7 +812,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -824,7 +824,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -836,7 +836,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -848,7 +848,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -860,7 +860,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -872,7 +872,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -884,7 +884,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -896,7 +896,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -919,7 +919,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -931,7 +931,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -943,7 +943,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -955,7 +955,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -967,7 +967,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -979,7 +979,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -991,7 +991,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1003,7 +1003,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1015,7 +1015,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1027,7 +1027,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1049,7 +1049,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1061,7 +1061,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1073,7 +1073,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1085,7 +1085,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1097,7 +1097,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1109,7 +1109,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1121,7 +1121,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1133,7 +1133,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1145,7 +1145,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1157,7 +1157,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1180,7 +1180,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1192,7 +1192,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1204,7 +1204,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1216,7 +1216,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1228,7 +1228,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1240,7 +1240,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1252,7 +1252,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1264,7 +1264,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1276,7 +1276,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1288,7 +1288,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1311,7 +1311,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1323,7 +1323,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1335,7 +1335,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1347,7 +1347,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1359,7 +1359,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1371,7 +1371,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1383,7 +1383,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1395,7 +1395,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1407,7 +1407,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1419,7 +1419,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1443,7 +1443,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1455,7 +1455,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1467,7 +1467,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1479,7 +1479,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1491,7 +1491,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1503,7 +1503,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1515,7 +1515,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1527,7 +1527,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1539,7 +1539,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1551,7 +1551,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1573,7 +1573,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1585,7 +1585,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1597,7 +1597,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1609,7 +1609,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1621,7 +1621,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1633,7 +1633,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1645,7 +1645,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1657,7 +1657,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1669,7 +1669,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1681,7 +1681,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1703,7 +1703,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1715,7 +1715,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1727,7 +1727,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1739,7 +1739,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1751,7 +1751,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1763,7 +1763,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1775,7 +1775,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1787,7 +1787,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1799,7 +1799,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1811,7 +1811,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1833,7 +1833,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1845,7 +1845,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1857,7 +1857,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1869,7 +1869,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1881,7 +1881,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1893,7 +1893,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1905,7 +1905,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1917,7 +1917,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1929,7 +1929,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1941,7 +1941,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1964,7 +1964,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1976,7 +1976,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -1988,7 +1988,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2000,7 +2000,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2012,7 +2012,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2024,7 +2024,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2036,7 +2036,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2048,7 +2048,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2060,7 +2060,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2072,7 +2072,7 @@ const tomorrowfiltered9Court10 = tomorrowfiltered9.filter(result => result.court
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2095,7 +2095,7 @@ const tomorrowfiltered21Court1 = tomorrowfiltered21.filter(result => result.cour
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2107,7 +2107,7 @@ const tomorrowfiltered21Court2 = tomorrowfiltered21.filter(result => result.cour
   <p className={styles.reserveP}>Group Size: {result.size}</p>
   <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
   
-  <p className={styles.reserveP}>Spots Available:</p>
+  <p className={styles.reserveP}>Spot(s) Available:</p>
   <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2119,7 +2119,7 @@ const tomorrowfiltered21Court3 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2131,7 +2131,7 @@ const tomorrowfiltered21Court4 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2143,7 +2143,7 @@ const tomorrowfiltered21Court5 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2155,7 +2155,7 @@ const tomorrowfiltered21Court6 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2167,7 +2167,7 @@ const tomorrowfiltered21Court7 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2179,7 +2179,7 @@ const tomorrowfiltered21Court8 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2191,7 +2191,7 @@ const tomorrowfiltered21Court9 = tomorrowfiltered21.filter(result => result.cour
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2203,7 +2203,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
 <p className={styles.reserveP}>Group Size: {result.size}</p>
 <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
 
-<p className={styles.reserveP}>Spots Available:</p>
+<p className={styles.reserveP}>Spot(s) Available:</p>
 <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2225,7 +2225,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2237,7 +2237,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
       <p className={styles.reserveP}>Group Size: {result.size}</p>
       <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
       
-      <p className={styles.reserveP}>Spots Available:</p>
+      <p className={styles.reserveP}>Spot(s) Available:</p>
       <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
       <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2249,7 +2249,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2261,7 +2261,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2273,7 +2273,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2285,7 +2285,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2297,7 +2297,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2309,7 +2309,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2321,7 +2321,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>
@@ -2333,7 +2333,7 @@ const tomorrowfiltered21Court10 = tomorrowfiltered21.filter(result => result.cou
     <p className={styles.reserveP}>Group Size: {result.size}</p>
     <p className={styles.reserveP}>Skill Level: {result.skill_level}</p>
     
-    <p className={styles.reserveP}>Spots Available:</p>
+    <p className={styles.reserveP}>Spot(s) Available:</p>
     <p className={styles.reserveP}>{result.user2_id ? "taken" : <button onClick={(event) => reserveSpotUser2(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? "taken" : <button onClick={(event) => reserveSpotUser3(event)} value={result.id}>sign up!</button>}</p>
 <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? "taken" : <button onClick={(event) => reserveSpotUser4(event)} value={result.id}>sign up!</button>}</p>

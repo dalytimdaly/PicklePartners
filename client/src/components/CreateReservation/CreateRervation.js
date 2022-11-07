@@ -232,13 +232,13 @@ export default function CreateReservation({user}) {
       </label>
       <label for="skill" className={styles.citylabel}>date
       <select className={styles.categories} onChange={handleDate}>
-        <option value={format(date, 'eee MMM MM/dd y')}>{format(date, 'eee, MM/dd')}</option>
-        <option value={format(tomorrow, 'eee MMM MM/dd y')}>{format(tomorrow, 'eee, MM/dd')}</option>
-        <option value={format(day3, 'eee MMM MM/dd y')}>{format(day3, 'eee, MM/dd')}</option>
-        <option value={format(day4, 'eee MMM MM/dd y')}>{format(day4, 'eee, MM/dd')}</option>
-        <option value={format(day5, 'eee MMM MM/dd y')}>{format(day5, 'eee, MM/dd')}</option>
-        <option value={format(day6, 'eee MMM MM/dd y')}>{format(day6, 'eee, MM/dd')}</option>
-        <option value={format(lastday, 'eee MMM MM/dd y')}>{format(lastday, 'eee, MM/dd')}</option>
+        <option value={format(date, 'eee MMM dd y')}>{format(date, 'eee, MM/dd')}</option>
+        <option value={format(tomorrow, 'eee MMM dd y')}>{format(tomorrow, 'eee, MM/dd')}</option>
+        <option value={format(day3, 'eee MMM dd y')}>{format(day3, 'eee, MM/dd')}</option>
+        <option value={format(day4, 'eee MMM dd y')}>{format(day4, 'eee, MM/dd')}</option>
+        <option value={format(day5, 'eee MMM dd y')}>{format(day5, 'eee, MM/dd')}</option>
+        <option value={format(day6, 'eee MMM dd y')}>{format(day6, 'eee, MM/dd')}</option>
+        <option value={format(lastday, 'eee MMM dd y')}>{format(lastday, 'eee, MM/dd')}</option>
       </select>
       </label>
       <label for="skill" className={styles.citylabel}>court number:
