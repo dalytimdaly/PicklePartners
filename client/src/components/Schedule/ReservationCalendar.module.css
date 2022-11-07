@@ -34,4 +34,29 @@
 
 .reservedBlock {
   background-color: rgb(241, 9, 9);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+}
+
+.reservedH4 {
+  margin: 0px;
+}
+
+.reserveP {
+  margin: 0px;
+}
+
+.userId {
+  margin: 0px;
+}
+
+.courtBlock {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.userNone{
+  display: none;
 }

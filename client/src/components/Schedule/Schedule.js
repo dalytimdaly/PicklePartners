@@ -18,7 +18,7 @@ export default function Search({ user }) {
     
   }, [])
 
- 
+  console.log(results)
   return (
     <div>
       <label for="courts" className={styles.categorylabel}>choose a court near you:
