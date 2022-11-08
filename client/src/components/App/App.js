@@ -18,6 +18,7 @@ import FourthDay from '../Schedule/Reservation/FourthDay';
 import FifthDay from '../Schedule/Reservation/FifthDay';
 import SixthDay from '../Schedule/Reservation/SixthDay';
 import LastDay from '../Schedule/Reservation/LastDay';
+import UserProfile from '../UserProfile/UserProfile';
 
 function App() {
   const [ user, setUser ] = useState(null);
@@ -56,6 +57,7 @@ function App() {
       <Route path='/schedule/:id/day7' element={<LastDay user={user} newUSer={newUser}/>} />
       <Route path='/create' element={<CreateReservation user={user}/>} />
       <Route path='/edit/:id' element={<EditReservation user={user}/>} />
+      <Route path='/user/profile/:id' element={<UserProfile user={user} />} />
     </Route>
     </Routes>
     <Footer />

@@ -11,7 +11,8 @@ export default function ReservationCalendar({ user }) {
   const [ errors, setErrors ] = useState([]);
   
 
-  const courtId = window.location.href.toString().substring(31,32)
+  const courtId = window.location.href.toString().substring(31,33).replace("/","")
+  console.log(courtId)
 
   useEffect(() => {
     fetch(`/pickleballs?q=${courtId}`)

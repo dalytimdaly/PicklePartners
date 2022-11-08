@@ -2435,6 +2435,20 @@ const lastday = add(new Date(), {
   return (
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
+      <div>View other courts:</div>
+      <Link to={`/schedule/1/tomorrow`}>Gates Tennis Center</Link>
+      <Link to={`/schedule/2/tomorrow`}>Congress Park</Link>
+      <Link to={`/schedule/3/tomorrow`}>Huston Lake Park</Link>
+      <Link to={`/schedule/4/tomorrow`}>Eisenhower Recreation Center</Link>
+      <Link to={`/schedule/5/tomorrow`}>Cook Park Recreation Center</Link>
+      <Link to={`/schedule/6/tomorrow`}>Bear Valley Park Pickleball Courts</Link>
+      <Link to={`/schedule/7/tomorrow`}>Washington Park Recreation Center</Link>
+      <Link to={`/schedule/8/tomorrow`}>Sheridan Recreation Center</Link>
+      <Link to={`/schedule/9/tomorrow`}>Meadow Creek Tennis and Fitness Club</Link>
+      <Link to={`/schedule/10/tomorrow`}>Johnson Recreation Center</Link>
+      <Link to={`/schedule/11/tomorrow`}>Martin Luther King Jr. Recreation Center</Link>
+      <Link to={`/schedule/12/tomorrow`}>Apex Pickleball Courts</Link>
+      <Link to={`/schedule/13/tomorrow`}>Cornerstone Park</Link>
       <Link>View other dates: </Link>
       <div>
      
