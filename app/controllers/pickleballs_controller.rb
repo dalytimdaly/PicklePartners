@@ -13,6 +13,7 @@ class PickleballsController < ApplicationController
   
   def show
     pickle = Pickleball.find(params[:id])
+    render json: pickle, status: :ok
   end
 
   def create

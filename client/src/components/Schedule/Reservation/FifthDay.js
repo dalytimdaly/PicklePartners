@@ -11,7 +11,7 @@ export default function FifthDay({user}) {
   const [ errors, setErrors ] = useState([]);
   const { term } = useParams();
 
-  const courtId = window.location.href.toString().substring(31,32)
+  const courtId = window.location.href.toString().substring(31,33).replace("/","")
 
   useEffect(() => {
     fetch(`/pickleballs?q=${courtId}`)

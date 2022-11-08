@@ -10,6 +10,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import EditAccount from '../EditAccount/EditAccount';
 import CreateReservation from '../CreateReservation/CreateRervation';
+import EditReservation from '../EditReservation/EditReservation';
 import Today from '../Schedule/Reservation/Today';
 import Tomorrow from '../Schedule/Reservation/Tomorrow';
 import ThirdDay from '../Schedule/Reservation/ThirdDay';
@@ -39,7 +40,7 @@ function App() {
     <div className={styles.App}>
     <Routes>
 
-    <Route element={<Header />}>
+    <Route element={<Header user={user} />}>
       <Route path="/" element={<Main />} />
       <Route path='/login' element={<Login user={user} newUser={newUser}/>} />
       <Route path='/account' element={<Account user={user} newUser={newUser}/>} />
@@ -54,6 +55,7 @@ function App() {
       <Route path='/schedule/:id/day6' element={<SixthDay user={user} newUSer={newUser}/>} />
       <Route path='/schedule/:id/day7' element={<LastDay user={user} newUSer={newUser}/>} />
       <Route path='/create' element={<CreateReservation user={user}/>} />
+      <Route path='/edit/:id' element={<EditReservation user={user}/>} />
     </Route>
     </Routes>
     <Footer />

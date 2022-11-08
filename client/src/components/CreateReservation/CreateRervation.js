@@ -68,7 +68,7 @@ export default function CreateReservation({user}) {
     const createdPickle = {
         "user_id": userId,
         "court_id": courtId,
-        "type": type,
+        "type_of_play": type,
         "size": size,
         "time": time,
         "date": dateOfGame,

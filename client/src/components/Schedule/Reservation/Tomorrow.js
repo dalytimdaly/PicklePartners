@@ -10,7 +10,8 @@ export default function Tomorrow({ user }) {
   const [ errors, setErrors ] = useState([]);
   const { term } = useParams();
 
-  const courtId = window.location.href.toString().substring(31,32)
+  const courtId = window.location.href.toString().substring(31,33).replace("/","")
+  console.log(courtId)
 
   useEffect(() => {
     fetch(`/pickleballs?q=${courtId}`)
@@ -34,7 +35,6 @@ export default function Tomorrow({ user }) {
     })
   }, [courtId])
 
-  console.log(user)
 
   const tomorrow = add(new Date(), {
     years: 0,
@@ -2401,11 +2401,26 @@ const lastday = add(new Date(), {
   seconds: 0,
 })
 
-
+console.log(court)
+console.log(court.name)
   return (
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
-      <Link>View other dates: </Link>
+      <div>View other courts:</div>
+      <Link to={`/schedule/1/tomorrow`}>Gates Tennis Center</Link>
+      <Link to={`/schedule/2/tomorrow`}>Congress Park</Link>
+      <Link to={`/schedule/3/tomorrow`}>Huston Lake Park</Link>
+      <Link to={`/schedule/4/tomorrow`}>Eisenhower Recreation Center</Link>
+      <Link to={`/schedule/5/tomorrow`}>Cook Park Recreation Center</Link>
+      <Link to={`/schedule/6/tomorrow`}>Bear Valley Park Pickleball Courts</Link>
+      <Link to={`/schedule/7/tomorrow`}>Washington Park Recreation Center</Link>
+      <Link to={`/schedule/8/tomorrow`}>Sheridan Recreation Center</Link>
+      <Link to={`/schedule/9/tomorrow`}>Meadow Creek Tennis and Fitness Club</Link>
+      <Link to={`/schedule/10/tomorrow`}>Johnson Recreation Center</Link>
+      <Link to={`/schedule/11/tomorrow`}>Martin Luther King Jr. Recreation Center</Link>
+      <Link to={`/schedule/12/tomorrow`}>Apex Pickleball Courts</Link>
+      <Link to={`/schedule/13/tomorrow`}>Cornerstone Park</Link>
+      <div>View other dates: </div>
       <div>
      
     <Link to={`/schedule/${courtId}/today`}>{format(date, 'eee, MM/dd')}</Link>

@@ -103,6 +103,7 @@ export default function EditAccount({user}) {
 
   return (
     <div className={styles.post}>
+      <div>Add some info to your account:</div>
       <form className={styles.form} onSubmit={handleSubmit} onChange={startPatch}>
       <div className={styles.groupcontainer}>
       <label for="firstname" className={styles.postlabel}>first name
