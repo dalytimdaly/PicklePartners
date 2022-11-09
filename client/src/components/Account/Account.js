@@ -1,7 +1,7 @@
 import styles from './Account.module.css';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { format } from 'date-fns';
+import { add, format } from 'date-fns';
 
 export default function Account({ user, newUser }) {
 
@@ -272,6 +272,16 @@ useEffect(() => {
       })
     
     }
+
+    const date = add(new Date(), {
+      years: 0,
+      months: 0,
+      weeks: 0,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    })
   
 
   return (
@@ -287,7 +297,7 @@ useEffect(() => {
         <div className={`${styles.manage} ${styles.heading}`}><button onClick={()=>setPickles(allGames)}>View</button>My Pickles:</div>
       </div>
       {
-      pickles.map(pickle => <div key={pickle.id} className={styles.post}>
+      pickles.map(pickle => <div key={pickle.id} className={date > pickle.date ? styles.userNone : styles.post}>
       <div className={styles.title}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`} Time: {renderTime(pickle.time)} Group Size: {pickle.size}</div>
       <div className={styles.area}><b>Location: {renderCourtName(pickle.court_id)}</b> Court: {pickle.court_number_id}</div>
       <div className={styles.area}>Created by/Player 1: {renderName(pickle.user_id)}</div>

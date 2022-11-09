@@ -11,6 +11,7 @@ export default function CreateReservation({user}) {
     .then(r=>r.json()).then((data)=>{
       setPostObject(data)
       setUserId(data.id)
+      setDateOfGame(date)
     })
   }, [])
 
@@ -49,7 +50,7 @@ export default function CreateReservation({user}) {
 
   function handleTime(event) {
     setTime(event.target.value)
-    console.log(time)
+    console.log(parseInt(time))
   }
 
   function handleDate(event) {
@@ -70,7 +71,7 @@ export default function CreateReservation({user}) {
         "court_id": courtId,
         "type_of_play": type,
         "size": size,
-        "time": time,
+        "time": parseInt(time),
         "date": dateOfGame,
         "skill_level": skillLevel,
         "court_number_id": courtNumber,
