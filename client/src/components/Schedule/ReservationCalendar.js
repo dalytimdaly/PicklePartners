@@ -11,7 +11,8 @@ export default function ReservationCalendar({ user }) {
   const [ errors, setErrors ] = useState([]);
   
 
-  const courtId = window.location.href.toString().substring(31,32)
+  const courtId = window.location.href.toString().substring(31,33).replace("/","")
+  console.log(courtId)
 
   useEffect(() => {
     fetch(`/pickleballs?q=${courtId}`)
@@ -118,17 +119,17 @@ export default function ReservationCalendar({ user }) {
      
     <Link to={`/schedule/${courtId}/today`}>{format(date, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(tomorrow, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/tomorrow`}>{format(tomorrow, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(day3, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/day3`}>{format(day3, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(day4, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/day4`}>{format(day4, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(day5, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/day5`}>{format(day5, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(day6, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/day6`}>{format(day6, 'MM/dd')}</Link>
     <br></br>
-    <Link to={`/schedule/${courtId}/today`}>{format(lastday, 'MM/dd')}</Link>
+    <Link to={`/schedule/${courtId}/day7`}>{format(lastday, 'MM/dd')}</Link>
     <br></br>
     </div>
   )

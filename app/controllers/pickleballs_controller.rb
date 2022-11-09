@@ -1,6 +1,7 @@
 class PickleballsController < ApplicationController
 
   def index
+    pickles = Pickleball.all
     if(params[:my_id])
       pickles = User.find(params[:my_id]).pickleballs
     end
@@ -13,6 +14,7 @@ class PickleballsController < ApplicationController
   
   def show
     pickle = Pickleball.find(params[:id])
+    render json: pickle, status: :ok
   end
 
   def create

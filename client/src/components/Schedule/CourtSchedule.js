@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function CourtSchedule({ image, address, hours, id, name, phone_number}) {
 
   const path = `/schedule/${id}`
-  console.log(image)
+  
 
   return (
       <Link to={path} className={styles.postcardcontainer}>

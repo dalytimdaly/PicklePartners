@@ -3,5 +3,7 @@ class Pickleball < ApplicationRecord
   belongs_to :user
 
   
+  
+
 
 end

@@ -38,7 +38,7 @@ export default function Login({ user, newUser }) {
     .then(res => {
       if(res.ok) {
         res.json().then(data => newUser(data));
-        navigate('/account');
+        navigate('/account-edit');
       } else {
         res.json().then(err => {
           setErrors(err.errors)});

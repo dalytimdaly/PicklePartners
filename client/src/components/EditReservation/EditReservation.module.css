@@ -91,17 +91,17 @@
 .checkboxcontainer {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  top: 550px;
 }
 
 .imagecontainer {
   position: relative;
-  top: -55px;
-  left: 205px;
+  top: -105px;
+  left: 160px;
 }
 
 /* text inputs, boxes and elements */
-
-
 
 .imageButton {
   padding: 6px;
@@ -125,6 +125,7 @@
   top: 13px;
   left: 50px;
 }
+
 .categories {
   margin-bottom: 10px;
 }
@@ -189,18 +190,12 @@
   margin-top: 15px;
   padding-left: 5px;
 }
+
 .button {
   width: 87px;
   height: 30px;
-  margin-left: 60rem;
+  margin-left: 50rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   font-size: large;
-}
-
-.imageDisplay {
-  width: 500px;
-  height: 500px;
-  top: 0px;
-  left: 0px;
-  position: absolute;
 }
