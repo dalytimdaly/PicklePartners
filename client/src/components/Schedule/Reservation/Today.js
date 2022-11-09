@@ -1,6 +1,6 @@
 import styles from '../ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
 
@@ -11,9 +11,11 @@ export default function Today({user}) {
   const [ errors, setErrors ] = useState([]);
   const { term } = useParams();
 
+  const navigate = useNavigate()
   const courtId = window.location.href.toString().substring(31,33).replace("/","")
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/pickleballs?q=${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -22,9 +24,11 @@ export default function Today({user}) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/courts/${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -33,6 +37,7 @@ export default function Today({user}) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
 
   console.log(user)
@@ -70,9 +75,9 @@ export default function Today({user}) {
           body: JSON.stringify(editedPlayer),
         })
         .then(r => r.json())
-        .then((data) => {
-          window.location.reload()
-        })
+        .then(
+          navigate('/account')
+        )
        
       }
     
@@ -95,9 +100,9 @@ export default function Today({user}) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
+      .then(
+        navigate('/account')
+      )
      
     }
   
@@ -117,9 +122,9 @@ export default function Today({user}) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
+      .then(
+        navigate('/account')
+      )
       
     }
   

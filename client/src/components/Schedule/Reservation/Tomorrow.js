@@ -1,6 +1,6 @@
 import styles from '../ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
 export default function Tomorrow({ user }) {
@@ -14,6 +14,7 @@ export default function Tomorrow({ user }) {
   console.log(courtId)
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/pickleballs?q=${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -22,9 +23,11 @@ export default function Tomorrow({ user }) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/courts/${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -33,6 +36,7 @@ export default function Tomorrow({ user }) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
 
 
@@ -48,6 +52,8 @@ export default function Tomorrow({ user }) {
 
   
     // FUNCTIONS
+
+    const navigate = useNavigate()
 
     function reserveSpotUser2(event) {
     
@@ -65,9 +71,9 @@ export default function Tomorrow({ user }) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
+      .then(
+        navigate('/account')
+      )
      
     }
   
@@ -90,9 +96,9 @@ export default function Tomorrow({ user }) {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then((data) => {
-      window.location.reload()
-    })
+    .then(
+      navigate('/account')
+    )
    
   }
 
@@ -112,9 +118,9 @@ export default function Tomorrow({ user }) {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then((data) => {
-      window.location.reload()
-    })
+    .then(
+      navigate('/account')
+    )
     
   }
   

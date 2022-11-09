@@ -1,6 +1,6 @@
 import styles from '../ReservationCalendar.module.css'
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { add, format } from 'date-fns'
 
 export default function FifthDay({user}) {
@@ -11,9 +11,11 @@ export default function FifthDay({user}) {
   const [ errors, setErrors ] = useState([]);
   const { term } = useParams();
 
+  const navigate = useNavigate()
   const courtId = window.location.href.toString().substring(31,33).replace("/","")
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/pickleballs?q=${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -22,9 +24,11 @@ export default function FifthDay({user}) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/courts/${courtId}`)
     .then(r => {
       if(r.ok) {
@@ -33,9 +37,8 @@ export default function FifthDay({user}) {
         r.json().then(err => setErrors(err.errors));
       }
     })
+  }
   }, [courtId])
-
-  console.log(user)
  
 
   const day5 = add(new Date(), {
@@ -68,10 +71,9 @@ export default function FifthDay({user}) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
-     
+      .then(
+        navigate('/account')
+      )
     }
   
 
@@ -93,10 +95,9 @@ export default function FifthDay({user}) {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then((data) => {
-      window.location.reload()
-    })
-   
+    .then(
+      navigate('/account')
+    )
   }
   
     function reserveSpotUser4(event) {
@@ -115,10 +116,9 @@ export default function FifthDay({user}) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then((data) => {
-        window.location.reload()
-      })
-      
+      .then(
+        navigate('/account')
+      )
     }
   
 
@@ -2747,7 +2747,8 @@ const lastday = add(new Date(), {
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{fifthDayfiltered21Court7.length !== 0 ? fifthDayfiltered21Court7 : <Link to='/create'>OPEN</Link>}</div></th>
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{fifthDayfiltered21Court8.length !== 0 ? fifthDayfiltered21Court8 : <Link to='/create'>OPEN</Link>}</div></th>
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{fifthDayfiltered21Court9.length !== 0 ? fifthDayfiltered21Court9 : <Link to='/create'>OPEN</Link>}</div></th>
-          
+                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{fifthDayfiltered21Court10.length !== 0 ? fifthDayfiltered21Court10 : <Link to='/create'>OPEN</Link>}</div></th>
+
              </tr> 
             <tr className={styles.tableRow}>
               <td className={styles.tableDateLast}>10PM</td>
