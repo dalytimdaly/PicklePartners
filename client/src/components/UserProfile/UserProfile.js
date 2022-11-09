@@ -51,7 +51,7 @@ export default function UserProfile({ user }) {
 
   const totalGamesPlayed = gameCreated + gamePlayed1 + gamePlayed2 + gamePlayed3
 
-  console.log(totalGamesPlayed)
+  
 
   return (
     <div>

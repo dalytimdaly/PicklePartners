@@ -119,8 +119,13 @@ export default function EditAccount({user}) {
       <input type='text' className={styles.postalcode} onChange={handlePhoneNumber} value={patch > 0 ? phoneNumber : postObject.phone_number}/>
       </label>
       <label for="skill" className={styles.citylabel}>skill level
-      <input type='text' className={styles.city} onChange={handleSkillLevel} value={patch > 0 ? skillLevel : postObject.skill_level}/>
-      </label>
+      <select className={styles.categories} onChange={handleSkillLevel}>
+        <option value="beginner">beginner</option>
+        <option value="intermediate">intermediate</option>
+        <option value="advanced">advanced</option>
+        <option value="pro">pro</option>
+      </select>
+      </label>  
       </div>
       <div className={styles.descriptioncontainer}>
       <label htmlFor="description" className={styles.descriptionlabel}>your bio

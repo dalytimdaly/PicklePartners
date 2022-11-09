@@ -12,7 +12,7 @@ export default function Header({ user }) {
         <Link to='/'>PP</Link>
       </div>
       <div className={styles.links}>
-        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link>
+        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link> | <Link to={`/user/profile/${user.id}`}>my profile</Link>
       </div>
     </div>
     <Outlet />

@@ -166,19 +166,19 @@ useEffect(() => {
   function renderNamePlayer2(param) {
     let player = opponent.filter(name => name.id === param)
     return player.map(result => <div> <Link key={result.id} to={`/user/profile/${result.id}`}>{result.first_name} {result.last_name} </Link> 
-    {result.id === user.id ? <button onClick={() => renderCancellationPlayer2(result.id)}>double click to cancel reservation</button> : null}</div> )
+    {result.id === user.id ? <button onClick={() => renderCancellationPlayer2(result.id)}>double click to cancel spot reservation</button> : null}</div> )
   }
 
   function renderNamePlayer3(param) {
     let player = opponent.filter(name => name.id === param)
     return player.map(result => <div> <Link key={result.id} to={`/user/profile/${result.id}`}>{result.first_name} {result.last_name} </Link> 
-    {result.id === user.id ? <button onClick={() => renderCancellationPlayer3(result.id)}>double click to cancel reservation</button> : null}</div> )
+    {result.id === user.id ? <button onClick={() => renderCancellationPlayer3(result.id)}>double click to cancel spot reservation</button> : null}</div> )
   }
 
   function renderNamePlayer4(param) {
     let player = opponent.filter(name => name.id === param)
     return player.map(result => <div> <Link key={result.id} to={`/user/profile/${result.id}`}>{result.first_name} {result.last_name} </Link> 
-    {result.id === user.id ? <button onClick={() => renderCancellationPlayer4(result.id)}>double click to cancel reservation</button> : null}</div> )
+    {result.id === user.id ? <button onClick={() => renderCancellationPlayer4(result.id)}>double click to cancel spot reservation</button> : null}</div> )
   }
 
   function renderCancellationPlayer2(param) {
@@ -298,14 +298,14 @@ useEffect(() => {
       </div>
       {
       pickles.map(pickle => <div key={pickle.id} className={parseInt(format(date, 'y-M-d').substr(8,2)) > parseInt(pickle.date.substr(8,2)) ? styles.userNone : styles.post} >
-      <div className={styles.title}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`} Time: {renderTime(pickle.time)} Group Size: {pickle.size}</div>
+      <div className={styles.title}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`} Time: {renderTime(pickle.time)} Group Size: {pickle.size} <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => editPickle(pickle.id)}>edit reservation</button></div>
+      <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => handleDelete(pickle.id)}>cancel reservation</button></div></div>
       <div className={styles.area}><b>Location: {renderCourtName(pickle.court_id)}</b> Court: {pickle.court_number_id}</div>
       <div className={styles.area}>Created by/Player 1: {renderName(pickle.user_id)}</div>
       <div className={styles.area}><div>Player 2: {pickle.user2_id ? renderNamePlayer2(pickle.user2_id) : "spot open"}</div></div>
       <div className={pickle.size === 2 ? styles.userNone : styles.area}><div>Player 3: {pickle.user3_id ? renderNamePlayer3(pickle.user3_id) : "spot open" }</div></div>
       <div className={pickle.size === 2 ? styles.userNone : styles.area}><div>Player 4: {pickle.user4_id ? renderNamePlayer4(pickle.user4_id) : "spot open" }</div></div>
-      <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => editPickle(pickle.id)}>edit reservation</button></div>
-      <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => handleDelete(pickle.id)}>cancel reservation</button></div>
+      
       </div>)
       }
     </div>
