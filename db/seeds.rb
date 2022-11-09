@@ -72,7 +72,7 @@ Court.create(
 name: "Cornerstone Park", address: "5150 S Windermere St, Littleton, CO 80120", phone_number: "(303) 953-7625", hours: "6AM-11PM", image: "https://loremflickr.com/600/#{rand(425..450).to_s}/pickleball", court_number1: 1,
 court_number2: 2, court_number3: 3, court_number4: 4, court_number5: 5, court_number6: 6, court_number7: 7, court_number8: 8, court_number9: 9, court_number10: 10)
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -80,13 +80,13 @@ court_number2: 2, court_number3: 3, court_number4: 4, court_number5: 5, court_nu
     size: 2,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -94,13 +94,13 @@ end
     size: 2,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -108,13 +108,13 @@ end
     size: 2,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -122,14 +122,14 @@ end
     size: 2,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
-    user2_id: "open spot",
+   
   )
 end
 
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -137,7 +137,7 @@ end
     size: 4,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
@@ -145,7 +145,7 @@ end
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -153,7 +153,7 @@ end
     size: 4,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
@@ -161,7 +161,7 @@ end
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -169,16 +169,15 @@ end
     size: 4,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
-    user3_id: "open spot",
     user4_id: User.all.pluck(:id).sample
   )
 end
 
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -186,7 +185,7 @@ end
     size: 4,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
@@ -194,7 +193,7 @@ end
   )
 end
 
-70.times do
+200.times do
   Pickleball.create(
     user_id: User.all.pluck(:id).sample,
     court_id: Court.all.pluck(:id).sample,
@@ -202,10 +201,10 @@ end
     size: 4,
     skill_level: skills.sample,
     time: rand(6..22),
-    date: Faker::Date.forward(days: 7),
+    date: Faker::Date.forward(days: 6),
     court_number_id: rand(1..10),
     user2_id: User.all.pluck(:id).sample,
     user3_id: User.all.pluck(:id).sample,
-    user4_id: "open spot"
+    
   )
 end

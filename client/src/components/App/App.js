@@ -40,13 +40,16 @@ function App() {
   return (
     <div className={styles.App}>
     <Routes>
-
+    
+    
     <Route element={<Header user={user} />}>
-      <Route path="/" element={<Main />} />
-      <Route path='/login' element={<Login user={user} newUser={newUser}/>} />
+    <Route path="/" element={<Main />} />
+    <Route path='/login' element={<Login user={user} newUser={newUser}/>} />
+    <Route path='/account-edit' element={<EditAccount user={user} newUser={newUser}/>} />
+      
       <Route path='/account' element={<Account user={user} newUser={newUser}/>} />
       <Route path='/schedule' element={<Schedule user={user} newUser={newUser}/>} />
-      <Route path='/account-edit' element={<EditAccount user={user} newUser={newUser}/>} />
+      
       <Route path='/schedule/:id' element={<ReservationCalendar user={user} newUSer={newUser}/>} />
       <Route path='/schedule/:id/today' element={<Today user={user} newUSer={newUser}/>} />
       <Route path='/schedule/:id/tomorrow' element={<Tomorrow user={user} newUSer={newUser}/>} />
