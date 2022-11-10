@@ -16,11 +16,8 @@ export default function EditAccount({user}) {
       setArea(data.area)
       setPhoneNumber(data.phone_number)
       setBio(data.bio)
-      setImage(data.image)
     })
   }, [])
-
-  console.log(postObject.id)
 
   function startPatch() {
     setPatch(1)
@@ -34,7 +31,6 @@ export default function EditAccount({user}) {
   const [phoneNumber, setPhoneNumber] = useState("")
   const [bio, setBio] = useState("")
   const [editImage, setEditImage] = useState(false)
-  const [image, setImage] = useState("")
   const [skillLevel, setSkillLevel] = useState("")
 
  
@@ -62,9 +58,6 @@ export default function EditAccount({user}) {
     setBio(event.target.value)
   }
 
-  function handleImage(event) {
-    setImage(event.target.value)
-  }
 
   function handleEditImage(event) {
     setEditImage(event.target.value)
@@ -82,7 +75,6 @@ export default function EditAccount({user}) {
         "first_name": firstName,
         "last_name": lastName,
         "bio": bio,
-        "profile_picture": image,
         "area": area,
         "phone_number": phoneNumber,
         "skill_level": skillLevel
@@ -99,7 +91,27 @@ export default function EditAccount({user}) {
     .then((data) => {
       navigate('/account')
     })
+
   }
+
+  function handleSubmitPicture(e) {
+    e.preventDefault()
+    const file = e.target['avatar'].files[0]
+    let formData = new FormData();
+    console.log(file)
+    formData.append('avatar', file)
+    
+  fetch('/setavatar', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        }).then(res => res.json())
+        .then((data) => console.log(data))
+        
+    }
+  
 
   return (
     <div className={styles.post}>
@@ -136,11 +148,10 @@ export default function EditAccount({user}) {
       <button className={styles.button} type="submit">Continue</button>
       </form>
       <div className={styles.imagecontainer}>
-        <img src={image} alt="your profile picture" className={styles.imageDisplay}/>
-      {editImage ? <label for="imageInput" className={styles.imagelabel}>profile picture url
-      <input type="text" className={styles.imageInput} onChange={handleImage} value={patch > 0 ? image : postObject.profile_picture}/>
-      </label> : 
-      <button onClick={renderEditImageInput} className={styles.imageButton}>edit profile picture</button>}
+      <form onSubmit={(e) => handleSubmitPicture(e)}>
+                <input type="file" name="avatar"/>
+                <button type="submit">Submit</button>
+            </form>
       </div>
     </div>
   )

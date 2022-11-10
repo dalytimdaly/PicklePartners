@@ -62,6 +62,7 @@ export default function UserProfile({ user }) {
       <div>Contact: phone: {profile.phone_number} email: {profile.username}</div>
       <div>skill level: {profile.skill_level}</div>
       <div>{`games played: ${totalGamesPlayed}`}</div>
+      <img src={profile.avatar} />
       </div>
 
         

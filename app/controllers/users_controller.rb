@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize
-  skip_before_action :authorize, only: :create
+  skip_before_action :authorize, only: :create, :set_avatar
 
   def index
     render json: User.all
@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_avatar
+      #If you set up your frontend request properly, params[:avatar] will be an UploadedFile instance, which is what we want
+      user = User.find(params[:id])
+      render json: user
+  end
+
   # PATCH /user - EDIT ACCOUNT INFO
   def update
     user = User.find(params[:id])
@@ -46,7 +52,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:id, :username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :profile_picture)
+    params.permit(:id, :username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :avatar)
   end
 
 end

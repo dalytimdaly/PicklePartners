@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function CourtSchedule({ image, address, hours, id, name, phone_number}) {
 
-  const path = `/schedule/${id}`
+  const path = `/schedule/${id}/today`
   
 
   return (
