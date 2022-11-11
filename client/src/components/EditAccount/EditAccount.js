@@ -16,6 +16,7 @@ export default function EditAccount({user}) {
       setArea(data.area)
       setPhoneNumber(data.phone_number)
       setBio(data.bio)
+      setSkillLevel(data.skillLevel)
     })
   }, [])
 
@@ -31,7 +32,7 @@ export default function EditAccount({user}) {
   const [phoneNumber, setPhoneNumber] = useState("")
   const [bio, setBio] = useState("")
   const [editImage, setEditImage] = useState(false)
-  const [skillLevel, setSkillLevel] = useState("")
+  const [skillLevel, setSkillLevel] = useState("beginner")
 
  
   function handleFirstName(event) {
@@ -94,15 +95,16 @@ export default function EditAccount({user}) {
 
   }
 
+
+
   function handleSubmitPicture(e) {
     e.preventDefault()
     const file = e.target['avatar'].files[0]
-    let formData = new FormData();
-    console.log(file)
+    const formData = new FormData();
     formData.append('avatar', file)
     
-  fetch('/setavatar', {
-            method: 'POST',
+  fetch(`/setavatar/${postObject.id}`, {
+            method: 'PATCH',
             headers: {
                 'Accept': 'application/json'
             },
@@ -148,10 +150,11 @@ export default function EditAccount({user}) {
       <button className={styles.button} type="submit">Continue</button>
       </form>
       <div className={styles.imagecontainer}>
-      <form onSubmit={(e) => handleSubmitPicture(e)}>
+      {editImage ? <form onSubmit={(e) => handleSubmitPicture(e)}>
                 <input type="file" name="avatar"/>
                 <button type="submit">Submit</button>
-            </form>
+            </form> : 
+      <button onClick={renderEditImageInput} className={styles.imageButton}>edit profile picture</button>}
       </div>
     </div>
   )

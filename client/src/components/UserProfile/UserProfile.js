@@ -14,8 +14,7 @@ export default function UserProfile({ user }) {
 
   
   const profileId = window.location.href.toString().substring(35,38).replace("/","")
-  console.log(profileId)
- 
+  
   useEffect(() => {
     fetch(`/users/${profileId}`)
     .then(r => {
@@ -40,7 +39,7 @@ export default function UserProfile({ user }) {
     
   }, [])
 
-  console.log(profile)
+
 
   const gameCreated = pickleballs.filter(pickle => pickle.user_id === profile.id ).length
   
@@ -62,7 +61,7 @@ export default function UserProfile({ user }) {
       <div>Contact: phone: {profile.phone_number} email: {profile.username}</div>
       <div>skill level: {profile.skill_level}</div>
       <div>{`games played: ${totalGamesPlayed}`}</div>
-      <img src={profile.avatar} />
+      {profile.avatar ? <img src={profile.avatar} alt={"No image provided"} />: null }
       </div>
 
         
