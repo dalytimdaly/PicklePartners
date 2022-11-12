@@ -18,6 +18,9 @@ export default function Header({ user }) {
       <div className={styles.homeBtn}>
         <Link to='/'>PP</Link>
       </div>
+      <div>
+      <h4 className={styles.slogan}>Create. Find. Connect. Play.</h4>
+      </div>
       <div className={styles.links}>
         <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link> | <button className={styles.buttonLink} onClick={renderProfile}>profile</button>
       </div>
