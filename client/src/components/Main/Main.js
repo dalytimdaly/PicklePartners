@@ -8,7 +8,7 @@ export default function Main() {
     <div>
     
     <div>
-      <h1>Welcome to PicklePartners</h1>
+      <h1>PicklePartners</h1>
       <h4>Create. Find. Connect. Play.</h4>
     </div>
     <Link to='/login' className={styles.Link}>Login/Sign-Up</Link>

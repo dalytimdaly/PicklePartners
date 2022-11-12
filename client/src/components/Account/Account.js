@@ -10,6 +10,7 @@ export default function Account({ user, newUser }) {
   const [ pickles, setPickles ] = useState([])
   const [ opponent, setOpponent ] = useState([])
   const [ removeMe, setRemoveMe ] = useState(0)
+  const [clicked, setClicked] = useState(false)
 
   const navigate = useNavigate();
 
@@ -282,20 +283,30 @@ useEffect(() => {
       minutes: 0,
       seconds: 0,
     })
+
+    function handleClick() {
+      setPickles(allGames)
+      console.log(pickles)
+      setClicked(!clicked)
+      console.log(clicked)
+    }
   
     
   return (
     <div>
-      <Link to='/account-edit'>Edit Account Info </Link>
-      <div>home of {user ? `${user.first_name} ${user.last_name}` : null}</div>
+      
+      <div className={styles.homeOf}>home of {user ? `${user.first_name} ${user.last_name}` : null}</div>
+      <Link to='/account-edit' className={styles.editAccount}>Edit Account Info </Link>
+      <br></br>
       <button className={styles.logoutBtn} onClick={logout}>[ Log out ]</button>
     <div>
     
     
       <div className={styles.posts}>
       <div className={styles.post}>
-        <div className={`${styles.manage} ${styles.heading}`}><button onClick={()=>setPickles(allGames)}>View</button>My Pickles:</div>
+        <div className={`${styles.manage} ${styles.heading}`}><button className={styles.buttonLink} onClick={handleClick}>{clicked ? "View Your Pickles ▾": "View Your Pickles ▸"}</button></div>
       </div>
+      <div className={clicked ? styles.displayGames : styles.userNone}>
       {
       pickles.map(pickle => <div key={pickle.id} className={parseInt(format(date, 'y-M-d').substr(8,2)) > parseInt(pickle.date.substr(8,2)) ? styles.userNone : styles.post} >
       <div className={styles.title}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`} Time: {renderTime(pickle.time)} Group Size: {pickle.size} <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => editPickle(pickle.id)}>edit reservation</button></div>
@@ -308,6 +319,7 @@ useEffect(() => {
       
       </div>)
       }
+      </div>
     </div>
     </div>
     

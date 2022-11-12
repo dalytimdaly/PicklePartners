@@ -7,7 +7,9 @@ export default function Header({ user }) {
   const navigate = useNavigate()
 
   function renderProfile() {
-      navigate(user ? `/user/profile/${user.id}` : '/login')}
+      navigate(user ? `/user/profile/${user.id}` : '/login')
+      window.location.reload()
+    }
   
 
   return (
