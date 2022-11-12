@@ -9,7 +9,7 @@ import ReservationCalendar from '../Schedule/ReservationCalendar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import EditAccount from '../EditAccount/EditAccount';
-import CreateReservation from '../CreateReservation/CreateRervation';
+import CreateReservation from '../CreateReservation/CreateReservation';
 import EditReservation from '../EditReservation/EditReservation';
 import Today from '../Schedule/Reservation/Today';
 import Tomorrow from '../Schedule/Reservation/Tomorrow';

@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   def avatar_url
     return Rails.application.routes.url_helpers.url_for(avatar) if avatar.attached?
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqcwio8gGLw-sSaYm0SYl13oLFpscvutmkk8l95s33AM3_kD0HivHJLzMF_t6w-VI2ow&usqp=CAU'
+    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
   end
 
 end

@@ -21,7 +21,7 @@ export default function Search({ user }) {
   
   return (
     <div>
-      <label for="courts" className={styles.categorylabel}>choose a court near you:
+      <label for="courts" className={styles.categorylabel}><h4>choose a court near you:</h4>
       <div className={styles.courtsContainer}>
         {results.map(result => <CourtSchedule image={result.image} key={result.id} result={result} address={result.address} hours={result.hours} id={result.id} name={result.name} phone_number={result.phone_number} courtNumber1={result.court_number1} courtNumber2={result.court_number2} courtNumber3={result.court_number3} courtNumber4={result.court_number4} courtNumber5={result.court_number5} courtNumber6={result.court_number6} courtNumber7={result.court_number7} courtNumber8={result.court_number8} courtNumber9={result.court_number9} courtNumber10={result.court_number10}/>)}
       </div>

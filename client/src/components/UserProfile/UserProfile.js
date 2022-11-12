@@ -54,16 +54,32 @@ export default function UserProfile({ user }) {
 
   return (
     <div>
-      <div key={profile.id} className={styles.post}> 
-      <div>{profile.first_name} {profile.last_name}</div>
-      <div>Located near: {profile.area}</div>
-      <div>About me: {profile.bio}</div>
-      <div>Contact: phone: {profile.phone_number} email: {profile.username}</div>
-      <div>skill level: {profile.skill_level}</div>
-      <div>{`games played: ${totalGamesPlayed}`}</div>
-      {profile.avatar ? <img src={profile.avatar} alt={"No image provided"} />: null }
+      <div key={profile.id} className={styles.post}>
+      {profile.avatar ? <img src={profile.avatar} alt={"No image provided"} className={styles.avatar}/>: null } 
+      <div className={styles.name}><h2>{profile.first_name} {profile.last_name}</h2></div>
+      <div className={styles.contact}><h3>Contact: </h3>
+      <h4>phone:</h4> {profile.phone_number} 
+      <h4>email:</h4> {profile.username}</div>
+      <div className={styles.location}>
+       <h3> Located near: </h3>
+        {profile.area}
+        </div>
+      
+      
+      <div className={styles.skill}>
+       <h3> skill level: </h3>
+      {profile.skill_level}</div>
+      <div className={styles.gamesPlayed}>
+        <h3>games played: </h3>
+        {`${totalGamesPlayed}`}
+        </div>
+        <div className={styles.aboutMe}>
+      <h3> About me: </h3>
+      {profile.bio}
       </div>
-
+      
+      </div>
+      
         
     </div>
   )
