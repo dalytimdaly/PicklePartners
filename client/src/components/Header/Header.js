@@ -1,9 +1,14 @@
 import styles from './Header.module.css';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 
 export default function Header({ user }) {
 
   const path = user ? '/account' : '/login';
+  const navigate = useNavigate()
+
+  function renderProfile() {
+      navigate(user ? `/user/profile/${user.id}` : '/login')}
+  
 
   return (
     <>
@@ -12,7 +17,7 @@ export default function Header({ user }) {
         <Link to='/'>PP</Link>
       </div>
       <div className={styles.links}>
-        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link> | <Link to={`/user/profile/${user.id}`}>my profile</Link>
+        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link> | <button className={styles.buttonLink} onClick={renderProfile}>profile</button>
       </div>
     </div>
     <Outlet />

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/me', to:'users#showme'
   post '/signup', to: 'users#create'
 
+  patch '/setavatar/:id', to: 'users#set_avatar'
+
 end
 

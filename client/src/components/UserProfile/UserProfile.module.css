@@ -1,0 +1,71 @@
+.post {
+  display: flex;
+  flex-direction: row;
+}
+
+.name {
+  position: absolute;
+  left:60px;
+  top: 38px;
+}
+
+.avatar {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  height: 250px;
+  width: 250px;
+}
+
+.aboutMe {
+  position: absolute;
+  text-align: left;
+  width: 60%;
+  max-width: 800px;
+  height: 70%;
+  max-height: 350px;
+  top: 100px;
+  left: 500px;
+  padding: 5px;
+  background-color:rgb(255, 255, 255);
+  border-left-color: rgb(204,204,204);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(204,204,204);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(204,204,204);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-color: rgb(204,204,204);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.contact {
+  position: absolute;
+  top: 80px;
+  left: 275px;
+}
+
+.location {
+  position: absolute;
+  padding: 10px;
+  top: 340px;
+  left: 0px;  
+}
+
+.skill {
+  position: absolute;
+  padding: 10px;
+  top: 340px;
+  left: 160px;
+}
+
+.gamesPlayed {
+  position: absolute;
+  padding: 10px;
+  top: 340px;
+  left: 280px;
+}
+

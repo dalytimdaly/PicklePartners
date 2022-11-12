@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def set_avatar
+      user = User.find(params[:id])
+      user.update(user_params)
+      render json: user, status: :accepted
+  end
+
   # PATCH /user - EDIT ACCOUNT INFO
   def update
     user = User.find(params[:id])
@@ -46,7 +52,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:id, :username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :profile_picture)
+    params.permit(:id, :username, :password, :password_confirmation, :first_name, :last_name, :area, :phone_number, :bio, :skill_level, :avatar)
   end
 
 end
