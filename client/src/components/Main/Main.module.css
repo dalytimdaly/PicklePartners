@@ -41,6 +41,13 @@
 .loginBtn {
   position: absolute;
   right: 0px;
-  top: 30px;
-  height: 50%;
+  top: 40px;
+  font-family: Arial;
+  font-size: 12.8px;
+  text-decoration: none white;
+}
+
+.icon {
+  height:40px;
+  width:40px;
 }

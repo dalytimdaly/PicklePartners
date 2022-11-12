@@ -4,6 +4,24 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function Main() {
 
+  const navigate = useNavigate()
+
+  function navCreate() {
+   console.log("hi")
+  }
+
+  function navFind() {
+   console.log("hi")
+  }
+
+  function navConnect() {
+   console.log("hi")
+  }
+
+  function navPlay() {
+   console.log("hi")
+  }
+
   return (
     <div>
     
@@ -13,23 +31,23 @@ export default function Main() {
     
     <div className={styles.buttonContainer}>
           <div className={styles.loginBtn}>
-            <Link to='/login' className={styles.category}><img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/8bc05b287157/assets/img/svg_illustrations/40x40_food_v2.svg" alt="restaurants"/> Login/Sign-Up</Link>
+            <Link style={{textDecoration: 'none', padding: '5px' }} to='/login' className={styles.category}><img className={styles.icon} src="https://img.icons8.com/cute-clipart/2x/login-rounded-up.png" alt="restaurants"/><h4>Login/Sign-Up</h4></Link>
           </div>  
-          <button className={styles.category} >
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/488aeb87ef6e/assets/img/svg_illustrations/40x40_gift_shops_v2.svg" alt="shopping"/>
-            Create
+          <button className={styles.category} onClick={navCreate}>
+            <img className={styles.icon} src="https://img.icons8.com/bubbles/2x/plus-2-math.png" alt="create"/>
+            <h4>Create</h4>
           </button>
-          <button className={styles.category} >
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/1397897c21a5/assets/img/svg_illustrations/40x40_new_v2.svg" alt="nightlife" />
+          <button className={styles.category} onClick={navFind}>
+            <img className={styles.icon} src="https://img.icons8.com/external-happy-man-bomsymbols-/2x/external-find-happy-man-human-resource-and-life-style-set-2-happy-man-bomsymbols-.png" alt="find" />
             <h4>Find</h4>
           </button>
-          <button className={styles.category} >
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/0372f8e93aa9/assets/img/svg_illustrations/40x40_set_objective_v2.svg" alt="active"/>
-            Connect
+          <button className={styles.category} onClick={navConnect}>
+            <img className={styles.icon} src="https://img.icons8.com/external-filled-outline-geotatah/2x/external-connect-recruitment-color-filled-outline-geotatah.png" alt="connect"/>
+            <h4>Connect</h4>
           </button>
-          <button className={styles.category} >
-            <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/5bd5d2648742/assets/img/svg_illustrations/40x40_barbers_v2.svg" alt="beautysvc"/>
-            Play
+          <button className={styles.category} onClick={navPlay}>
+            <img className={styles.icon} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmoN9ia7-iVJfn49QTWM1yEP4nu2xB38PtiA&usqp=CAU" alt="play"/>
+            <h4>Play</h4>
           </button>
         </div>
         
