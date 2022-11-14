@@ -2432,35 +2432,57 @@ const lastday = add(new Date(), {
   seconds: 0,
 })
 
+const [change, setChange] = useState(`/schedule/1/day6`)
+
+function handleSubmit(e) {
+  e.preventDefault()
+  console.log(change)
+  navigate(change)
+}
+
+const [changeDate, setChangeDate] = useState(`/schedule/${courtId}/today`)
+
+function handleSubmitDate(e) {
+  e.preventDefault()
+  console.log(changeDate)
+  navigate(changeDate)
+}
+
   return (
     <div className={styles.pickleContainer}>
       <h1>{court.name}</h1>
+      <h4>{format(day6, 'eee, MM/dd')}</h4>
       <div>View other courts:</div>
-      <Link to={`/schedule/1/tomorrow`}>Gates Tennis Center</Link>
-      <Link to={`/schedule/2/tomorrow`}>Congress Park</Link>
-      <Link to={`/schedule/3/tomorrow`}>Huston Lake Park</Link>
-      <Link to={`/schedule/4/tomorrow`}>Eisenhower Recreation Center</Link>
-      <Link to={`/schedule/5/tomorrow`}>Cook Park Recreation Center</Link>
-      <Link to={`/schedule/6/tomorrow`}>Bear Valley Park Pickleball Courts</Link>
-      <Link to={`/schedule/7/tomorrow`}>Washington Park Recreation Center</Link>
-      <Link to={`/schedule/8/tomorrow`}>Sheridan Recreation Center</Link>
-      <Link to={`/schedule/9/tomorrow`}>Meadow Creek Tennis and Fitness Club</Link>
-      <Link to={`/schedule/10/tomorrow`}>Johnson Recreation Center</Link>
-      <Link to={`/schedule/11/tomorrow`}>Martin Luther King Jr. Recreation Center</Link>
-      <Link to={`/schedule/12/tomorrow`}>Apex Pickleball Courts</Link>
-      <Link to={`/schedule/13/tomorrow`}>Cornerstone Park</Link>
-      <Link>View other dates: </Link>
-      <div>
-     
-    <Link to={`/schedule/${courtId}/today`}>{format(date, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/tomorrow`}>{format(tomorrow, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/day3`}>{format(day3, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/day4`}>{format(day4, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/day5`}>{format(day5, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/day6`}>{format(day6, 'eee, MM/dd')}</Link>
-    <Link to={`/schedule/${courtId}/day7`}>{format(lastday, 'eee, MM/dd')}</Link>
-  
-    </div>
+      <form onSubmit={handleSubmit}>
+      <select onChange={(e) => setChange(e.target.value)}>
+      <option value={`/schedule/1/day6`}>Gates Tennis Center</option>
+      <option value={`/schedule/2/day6`}>Congress Park</option>
+      <option value={`/schedule/3/day6`}>Huston Lake Park</option>
+      <option value={`/schedule/4/day6`}>Eisenhower Recreation Center</option>
+      <option value={`/schedule/5/day6`}>Cook Park Recreation Center</option>
+      <option value={`/schedule/6/day6`}>Bear Valley Park Pickleball Courts</option>
+      <option value={`/schedule/7/day6`}>Washington Park Recreation Center</option>
+      <option value={`/schedule/8/day6`}>Sheridan Recreation Center</option>
+      <option value={`/schedule/9/day6`}>Meadow Creek Tennis and Fitness Club</option>
+      <option value={`/schedule/10/day6`}>Johnson Recreation Center</option>
+      <option value={`/schedule/11/day6`}>>Martin Luther King Jr. Recreation Center</option>
+      <option value={`/schedule/12/day6`}>Apex Pickleball Courts</option>
+      <option value={`/schedule/13/day6`}>Cornerstone Park</option>
+      </select>
+      <button type="submit">Go</button>
+      </form>
+      <div>View other dates: </div>
+      <form onSubmit={handleSubmitDate}> 
+      <select onChange={(e) => setChangeDate(e.target.value)}>
+      <option value={`/schedule/${courtId}/today`}>{format(date, 'eee, MM/dd')}</option>
+      <option value={`/schedule/${courtId}/tomorrow`}>{format(tomorrow, 'eee, MM/dd')}</option>
+      <option value={`/schedule/${courtId}/day3`}>{format(day3, 'eee, MM/dd')}</option>
+      <option value={`/schedule/${courtId}/day4`}>{format(day4, 'eee, MM/dd')}</option>
+      <option value={`/schedule/${courtId}/day5`}>{format(day5, 'eee, MM/dd')}</option>
+      <option value={`/schedule/${courtId}/day7`}>{format(lastday, 'eee, MM/dd')}</option>
+      </select>
+      <button type="submit">Go</button>
+     </form>
       <table className={styles.table}>
           <tbody>
             <tr className={styles.tableRowDays}>

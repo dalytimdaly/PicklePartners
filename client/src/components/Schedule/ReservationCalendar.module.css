@@ -1,16 +1,25 @@
+.table {
+  margin-left: 5%;
+  align-content: center;
+}
+
+
 .tableHead {
-  padding-left: 70px;
-  padding-right: 70px;
+  height: 100px;
+  width: 100px;
+  align-content: center;
 }
 
 .tableDate {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  height: 100px;
+  width: 100px;
+  align-content: center;
 }
 
 .tableDateLast {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  align-content: center;
 }
 
 .reservationBlock {
@@ -27,16 +36,17 @@
   border-bottom-color: rgb(204,204,204);
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  text-align: center;
   padding: 0px;
   font-style: normal;
+
 }
 
 .reservedBlock {
   background-color: rgb(241, 9, 9);
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px;
+  margin-top: 0px;
+  font-size: 5px;
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 .reservedH4 {
@@ -45,17 +55,28 @@
 
 .reserveP {
   margin: 0px;
+  
 }
+
+.reservedBlock:hover {
+  box-shadow: 0 0 10px 0 #00000026;
+  font-size: 20px;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
 
 .userId {
   margin: 0px;
 }
 
 .courtBlock {
-  display: flex;
-  flex-direction: column;
-  
+  height: auto;
+  align-content: center;
 }
+
+
+
 
 .userNone{
   display: none;
