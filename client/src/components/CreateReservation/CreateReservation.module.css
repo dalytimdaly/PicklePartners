@@ -1,0 +1,38 @@
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto; 
+}
+
+.h1Title {
+  position: relative;
+  margin-left: 100%;
+  width: 100%;
+}
+
+.leftColumn {
+  position: relative;
+  left: 350px;
+  top: 20px;
+}
+
+.rightColumn {
+  position: relative;
+  left: 700px;
+  top: -300px;
+}
+
+.butDiv {
+  position: relative;
+  left: 750px;
+  top: -230px;
+  width: 100px;;
+  border: solid 4px #e3e3e3;
+}
+
+.icon {
+  position: relative;
+  top: 15px;
+  height: 40px;
+  width: 40px;
+}

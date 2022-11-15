@@ -296,7 +296,9 @@ useEffect(() => {
     <div>
       
       <div className={styles.homeOf}><h4>home of {user ? `${user.first_name} ${user.last_name}` : null}</h4></div>
-      <Link to='/account-edit' className={styles.editAccount}>Edit Account Info </Link>
+      <Link to='/account-edit' className={styles.editAccount}>
+      <img className={styles.icon} src="https://cdn-icons-png.flaticon.com/128/1256/1256291.png" alt="edit"/>
+        Edit Account Info </Link>
       <br></br>
       <button className={styles.logoutBtn} onClick={logout}>[ Log out ]</button>
     <div>
