@@ -169,7 +169,8 @@ export default function CreateReservation({user}) {
     <div className={styles.post}>
       <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.groupcontainer}>
-        <h1>Create your Pickleball Reservation</h1>
+        <h1 className={styles.h1Title}>Create your Pickleball Reservation</h1>
+        <div className={styles.leftColumn}>
         <h4> Where would you like to play? </h4>
       <label for="court" className={styles.postlabel}>
       <select className={styles.categories} onChange={handleCourtId}>
@@ -212,6 +213,8 @@ export default function CreateReservation({user}) {
         <option value="pro">pro</option>
       </select>
       </label>
+      </div>
+      <div className={styles.rightColumn}>
       <h4>What day do you want to play?</h4>
       <label for="skill" className={styles.citylabel}>
       <select className={styles.categories} onChange={handleDate}>
@@ -261,9 +264,12 @@ export default function CreateReservation({user}) {
         <option value="10">Court 10</option>
       </select>
       </label>
+      </div>
       </div> 
       <br></br>
-      <button className={styles.button} type="submit">Submit your Reservation</button>
+      <div className={styles.butDiv}>
+      <button className={styles.button} type="submit"><img className={styles.icon} src="https://cdn-icons-png.flaticon.com/512/5307/5307921.png" alt="submit"/><h4 className={styles.h4but}>Submit your Reservation</h4></button>
+      </div>
       </form>
     </div>
   )

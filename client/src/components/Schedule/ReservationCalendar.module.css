@@ -1,3 +1,48 @@
+.picklecontainer {
+  background-image: linear-gradient(180deg, rgba(46, 46, 46, 0.97),rgba(46, 46, 46, .1) 40%), url('https://source.unsplash.com/1600x900/?pickleball');
+}
+
+.topDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottomDiv {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.pageCourt {
+  display: flex;
+  flex-direction: row;
+  left: 10px;
+  width: auto;
+  margin: 0px;
+  margin-left: 2%;
+  margin-top: 10px;
+}
+
+.pageDate {
+  display: flex;
+  flex-direction: row;
+  max-width: auto;
+  width: 100px;
+  margin: 0px;
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.changeCourt {
+  margin-left: 2%;
+  margin-top: 10px;
+}
+
+.changeDate {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
 .table {
   margin-left: 5%;
   align-content: center;
@@ -21,6 +66,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
   align-content: center;
+  font-weight: bold;
 }
 
 .reservationBlock {
@@ -58,7 +104,27 @@
 }
 
 .spotBtn {
-  font-size: 20px;
+  font-size: 25px;
+  border-left-color: rgb(11, 0, 0);
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-right-color: rgb(16, 1, 1);
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-top-color: rgb(3, 0, 0);
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-bottom-color: rgb(3, 0, 0);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  background-color: blue;
+  color: white;
+}
+
+.spotBtn:hover {
+  background-color: green;
+  color: yellow;
+  cursor: pointer;
 }
 
 .reservedBlock:hover {

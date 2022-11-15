@@ -4,6 +4,8 @@ import { Outlet, Link, useNavigate } from 'react-router-dom';
 export default function Header({ user }) {
 
   const path = user ? '/account' : '/login';
+  const path2 = user ? '/create' : '/login';
+  const path3 = user ? '/schedule' : '/login';
   const navigate = useNavigate()
 
   function renderProfile() {
@@ -22,7 +24,7 @@ export default function Header({ user }) {
       <h4 className={styles.slogan}>Create. Find. Connect. Play.</h4>
       </div>
       <div className={styles.links}>
-        <Link to='/create'>create a pickle</Link> | <Link to='/schedule'>find a pickle</Link> | <Link to={path}>account</Link> | <button className={styles.buttonLink} onClick={renderProfile}>profile</button>
+      {user ? `Hi, ${user.first_name}!` : "Log in or Sign up!" } | <Link to={path2}>create a pickle</Link> | <Link to={path3}>find a pickle</Link> | <Link to={path}>account</Link> | <button className={styles.buttonLink} onClick={renderProfile}>profile</button>
       </div>
     </div>
     <Outlet />
