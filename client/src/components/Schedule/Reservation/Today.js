@@ -186,7 +186,7 @@ const filtered6 = results.filter(result => result.time === 6)
     <p className={styles.reserveP}>Created by: {renderName(result.user_id)}</p>
       
       <p className={user.id === result.user_id || user.id === result.user2_id || user.id === result.user3_id || user.id === result.user4_id || result.user2_id && result.user3_id && result.user4_id || result.size === 2 && result.user2_id ? styles.userNone : styles.reserveP}>Spot(s) Available:
-      <p className={styles.reserveP}>{result.user2_id ? <div>{renderNamePlayer2(result.user2_id)}</div> : <button  onClick={(event) => reserveSpotUser2(event)} value={result.id}>Spot Open</button>}</p>
+      <p className={styles.reserveP}>{result.user2_id ? <div>{renderNamePlayer2(result.user2_id)}</div> : <button className={styles.spotBtn} onClick={(event) => reserveSpotUser2(event)} value={result.id}>Spot Open</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user3_id ? <div>{renderNamePlayer3(result.user3_id)}</div> : <button className={styles.spotBtn} onClick={(event) => reserveSpotUser3(event)} value={result.id}>Spot Open</button>}</p>
   <p className={result.size === 4 ? styles.userId : styles.userNone}>{result.user4_id ? <div>{renderNamePlayer4(result.user4_id)}</div> : <button className={styles.spotBtn} onClick={(event) => reserveSpotUser4(event)} value={result.id}>Spot Open</button>}</p></p>
       </div>)

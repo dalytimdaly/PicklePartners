@@ -3,11 +3,14 @@
   display: flex;
   flex-wrap: wrap;
   width: 300px;
+  left: 100px;
   color: rgb(34,34,34);
   border-bottom-width: 1px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 6px #ccc;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .postcardcontainer:hover {
