@@ -69,3 +69,40 @@
   left: 280px;
 }
 
+.h4butFind {
+  position: relative;
+  margin: 0px;
+  right: -16px;
+}
+
+.icon {
+  position: relative;
+  height:60px;
+  width:60px;
+  right: -10px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  right: 5px;
+  margin: 0px 20px;
+  margin-top: 20px;
+  width: 120px;
+  text-align: center;
+  border-radius: 4px;
+  border: solid 1px #e3e3e3;
+}
+
+.category:hover {
+  background-color: transparent;
+  box-shadow: 0 0 10px 0 #00000026;
+}
+
+.buttonDiv {
+  position: relative;
+  left: 1400px;
+  top: 100px;
+}
+

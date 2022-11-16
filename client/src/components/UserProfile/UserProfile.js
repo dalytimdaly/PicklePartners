@@ -53,7 +53,7 @@ export default function UserProfile({ user }) {
   
 
   return (
-    <div>
+    <div className={styles.profileContainer}>
       <div key={profile.id} className={styles.post}>
       {profile.avatar ? <img src={profile.avatar} alt={"No image provided"} className={styles.avatar}/>: null } 
       <div className={styles.name}><h2>{profile.first_name} {profile.last_name}</h2></div>
@@ -77,7 +77,12 @@ export default function UserProfile({ user }) {
       <h3> About me: </h3>
       {profile.bio}
       </div>
-      
+      <div className={styles.buttonDiv}>
+          <button className={styles.category} onClick={() => alert("coming soon")}>
+            <img className={styles.icon} src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png" alt="connect" />
+            <h4 className={styles.h4butFind}>Connect</h4>
+          </button>
+      </div>
       </div>
       
         

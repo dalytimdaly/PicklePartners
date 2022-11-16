@@ -44,15 +44,15 @@ export default function Main({ user }) {
           </button>
           <button className={styles.category} onClick={navFind}>
             <img className={styles.icon} src="https://img.icons8.com/external-happy-man-bomsymbols-/2x/external-find-happy-man-human-resource-and-life-style-set-2-happy-man-bomsymbols-.png" alt="find" />
-            <h4 className={styles.h4but}>Find</h4>
+            <h4 className={styles.h4butFind}>Find</h4>
           </button>
           <button className={styles.category} onClick={navConnect}>
             <img className={styles.icon} src="https://img.icons8.com/external-filled-outline-geotatah/2x/external-connect-recruitment-color-filled-outline-geotatah.png" alt="connect"/>
-            <h4 className={styles.h4but}>Connect</h4>
+            <h4 className={styles.h4butConnect}>Connect</h4>
           </button>
           <button className={styles.category} onClick={navPlay}>
             <img className={styles.icon} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmoN9ia7-iVJfn49QTWM1yEP4nu2xB38PtiA&usqp=CAU" alt="play"/>
-            <h4 className={styles.h4but}>Play</h4>
+            <h4 className={styles.h4butPlay}>Play</h4>
           </button>
         </div>
         

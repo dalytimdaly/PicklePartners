@@ -88,9 +88,10 @@ useEffect(() => {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then(
+      .then((data) => {
         navigate('/account')
-      )
+        window.location.reload()
+      })
      
     }
   
@@ -113,9 +114,10 @@ useEffect(() => {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then(
+    .then((data) => {
       navigate('/account')
-    )
+      window.location.reload()
+    })
    
   }
   
@@ -135,9 +137,10 @@ useEffect(() => {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then(
+      .then((data) => {
         navigate('/account')
-      )
+        window.location.reload()
+      })
       
     }
 
@@ -2704,7 +2707,7 @@ function renderNamePlayer4(param) {
               <th className={styles.tableHead}>Court 9</th>
               <th className={styles.tableHead}>Court 10</th>
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 6 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>6AM</td>
             
               
@@ -2721,7 +2724,7 @@ function renderNamePlayer4(param) {
               
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 7 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>7AM</td>
              
        
@@ -2738,7 +2741,7 @@ function renderNamePlayer4(param) {
             
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 8 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>8AM</td>
              
       
@@ -2755,7 +2758,7 @@ function renderNamePlayer4(param) {
    
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 9 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>9AM</td>
               
             
@@ -2772,7 +2775,7 @@ function renderNamePlayer4(param) {
             
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 10 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>10AM</td>
               
               
@@ -2790,7 +2793,7 @@ function renderNamePlayer4(param) {
       
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 11 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>11AM</td>
               
           
@@ -2907,7 +2910,7 @@ function renderNamePlayer4(param) {
              
             </tr>
             <tr className={styles.tableRow}></tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 19 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>6PM</td>
            
             
@@ -2924,7 +2927,7 @@ function renderNamePlayer4(param) {
        
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 20 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>7PM</td>
            
    
@@ -2941,7 +2944,7 @@ function renderNamePlayer4(param) {
      
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 21 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>8PM</td>
              
               
@@ -2958,7 +2961,7 @@ function renderNamePlayer4(param) {
                
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 22 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>9PM</td>
       
                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{thirdDayfiltered21Court1.length !== 0 ? thirdDayfiltered21Court1 : <Link to='/create'>OPEN</Link>}</div></th>
@@ -2973,7 +2976,7 @@ function renderNamePlayer4(param) {
                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{thirdDayfiltered21Court10.length !== 0 ? thirdDayfiltered21Court10 : <Link to='/create'>OPEN</Link>}</div></th>
         
              </tr> 
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 23 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDateLast}>10PM</td>
            
                <th className={styles.reservationBlock}><div className={styles.courtBlock}>{thirdDayfiltered22Court1.length !== 0 ? thirdDayfiltered22Court1 : <Link to='/create'>OPEN</Link>}</div></th>

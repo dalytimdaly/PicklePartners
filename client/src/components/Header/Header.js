@@ -18,7 +18,7 @@ export default function Header({ user }) {
     <>
     <div className={styles.header}>
       <div className={styles.homeBtn}>
-        <Link to='/'>PP</Link>
+        <Link to='/'><img className={styles.icon} src="https://cdn-icons-png.flaticon.com/512/2544/2544087.png" alt="create"/></Link>
       </div>
       <div>
       <h4 className={styles.slogan}>Create. Find. Connect. Play.</h4>

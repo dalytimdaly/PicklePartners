@@ -15,6 +15,8 @@ export default function CreateReservation({user}) {
     })
   }, [])
 
+  
+
 
   const navigate = useNavigate();
   
@@ -23,10 +25,25 @@ export default function CreateReservation({user}) {
   const [type, setType] = useState("casual")
   const [size, setSize] = useState(2)
   const [time, setTime] = useState(6)
-  const [dateOfGame, setDateOfGame] = useState("")
+  
   const [courtNumber, setCourtNumber] = useState(1)
   const [skillLevel, setSkillLevel] = useState("beginner")
+  const [court, setCourt] = useState({close_hour: 22})
+  const [errors, setErrors] = useState([])
   
+  useEffect(() => {
+    if(user !== null) {
+    fetch(`/courts/${courtId}`)
+    .then(r => {
+      if(r.ok) {
+        r.json().then(data => setCourt(data));
+      } else {
+        r.json().then(err => setErrors(err.errors));
+      }
+    })
+  }
+  }, [courtId])
+
 
   function handleCourtId(event) {
     setCourtId(event.target.value)
@@ -103,6 +120,8 @@ export default function CreateReservation({user}) {
     minutes: 0,
     seconds: 0,
   })
+
+  const [dateOfGame, setDateOfGame] = useState(date)
 
   const tomorrow = add(new Date(), {
     years: 0,
@@ -230,23 +249,23 @@ export default function CreateReservation({user}) {
       <h4>What time do you want to play?</h4> 
       <label for="postalcode" className={styles.postallabel}>
       <select className={styles.categories} onChange={handleTime}>
-        <option value="6">6AM</option>
-        <option value="7">7AM</option>
-        <option value="8">8AM</option>
-        <option value="9">9AM</option>
-        <option value="10">10AM</option>
-        <option value="11">11AM</option>
+        <option className={court.open_hour > 6 ? styles.userNone : null} value="6">6AM</option>
+        <option className={court.open_hour > 7 ? styles.userNone : null}  value="7">7AM</option>
+        <option className={court.open_hour > 8 ? styles.userNone : null}  value="8">8AM</option>
+        <option className={court.open_hour > 9 ? styles.userNone : null}  value="9">9AM</option>
+        <option className={court.open_hour > 10 ? styles.userNone : null}  value="10">10AM</option>
+        <option className={court.open_hour > 11 ? styles.userNone : null}  value="11">11AM</option>
         <option value="12">12</option>
         <option value="13">1PM</option>
         <option value="14">2PM</option>
         <option value="15">3PM</option>
         <option value="16">4PM</option>
         <option value="17">5PM</option>
-        <option value="18">6PM</option>
-        <option value="19">7PM</option>
-        <option value="20">8PM</option>
-        <option value="21">9PM</option>
-        <option value="22">10PM</option>
+        <option className={court.close_hour < 19 ? styles.userNone : null}  value="18">6PM</option>
+        <option className={court.close_hour < 20 ? styles.userNone : null}  value="19">7PM</option>
+        <option className={court.close_hour < 21 ? styles.userNone : null}  value="20">8PM</option>
+        <option className={court.close_hour < 22 ? styles.userNone : null}  value="21">9PM</option>
+        <option className={court.close_hour < 23 ? styles.userNone : null}  value="22">10PM</option>
       </select>
       </label>
       <h4>Which court would you like to play on?</h4>
