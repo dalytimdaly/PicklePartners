@@ -38,6 +38,8 @@
 }
 
 .icon {
+  position: relative;
+  top: 2px;
   height: 23px;
   width: 26px;
 }

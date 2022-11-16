@@ -314,9 +314,9 @@ useEffect(() => {
       <div className={clicked ? styles.displayGames : styles.userNone}>
       {
       pickles.map(pickle => <div key={pickle.id} className={parseInt(format(date, 'y-M-d').substr(8,2)) > parseInt(pickle.date.substr(8,2)) ? styles.userNone : styles.post} >
-      <div className={styles.title}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`} Time: {renderTime(pickle.time)} Group Size: {pickle.size} <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => editPickle(pickle.id)}>edit reservation</button></div>
+      <div className={styles.title}><h4 className={styles.dateH4}>{`${pickle.date.substr(5,2)}/${pickle.date.substr(8,2)}`}</h4> <div className={styles.timeDiv}><b>Time:</b> {renderTime(pickle.time)}</div> <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => editPickle(pickle.id)}>edit reservation</button></div>
       <div className={pickle.user_id === user.id ? "" : styles.userNone}><button onClick={() => handleDelete(pickle.id)}>cancel reservation</button></div></div>
-      <div className={styles.area}><b>Location: {renderCourtName(pickle.court_id)}</b> Court: {pickle.court_number_id}</div>
+      <div className={styles.area}><div className={styles.timeDiv}> <h4 className={styles.dateH4}>Location:</h4>{renderCourtName(pickle.court_id)} </div> <h4 className={styles.dateH4}> Court:</h4> {pickle.court_number_id}</div>
       <div className={styles.area}>Created by/Player 1: {renderName(pickle.user_id)}</div>
       <div className={styles.area}><div>Player 2: {pickle.user2_id ? renderNamePlayer2(pickle.user2_id) : "spot open"}</div></div>
       <div className={pickle.size === 2 ? styles.userNone : styles.area}><div>Player 3: {pickle.user3_id ? renderNamePlayer3(pickle.user3_id) : "spot open" }</div></div>

@@ -179,3 +179,12 @@ button:hover {
   position: relative;
   left: 10px;
 }
+
+.dateH4 {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.timeDiv {
+  margin-bottom: 5px;
+}
