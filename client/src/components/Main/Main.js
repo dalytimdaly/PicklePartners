@@ -36,7 +36,7 @@ export default function Main({ user }) {
     
     <div className={styles.buttonContainer}>
           <div className={ user ? styles.userNone : styles.loginBtn}>
-            <Link style={{textDecoration: 'none', padding: '5px' }} to='/login' className={styles.category}><img className={styles.loginIcon} src="https://img.icons8.com/cute-clipart/2x/login-rounded-up.png" alt="restaurants"/><h4 className={styles.h4butLog}>Login/Sign-Up</h4></Link>
+            <Link style={{textDecoration: 'none', padding: '5px', margin: '0px' }} to='/login' className={styles.category}><img className={styles.loginIcon} src="https://img.icons8.com/cute-clipart/2x/login-rounded-up.png" alt="restaurants"/><h4 className={styles.h4butLog}>Login/Sign-Up</h4></Link>
           </div>  
           <button className={styles.category} onClick={navCreate}>
             <img className={styles.icon} src="https://img.icons8.com/bubbles/2x/plus-2-math.png" alt="create"/>

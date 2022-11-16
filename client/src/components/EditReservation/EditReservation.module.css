@@ -1,201 +1,45 @@
-
-
-/* labels */
-.postlabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.pricelabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.citylabel {
-  color: black;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.postallabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.descriptionlabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.emaillabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.categorylabel {
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.imagelabel {
-  position: absolute;
-  color: #008800;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  max-width: 620px;
-  width: 100%
-}
-
-/* containers */
-
-.form {
-  margin-top: 5rem;
-  margin-left: 10rem;
-  align-content: center;
-}
-
-.groupcontainer {
+.post {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  height: auto;
-  gap: 10px
+  height: auto; 
 }
 
-.descriptioncontainer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-
-.contactcontainer {
-  display: flex;
-  border: black;
-  margin-top: 10px;
-}
-
-.checkboxcontainer {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 550px;
-}
-
-.imagecontainer {
+.h1Title {
   position: relative;
-  top: -105px;
-  left: 160px;
-}
-
-/* text inputs, boxes and elements */
-
-.imageButton {
-  padding: 6px;
-  background-color: rgb(241, 237, 237);
-  border-left-color: rgb(34,34,34);
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-right-color: rgb(34,34,34);
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-top-color: rgb(34,34,34);
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-bottom-color: rgb(34,34,34);
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  text-align: center;
-  color: rgb(34,34,34);
-  border-radius: 10px;
-  position: absolute;
-  top: 13px;
-  left: 50px;
-}
-
-.categories {
-  margin-bottom: 10px;
-}
-
-.postingtitle {
-  display: flex;
-  width: 239.407px;
-  height: 21.6px;
-}
-
-.price {
-  display: flex;
-  width: 102.885px;
-  height: 21.6px;
-}
-
-.city {
-  display: flex;
-  width: 295.807px;
-  height: 21.6px;
-}
-
-.postalcode {
-  display: flex;
-  width: 100.320px;
-  height: 21.6px;
-}
-
-.description {
-  display: flex;
-  align-content: center;
-  max-width: 952px;
-  max-height: 216px;
-  min-width: 228px;
-  min-height: 216px;
+  margin-left: 100%;
   width: 100%;
-  height: auto;
 }
 
-.contactinfo {
-  display: flex;
-  width: 295.807px;
-  height: 21.6px;
+.leftColumn {
+  position: relative;
+  left: 350px;
+  top: 20px;
 }
 
-.checkbox {
-  display: flex;
-  width: 15px;
-  height: 15px;
-  margin-top: 15px;
+.rightColumn {
+  position: relative;
+  left: 340px;
+  top: -325px;
 }
 
-.checkboxcontainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: right;
+.butDiv {
+  position: relative;
+  left: 750px;
+  top: -210px;
+  width: 100px;;
+  border: solid 4px #e3e3e3;
 }
 
-.checkboxText {
-  margin: 0px;
-  margin-top: 15px;
-  padding-left: 5px;
+.icon {
+  position: relative;
+  top: 15px;
+  height: 40px;
+  width: 40px;
 }
 
-.button {
-  width: 87px;
-  height: 30px;
-  margin-left: 50rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  font-size: large;
+.userNone{
+  display: none;
+}
+.userNone {
+  display: none;
 }

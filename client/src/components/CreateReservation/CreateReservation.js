@@ -15,9 +15,6 @@ export default function CreateReservation({user}) {
     })
   }, [])
 
-  
-
-
   const navigate = useNavigate();
   
   const [userId, setUserId] = useState("")
@@ -25,7 +22,6 @@ export default function CreateReservation({user}) {
   const [type, setType] = useState("casual")
   const [size, setSize] = useState(2)
   const [time, setTime] = useState(6)
-  
   const [courtNumber, setCourtNumber] = useState(1)
   const [skillLevel, setSkillLevel] = useState("beginner")
   const [court, setCourt] = useState({close_hour: 22})
