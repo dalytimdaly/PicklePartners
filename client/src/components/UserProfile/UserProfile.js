@@ -50,8 +50,6 @@ export default function UserProfile({ user }) {
 
   const totalGamesPlayed = gameCreated + gamePlayed1 + gamePlayed2 + gamePlayed3
 
-  
-
   return (
     <div className={styles.profileContainer}>
       <div key={profile.id} className={styles.post}>
@@ -77,7 +75,7 @@ export default function UserProfile({ user }) {
       <h3> About me: </h3>
       {profile.bio}
       </div>
-      <div className={styles.buttonDiv}>
+      <div className={user !== null && user.id === profile.id ? styles.userNone : styles.buttonDiv }>
           <button className={styles.category} onClick={() => alert("coming soon")}>
             <img className={styles.icon} src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png" alt="connect" />
             <h4 className={styles.h4butFind}>Connect</h4>
