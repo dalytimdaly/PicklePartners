@@ -38,6 +38,13 @@
 }
 
 .icon {
+  position: relative;
+  top: 2px;
   height: 23px;
   width: 26px;
+}
+
+.icon:hover {
+  height: 25px;
+  width: 28px;
 }

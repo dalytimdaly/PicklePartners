@@ -21,7 +21,7 @@
   border: solid 1px #e3e3e3;
 }
 .category:hover {
-  background-color: transparent;
+  background-color: lightyellow;
   box-shadow: 0 0 10px 0 #00000026;
 }
 
@@ -41,11 +41,17 @@
 
 .loginBtn {
   position: absolute;
-  right: 0px;
-  top: 40px;
+  right: 20px;
+  top: 60px;
   font-family: Arial;
   font-size: 12.8px;
   text-decoration: none white;
+  margin: 0px;
+}
+
+.loginBtn:hover {
+  background-color: lightyellow;
+  box-shadow: 0 0 10px 0 #00000026;
 }
 
 .icon {
@@ -53,6 +59,7 @@
   height:60px;
   width:60px;
   right: -10px;
+  border-radius: 20px;
 }
 
 .loginIcon {
@@ -98,3 +105,4 @@
   padding-bottom: 32px;
   top: 16px;
 }
+

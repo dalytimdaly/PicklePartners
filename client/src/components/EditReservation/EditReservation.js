@@ -10,6 +10,13 @@ export default function EditReservation({user}) {
   const { id } = useParams();
 
   const [patch, setPatch] = useState(0);
+  const [courtId, setCourtId] = useState(1)
+  const [type, setType] = useState("casual")
+  const [size, setSize] = useState(2)
+  const [time, setTime] = useState(6)
+  const [dateOfGame, setDateOfGame] = useState("")
+  const [courtNumber, setCourtNumber] = useState(1)
+  const [skillLevel, setSkillLevel] = useState("beginner")
 
   useEffect(() => {
     fetch(`/pickleballs/${id}`)
@@ -25,6 +32,24 @@ export default function EditReservation({user}) {
     })
   }, [id])
 
+  const [court, setCourt] = useState({close_hour: 22})
+  const [errors, setErrors] = useState([])
+  
+  useEffect(() => {
+    if(user !== null) {
+    fetch(`/courts/${courtId}`)
+    .then(r => {
+      if(r.ok) {
+        r.json().then(data => setCourt(data));
+      } else {
+        r.json().then(err => setErrors(err.errors));
+      }
+    })
+  }
+  }, [courtId])
+
+  console.log(court)
+
 
   function startPatch() {
     setPatch(1)
@@ -32,15 +57,6 @@ export default function EditReservation({user}) {
 
   const navigate = useNavigate();
 
-  const [courtId, setCourtId] = useState(1)
-  const [type, setType] = useState("casual")
-  const [size, setSize] = useState(2)
-  const [time, setTime] = useState(6)
-  const [dateOfGame, setDateOfGame] = useState("")
-  const [courtNumber, setCourtNumber] = useState(1)
-  const [skillLevel, setSkillLevel] = useState("beginner")
-
-  
 
   function handleCourtId(event) {
     setCourtId(event.target.value)
@@ -182,7 +198,9 @@ export default function EditReservation({user}) {
   return (
     <div className={styles.post}>
       <form className={styles.form} onSubmit={handleSubmit} onChange={startPatch}>
-    <label for="court" className={styles.postlabel}>court
+      <h1 className={styles.h1Title}>Update your Pickleball Reservation</h1>
+      <div className={styles.leftColumn}>
+        <h4> Where would you like to play? </h4>
     <select className={styles.categories} onChange={handleCourtId} value={patch > 0 ? courtId : postObject.court_id}>
       <option value="1">Gates Tennis Center</option>
       <option value="2">Congress Park</option>
@@ -198,22 +216,23 @@ export default function EditReservation({user}) {
       <option value="12">Apex Pickleball Courts</option>
       <option value="13">Cornerstone Park</option>
     </select>
-    </label>
-        <div className={styles.groupcontainer}>
-      <label for="size" className={styles.citylabel}>size
+        <h4>What size game do you want to play?</h4>
+      <label for="size" className={styles.citylabel}>
     <select className={styles.categories} onChange={handleSize} value={patch > 0 ? size : postObject.size}>
       <option value="2">Singles</option>
       <option value="4">Doubles</option>
     </select>
     </label>
-      <label for="type" className={styles.pricelabel}>type of play
+    <h4>What type of play do you want?</h4>
+    <label for="type" className={styles.pricelabel}>
     <select className={styles.categories} onChange={handleType}  value={patch > 0 ? type : postObject.type_of_play}>
       <option value="casual">casual</option>
       <option value="competitive">competitive</option>
       <option value="practice">practice</option>
     </select>
-    </label>    
-      <label for="skill" className={styles.citylabel}>skill level
+    </label> 
+    <h4>What skill level are you seeking?</h4>      
+      <label for="skill" className={styles.citylabel}>
     <select className={styles.categories} onChange={handleSkillLevel} value={patch > 0 ? skillLevel : postObject.skill_level}>
       <option value="beginner">beginner</option>
       <option value="intermediate">intermediate</option>
@@ -221,28 +240,10 @@ export default function EditReservation({user}) {
       <option value="pro">pro</option>
     </select>
     </label>
-      <label for="postalcode" className={styles.postallabel}>time
-    <select className={styles.categories} onChange={handleTime} value={patch > 0 ? time : postObject.time}>
-      <option value="6">6AM</option>
-      <option value="7">7AM</option>
-      <option value="8">8AM</option>
-      <option value="9">9AM</option>
-      <option value="10">10AM</option>
-      <option value="11">11AM</option>
-      <option value="12">12</option>
-      <option value="13">1PM</option>
-      <option value="14">2PM</option>
-      <option value="15">3PM</option>
-      <option value="16">4PM</option>
-      <option value="17">5PM</option>
-      <option value="18">6PM</option>
-      <option value="19">7PM</option>
-      <option value="20">8PM</option>
-      <option value="21">9PM</option>
-      <option value="22">10PM</option>
-    </select>
-    </label>
-    <label for="skill" className={styles.citylabel}>date
+    
+      <div className={styles.rightColumn}>
+      <h4>What day do you want to play?</h4>
+    <label for="skill" className={styles.citylabel}>
     <select className={styles.categories} onChange={handleDate} value={patch > 0 ? dateOfGame : postObject.date }>
       <option value={format(date, 'eee MMM dd y')}>{format(date, 'eee, MM/dd')}</option>
       <option value={format(tomorrow, 'eee MMM dd y')}>{format(tomorrow, 'eee, MM/dd')}</option>
@@ -253,7 +254,30 @@ export default function EditReservation({user}) {
       <option value={format(lastday, 'eee MMM dd y')}>{format(lastday, 'eee, MM/dd')}</option>
     </select>
     </label>
-    <label for="skill" className={styles.citylabel}>court number:
+    <h4>What time do you want to play?</h4> 
+      <label for="postalcode" className={styles.postallabel}>
+    <select className={styles.categories} onChange={handleTime} value={patch > 0 ? time : postObject.time}>
+        <option className={court.open_hour > 6 ? styles.userNone : null} value="6">6AM</option>
+        <option className={court.open_hour > 7 ? styles.userNone : null}  value="7">7AM</option>
+        <option className={court.open_hour > 8 ? styles.userNone : null}  value="8">8AM</option>
+        <option className={court.open_hour > 9 ? styles.userNone : null}  value="9">9AM</option>
+        <option className={court.open_hour > 10 ? styles.userNone : null}  value="10">10AM</option>
+        <option className={court.open_hour > 11 ? styles.userNone : null}  value="11">11AM</option>
+        <option value="12">12</option>
+        <option value="13">1PM</option>
+        <option value="14">2PM</option>
+        <option value="15">3PM</option>
+        <option value="16">4PM</option>
+        <option value="17">5PM</option>
+        <option className={court.close_hour < 19 ? styles.userNone : null}  value="18">6PM</option>
+        <option className={court.close_hour < 20 ? styles.userNone : null}  value="19">7PM</option>
+        <option className={court.close_hour < 21 ? styles.userNone : null}  value="20">8PM</option>
+        <option className={court.close_hour < 22 ? styles.userNone : null}  value="21">9PM</option>
+        <option className={court.close_hour < 23 ? styles.userNone : null}  value="22">10PM</option>
+    </select>
+    </label>
+    <h4>Which court would you like to play on?</h4>
+    <label for="skill" className={styles.citylabel}>
     <select className={styles.categories} onChange={handleCourtNumber} value={patch > 0 ? courtNumber : postObject.court_number_id}>
       <option value="1">Court 1</option>
       <option value="2">Court 2</option>
@@ -267,8 +291,12 @@ export default function EditReservation({user}) {
       <option value="10">Court 10</option>
     </select>
     </label>
+    
       </div>
-      <button className={styles.button} type="submit">submit updated reservation</button>
+      </div>
+      <div className={styles.butDiv}>
+      <button className={styles.button} type="submit"><img className={styles.icon} src="https://cdn-icons-png.flaticon.com/512/5334/5334827.png" alt="submit"/><h4 className={styles.h4but}>Update your Reservation</h4></button>
+      </div>
       </form>
     </div>
   )

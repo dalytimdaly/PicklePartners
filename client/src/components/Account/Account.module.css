@@ -179,3 +179,17 @@ button:hover {
   position: relative;
   left: 10px;
 }
+
+.dateH4 {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.skillH4 {
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.timeDiv {
+  margin-bottom: 5px;
+}
