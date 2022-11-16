@@ -224,6 +224,7 @@ useEffect(() => {
       .then(r => r.json())
       .then((data) => {
         navigate(`/account`)
+        window.location.reload()
       })
     
     }
@@ -247,6 +248,7 @@ useEffect(() => {
       .then(r => r.json())
       .then((data) => {
         navigate(`/account`)
+        window.location.reload()
       })
       
     }
@@ -270,6 +272,7 @@ useEffect(() => {
       .then(r => r.json())
       .then((data) => {
         navigate(`/account`)
+        window.location.reload()
       })
     
     }

@@ -11,7 +11,7 @@
 .category {
   display: flex;
   flex-direction: column;
-  padding: 28px;
+  padding: 20px;
   right: 5px;
   margin: 0px 20px;
   margin-top: 20px;
@@ -50,18 +50,18 @@
 
 .icon {
   position: relative;
-  height:40px;
-  width:40px;
-  right: -15px;
+  height:60px;
+  width:60px;
+  right: -10px;
 }
 
 .loginIcon {
   position: relative;
-  height:40px;
-  width:40px;
-  right: -40px;
-  top: 28px;
-  padding-top:-20px;
+  height:60px;
+  width:60px;
+  right: -30px;
+  top: 15px;
+  padding-top: 0px;
 }
 
 .userNone {
@@ -71,12 +71,30 @@
 .h4but {
   position: relative;
   margin: 0px;
-  right: -15px;
+  right: -20px;
+}
+
+.h4butFind {
+  position: relative;
+  margin: 0px;
+  right: -25px;
+}
+
+.h4butConnect {
+  position: relative;
+  margin: 0px;
+  right: -13px;
+}
+
+.h4butPlay {
+  position: relative;
+  margin: 0px;
+  right: -26px;
 }
 
 .h4butLog {
   position: relative;
-  top: 29px;
   margin: 0px;
-  padding-bottom: 50px;
+  padding-bottom: 32px;
+  top: 16px;
 }

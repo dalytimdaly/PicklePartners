@@ -121,9 +121,9 @@
   text-align: center;
   color: rgb(34,34,34);
   border-radius: 10px;
-  position: absolute;
-  top: 13px;
-  left: 50px;
+  position: relative;
+  top: -30px;
+  left: -780px;
 }
 .categories {
   margin-bottom: 10px;
@@ -189,12 +189,16 @@
   margin-top: 15px;
   padding-left: 5px;
 }
+
 .button {
   width: 87px;
-  height: 30px;
+  height: 80px;
   margin-left: 60rem;
   margin-bottom: 3rem;
   font-size: large;
+  position: relative;
+  left: -400px;
+  top: 20px;
 }
 
 .imageDisplay {
@@ -203,4 +207,19 @@
   top: 0px;
   left: 0px;
   position: absolute;
+}
+
+.avatarInput {
+  display: flex;
+  width: 239.407px;
+  height: 21.6px;
+  position: relative;
+  top: -40px;
+}
+
+.avatarButton {
+  position: relative;
+  left: -700px;
+  top: -20px;
+  font-size: large;
 }

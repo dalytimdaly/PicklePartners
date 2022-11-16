@@ -6,7 +6,7 @@
 
 .h1Title {
   position: relative;
-  margin-left: 100%;
+  margin-left: 105%;
   width: 100%;
 }
 
@@ -35,4 +35,8 @@
   top: 15px;
   height: 40px;
   width: 40px;
+}
+
+.userNone{
+  display: none;
 }

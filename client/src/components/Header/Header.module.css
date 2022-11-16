@@ -7,14 +7,10 @@
   border-bottom: 1px solid #ccc;
 }
 
-.breadcrumb {
-  margin-left: 10px;
-}
-
 .homeBtn {
   border-radius: 15px;
   background-color: white;
-  padding: 4px;
+  padding: 3px;
   border: 1px solid #ccc;
   margin-left: 20px;
 }
@@ -34,4 +30,14 @@
 
 .slogan {
   padding-left: 10px;
+}
+
+.buttonLink:hover {
+  box-shadow: 0 0 0px 0 #00000026;
+  cursor: pointer;
+}
+
+.icon {
+  height: 23px;
+  width: 26px;
 }

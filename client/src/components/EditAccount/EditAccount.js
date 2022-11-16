@@ -91,6 +91,7 @@ export default function EditAccount({user}) {
     .then(r => r.json())
     .then((data) => {
       navigate('/account')
+      window.location.reload()
     })
 
   }
@@ -110,7 +111,7 @@ export default function EditAccount({user}) {
             },
             body: formData
         }).then(res => res.json())
-        .then((data) => console.log(data))
+        .then((data) => alert('Avatar submitted!'))
         
     }
   
@@ -147,14 +148,14 @@ export default function EditAccount({user}) {
       </label>
       </div>
       
-      <button className={styles.button} type="submit">Continue</button>
+      <button className={styles.button} type="submit">Submit Account Info</button>
       </form>
       <div className={styles.imagecontainer}>
       {editImage ? <form onSubmit={(e) => handleSubmitPicture(e)}>
-                <input type="file" name="avatar"/>
-                <button type="submit">Submit</button>
+                <input type="file" name="avatar" className={styles.avatarInput}/>
+                <button type="submit" className={styles.avatarButton}>Submit</button>
             </form> : 
-      <button onClick={renderEditImageInput} className={styles.imageButton}>edit profile picture</button>}
+      <button onClick={renderEditImageInput} className={styles.imageButton}>edit avatar</button>}
       </div>
     </div>
   )

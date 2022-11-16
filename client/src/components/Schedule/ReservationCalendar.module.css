@@ -1,6 +1,4 @@
-.picklecontainer {
-  background-image: linear-gradient(180deg, rgba(46, 46, 46, 0.97),rgba(46, 46, 46, .1) 40%), url('https://source.unsplash.com/1600x900/?pickleball');
-}
+
 
 .topDiv {
   display: flex;
@@ -84,7 +82,6 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   padding: 0px;
-  font-style: normal;
 }
 
 .reservedBlock {
@@ -92,7 +89,7 @@
   margin-top: 0px;
   font-size: 5px;
   background-repeat: repeat;
-  background-size: 100px;
+  
 }
 
 .reservedH4 {
@@ -104,7 +101,7 @@
 }
 
 .spotBtn {
-  font-size: 25px;
+  font-size: 20px;
   border-left-color: rgb(11, 0, 0);
   border-left-style: solid;
   border-left-width: 2px;

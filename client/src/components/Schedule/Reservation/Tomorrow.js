@@ -86,9 +86,10 @@ export default function Tomorrow({ user }) {
         body: JSON.stringify(editedPlayer),
       })
       .then(r => r.json())
-      .then(
+      .then((data) => {
         navigate('/account')
-      )
+        window.location.reload()
+      })
      
     }
   
@@ -111,9 +112,10 @@ export default function Tomorrow({ user }) {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then(
+    .then((data) => {
       navigate('/account')
-    )
+      window.location.reload()
+    })
    
   }
 
@@ -133,9 +135,10 @@ export default function Tomorrow({ user }) {
       body: JSON.stringify(editedPlayer),
     })
     .then(r => r.json())
-    .then(
+    .then((data) => {
       navigate('/account')
-    )
+      window.location.reload()
+    })
     
   }
 
@@ -2686,7 +2689,7 @@ function handleSubmitDate(e) {
               <th className={styles.tableHead}>Court 10</th>
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 6 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>6AM</td>
             
               
@@ -2703,7 +2706,7 @@ function handleSubmitDate(e) {
                 
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 7 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>7AM</td>
          
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{tomorrowfiltered7Court1.length !== 0 ? tomorrowfiltered7Court1 : <Link to='/create'>OPEN</Link>}</div></th>
@@ -2719,7 +2722,7 @@ function handleSubmitDate(e) {
              
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 8 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>8AM</td>
              
            
@@ -2736,7 +2739,7 @@ function handleSubmitDate(e) {
           
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 9 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>9AM</td>
               
              
@@ -2753,7 +2756,7 @@ function handleSubmitDate(e) {
              
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 10 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>10AM</td>
               
               
@@ -2770,7 +2773,7 @@ function handleSubmitDate(e) {
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{tomorrowfiltered10Court10.length !== 0 ? tomorrowfiltered10Court10 : <Link to='/create'>OPEN</Link>}</div></th>
                        
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.open_hour > 11 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>11AM</td>
               
              
@@ -2889,7 +2892,7 @@ function handleSubmitDate(e) {
              
             </tr>
             <tr className={styles.tableRow}></tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 19 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>6PM</td>
            
              
@@ -2906,7 +2909,7 @@ function handleSubmitDate(e) {
        
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 20 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>7PM</td>
            
               
@@ -2923,7 +2926,7 @@ function handleSubmitDate(e) {
                
              
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 21 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>8PM</td>
              
            
@@ -2940,7 +2943,7 @@ function handleSubmitDate(e) {
               
               
             </tr>
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 22 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDate}>9PM</td>
           
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{tomorrowfiltered21Court1.length !== 0 ? tomorrowfiltered21Court1 : <Link to='/create'>OPEN</Link>}</div></th>
@@ -2955,7 +2958,7 @@ function handleSubmitDate(e) {
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{tomorrowfiltered21Court10.length !== 0 ? tomorrowfiltered21Court10 : <Link to='/create'>OPEN</Link>}</div></th>
             
              </tr> 
-            <tr className={styles.tableRow}>
+            <tr className={court.close_hour < 23 ? styles.userNone : styles.tableRow}>
               <td className={styles.tableDateLast}>10PM</td>
             
                 <th className={styles.reservationBlock}><div className={styles.courtBlock}>{tomorrowfiltered22Court1.length !== 0 ? tomorrowfiltered22Court1 : <Link to='/create'>OPEN</Link>}</div></th>
