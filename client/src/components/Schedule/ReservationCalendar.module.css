@@ -42,8 +42,9 @@
 }
 
 .table {
-  margin-left: 5%;
+  margin-left: 15%;
   align-content: center;
+  margin-bottom: 75px;
 }
 
 .tableHead {
@@ -58,6 +59,7 @@
   width: 100px;
   align-content: center;
   font-weight: bold;
+  
 }
 
 .tableDateLast {
