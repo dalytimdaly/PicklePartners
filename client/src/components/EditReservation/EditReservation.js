@@ -1,12 +1,12 @@
 import styles from './EditReservation.module.css';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
-import { format, add } from 'date-fns'
+import { format, add, parseISO } from 'date-fns'
 
 export default function EditReservation({user}) {
 
-  const [postObject, setPostObject] = useState({})
-
+ 
+ 
   const { id } = useParams();
 
   const [patch, setPatch] = useState(0);
@@ -17,11 +17,13 @@ export default function EditReservation({user}) {
   const [dateOfGame, setDateOfGame] = useState("")
   const [courtNumber, setCourtNumber] = useState(1)
   const [skillLevel, setSkillLevel] = useState("beginner")
+  const [postObject, setPostObject] = useState([])
 
   useEffect(() => {
+    if(user !== null) {
     fetch(`/pickleballs/${id}`)
     .then(r=>r.json()).then((data)=>{
-      setPostObject(data)
+      
       setCourtId(data.court_id)
       setCourtNumber(data.court_number_id)
       setType(data.type_of_play)
@@ -29,9 +31,15 @@ export default function EditReservation({user}) {
       setSkillLevel(data.skill_level)
       setTime(data.time)
       setDateOfGame(data.date)
+      setPostObject(data)
+
+      
     })
+  
+  }
   }, [id])
 
+  
   const [court, setCourt] = useState({close_hour: 22})
   const [errors, setErrors] = useState([])
   
@@ -47,8 +55,6 @@ export default function EditReservation({user}) {
     })
   }
   }, [courtId])
-
-  console.log(court)
 
 
   function startPatch() {
@@ -193,7 +199,10 @@ export default function EditReservation({user}) {
     seconds: 0,
   })
 
+  
+ 
 
+  
 
   return (
     <div className={styles.post}>

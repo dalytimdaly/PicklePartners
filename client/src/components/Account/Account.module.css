@@ -137,6 +137,7 @@ button:hover {
   border-radius: 5px;
   margin-bottom: 2px;
   padding: 5px 10px;
+  margin-left: 10%
 }
 
 .buttonLink {
@@ -145,6 +146,7 @@ button:hover {
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: black;
   padding: 0px;
+  margin-left: 5%;
 }
 
 .editAccount {
@@ -192,4 +194,8 @@ button:hover {
 
 .timeDiv {
   margin-bottom: 5px;
+}
+
+.displayGames {
+  margin-left: 10%
 }
